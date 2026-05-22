@@ -1,0 +1,154 @@
+[
+  {
+    "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+    "label": "Polkadot Foundation Parity Multisig",
+    "class": "UNKNOWN_CONTRACT",
+    "reason": "Code size 925 bytes, no obvious owner pattern",
+    "balance_eth": 306276.63553761196,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+    "label": "Iconomi Parity Multisig",
+    "class": "UNKNOWN_CONTRACT",
+    "reason": "Code size 925 bytes, no obvious owner pattern",
+    "balance_eth": 114939.00007763378,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0xc7cd9d874f93f2409f39a95987b3e3c738313925",
+    "label": "Musiconomi Parity Multisig",
+    "class": "UNKNOWN_CONTRACT",
+    "reason": "Code size 925 bytes, no obvious owner pattern",
+    "balance_eth": 16475.534209330526,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0xdb0e7d784d6a7ca2cbda6ce26ac3b1bd348c06f8",
+    "label": "Unknown Parity Multisig #4",
+    "class": "UNKNOWN_CONTRACT",
+    "reason": "Code size 925 bytes, no obvious owner pattern",
+    "balance_eth": 6925.000001009999,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+    "label": "IDEX 1.0",
+    "class": "OWNED",
+    "reason": "Owner = 0x6b770f1a6bff9151f437f2eab907fff132dd86a5 via owner()",
+    "balance_eth": 16168.164450952987,
+    "is_contract": true,
+    "has_owner": true,
+    "patterns": []
+  },
+  {
+    "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+    "label": "EtherDelta v3",
+    "class": "OWNED",
+    "reason": "Owner = 0x1ed014aec47fae44c9e55bac7662c0b78ae61798 via admin()",
+    "balance_eth": 15221.753203131033,
+    "is_contract": true,
+    "has_owner": true,
+    "patterns": []
+  },
+  {
+    "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+    "label": "EtherDelta v2",
+    "class": "EOA_EMPTY",
+    "reason": "Not a contract, no balance",
+    "balance_eth": 0.0,
+    "is_contract": false,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+    "label": "Token.Store",
+    "class": "OWNED",
+    "reason": "Owner = 0x44a93f553bd529c19386b2ddfa30f458b0bc3b20 via owner()",
+    "balance_eth": 633.4702695141033,
+    "is_contract": true,
+    "has_owner": true,
+    "patterns": []
+  },
+  {
+    "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+    "label": "Saturn Network",
+    "class": "EOA_EMPTY",
+    "reason": "Not a contract, no balance",
+    "balance_eth": 0.0,
+    "is_contract": false,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+    "label": "The DAO (original)",
+    "class": "OWNED",
+    "reason": "Owner = 0x0000000000000000000000000000000000000001 via owner()",
+    "balance_eth": 0.0006,
+    "is_contract": true,
+    "has_owner": true,
+    "patterns": []
+  },
+  {
+    "address": "0xbf4ed7b27f1d666546e30d74d50d173d20bca754",
+    "label": "WithdrawDAO",
+    "class": "PERMISSIONLESS",
+    "reason": "Contract has withdraw() with no auth check (MEV bot likely already drained)",
+    "balance_eth": 81914.89353817352,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": [
+      "public_withdraw"
+    ]
+  },
+  {
+    "address": "0xb9df00b0b0d3d2c4b15d4d1b6bf1c6c8e5e8f0c1",
+    "label": "Old Augur REP staking",
+    "class": "EOA_EMPTY",
+    "reason": "Not a contract, no balance",
+    "balance_eth": 0.0,
+    "is_contract": false,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0xf230b790e05390fc8295f4d3f60332c93bed42e2",
+    "label": "Old TRX Token (deprecated)",
+    "class": "UNKNOWN_CONTRACT",
+    "reason": "Code size 2656 bytes, no obvious owner pattern",
+    "balance_eth": 0.0,
+    "is_contract": true,
+    "has_owner": false,
+    "patterns": []
+  },
+  {
+    "address": "0xc0829421C1d260BD3CB3E0F06cfE2D52db2cE315",
+    "label": "Plasma Bitcoin Bridge (defunct)",
+    "class": "OWNED",
+    "reason": "Owner = 0xdfee8dc240c6cadc2c7f7f9c257c259914dea84e via owner()",
+    "balance_eth": 27.18656299398245,
+    "is_contract": true,
+    "has_owner": true,
+    "patterns": []
+  },
+  {
+    "address": "0x2efaf1f3c1d3f6f4e2b7e5e2c2c6c2c5e2d5a4b6",
+    "label": "[Placeholder: scan candidate]",
+    "class": "EOA_EMPTY",
+    "reason": "Not a contract, no balance",
+    "balance_eth": 0.0,
+    "is_contract": false,
+    "has_owner": false,
+    "patterns": []
+  }
+]

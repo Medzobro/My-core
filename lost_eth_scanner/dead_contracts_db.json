@@ -1,0 +1,116 @@
+{
+  "_comment": "Database of known DEAD/DORMANT Ethereum contracts. Categories: FROZEN (cannot move), USER_DEPOSITS (depositors can withdraw their own), PERMISSIONLESS (anyone can withdraw - but MEV bots watch these), LOST_OWNER (owner key lost/dead), HD_WALLET (forwarding wallets)",
+  "contracts": [
+    {
+      "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+      "name": "Polkadot Foundation Parity Multisig",
+      "category": "FROZEN",
+      "reason": "Parity library 0x863df6 was selfdestructed Nov 6 2017",
+      "balance_eth": 306276,
+      "recoverable": false,
+      "notes": "Affected by devops199 incident. Cannot move without ETH protocol hard fork (which was rejected by community)."
+    },
+    {
+      "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+      "name": "Iconomi Parity Multisig",
+      "category": "FROZEN",
+      "reason": "Parity library destroyed",
+      "balance_eth": 114939,
+      "recoverable": false
+    },
+    {
+      "address": "0xc7cd9d874f93f2409f39a95987b3e3c738313925",
+      "name": "Musiconomi Parity Multisig",
+      "category": "FROZEN",
+      "reason": "Parity library destroyed",
+      "balance_eth": 16475,
+      "recoverable": false
+    },
+    {
+      "address": "0xdb0e7d784d6a7ca2cbda6ce26ac3b1bd348c06f8",
+      "name": "Unknown Parity Multisig #4",
+      "category": "FROZEN",
+      "reason": "Parity library destroyed",
+      "balance_eth": 6925,
+      "recoverable": false
+    },
+    {
+      "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+      "name": "IDEX 1.0",
+      "category": "USER_DEPOSITS",
+      "reason": "DEX abandoned for IDEX 2.0 in 2020. Owner key alive but inactive.",
+      "balance_eth": 16168,
+      "recoverable": "by_depositor",
+      "withdraw_method": "withdraw(address,uint256)"
+    },
+    {
+      "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+      "name": "EtherDelta v3",
+      "category": "USER_DEPOSITS",
+      "reason": "DEX shut down by SEC enforcement 2018",
+      "recoverable": "by_depositor",
+      "withdraw_method": "withdraw(uint256), withdrawToken(address,uint256)"
+    },
+    {
+      "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+      "name": "EtherDelta v2",
+      "category": "USER_DEPOSITS",
+      "reason": "Replaced by v3",
+      "recoverable": "by_depositor"
+    },
+    {
+      "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+      "name": "Token.Store",
+      "category": "USER_DEPOSITS",
+      "reason": "Officially abandoned by team Jan 2022",
+      "balance_eth_estimate": 100,
+      "recoverable": "by_depositor"
+    },
+    {
+      "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+      "name": "Saturn Network",
+      "category": "USER_DEPOSITS",
+      "recoverable": "by_depositor"
+    },
+    {
+      "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+      "name": "The DAO (original)",
+      "category": "FROZEN",
+      "reason": "Hard forked away. Funds returned via WithdrawDAO contract.",
+      "recoverable": false,
+      "notes": "Historical - source of the ETH/ETC split"
+    },
+    {
+      "address": "0xbf4ed7b27f1d666546e30d74d50d173d20bca754",
+      "name": "WithdrawDAO",
+      "category": "PERMISSIONLESS_DAO_REFUND",
+      "reason": "DAO refund contract - holders of DAO tokens can still claim ETH 1:100",
+      "recoverable": "by_DAO_token_holders"
+    },
+    {
+      "address": "0xb9df00b0b0d3d2c4b15d4d1b6bf1c6c8e5e8f0c1",
+      "name": "Old Augur REP staking",
+      "category": "USER_DEPOSITS",
+      "recoverable": "by_depositor"
+    },
+    {
+      "address": "0xf230b790e05390fc8295f4d3f60332c93bed42e2",
+      "name": "Old TRX Token (deprecated)",
+      "category": "FROZEN_TOKEN",
+      "reason": "Justin Sun migrated TRX away from Ethereum to TRON",
+      "notes": "ETH deposits sent to this address are stuck."
+    },
+    {
+      "address": "0xc0829421C1d260BD3CB3E0F06cfE2D52db2cE315",
+      "name": "Plasma Bitcoin Bridge (defunct)",
+      "category": "ABANDONED",
+      "recoverable": "unknown"
+    },
+    {
+      "address": "0x2efaf1f3c1d3f6f4e2b7e5e2c2c6c2c5e2d5a4b6",
+      "name": "[Placeholder: scan candidate]",
+      "category": "INVESTIGATE",
+      "notes": "Add via scanner discovery"
+    }
+  ]
+}
