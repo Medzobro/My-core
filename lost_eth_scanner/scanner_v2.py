@@ -7,26 +7,29 @@ contracts across Ethereum mainnet AND Layer 2 networks.
 
 Features:
   - Concurrent async HTTP via aiohttp (50x faster than sync)
-  - 9 chains supported: ETH, Arbitrum, Optimism, Base, Polygon, zkSync, Linea, Scroll, BSC
+  - 9 chains: ETH, Arbitrum, Optimism, Base, Polygon, zkSync, Linea, Scroll, BSC
   - Multi-RPC fallback per chain
-  - Three balance check types:
-      * etherdelta:  balanceOf(address,address) on EtherDelta-fork DEXs
-      * erc20_self:  ERC-20 balance of the address on a token contract
+  - Token database per chain (~100+ tokens scanned per address)
+  - 4 balance check types:
+      * etherdelta:   balanceOf(address,address) on EtherDelta-fork DEXs
+      * erc20_self:   ERC-20 balance on the contract itself (cTokens, GST2)
       * erc20_holder: holder of OTHER token (e.g. DAO tokens for WithdrawDAO)
-      * native:      native ETH/MATIC/BNB balance held by contract
-  - Color-coded output, progress reporting
-  - JSON output for downstream processing
+      * native:       native ETH/MATIC/BNB held by user (for L2 dust)
+  - Color-coded output with progress
+  - JSON output for downstream tools
+  - Watch mode (continuously polls for new findings)
 
 ETHICAL USE:
-  This scanner reads only PUBLIC on-chain state. It reports balances registered
-  to the address you provide. Withdrawing requires the private key for THAT
-  address. Do not use to attempt extraction of funds belonging to others.
+  Reads PUBLIC on-chain state for the address you provide.
+  Withdrawing requires the private key for THAT address.
 
 Usage:
-    python3 scanner_v2.py 0xAddr1 [0xAddr2 0xAddr3 ...]
+    python3 scanner_v2.py 0xAddr1 [0xAddr2 ...]
     python3 scanner_v2.py --chains ethereum,arbitrum 0xAddr1
-    python3 scanner_v2.py --concurrency 100 0xAddr1
-    python3 scanner_v2.py --json results.json 0xAddr1
+    python3 scanner_v2.py --concurrency 100 0xAddr
+    python3 scanner_v2.py --json results.json 0xAddr
+    python3 scanner_v2.py --watch --interval 60 0xAddr
+    python3 scanner_v2.py --include-native 0xAddr      # also report L1/L2 wallet balances
 """
 import argparse
 import asyncio
@@ -43,8 +46,9 @@ import certifi
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CHAINS_FILE = os.path.join(SCRIPT_DIR, 'chains.json')
 CONTRACTS_FILE = os.path.join(SCRIPT_DIR, 'contracts_multichain.json')
+TOKENS_FILE = os.path.join(SCRIPT_DIR, 'tokens_multichain.json')
 
-# ANSI colors
+
 class C:
     RESET = '\033[0m'
     BOLD = '\033[1m'
@@ -56,24 +60,6 @@ class C:
     GRAY = '\033[90m'
     MAGENTA = '\033[35m'
 
-COMMON_TOKENS_ETHEREUM = {
-    '0x6b175474e89094c44da98b954eedeac495271d0f': ('DAI', 18),
-    '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48': ('USDC', 6),
-    '0xdac17f958d2ee523a2206206994597c13d831ec7': ('USDT', 6),
-    '0x514910771af9ca656af840dff83e8264ecf986ca': ('LINK', 18),
-    '0x744d70fdbe2ba4cf95131626614a1763df805b9e': ('SNT', 18),
-    '0xb705268213d593b8fd88d3fdeff93aff5cbdcfae': ('IDEX', 18),
-    '0xe41d2489571d322189246dafa5ebde1f4699f498': ('ZRX', 18),
-    '0xd26114cd6ee289accf82350c8d8487fedb8a0c07': ('OMG', 18),
-    '0x1985365e9f78359a9b6ad760e32412f4a445e862': ('REP', 18),
-    '0x0d8775f648430679a709e98d2b0cb6250d2887ef': ('BAT', 18),
-    '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2': ('MKR', 18),
-    '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f': ('SNX', 18),
-    '0x6c6ee5e31d828de241282b9606c8e98ea48526e2': ('HOT', 18),
-    '0xbb9bc244d798123fde783fcc1c72d3bb8c189413': ('DAO_v1', 16),
-    '0xa974c709cfb4566686553a20790685a47aceaa33': ('IDXM', 8),
-}
-
 
 def load_config():
     with open(CHAINS_FILE) as f:
@@ -81,7 +67,17 @@ def load_config():
     with open(CONTRACTS_FILE) as f:
         contracts = [c for c in json.load(f)['contracts']
                      if not c.get('_comment') and c.get('address', '').startswith('0x')]
-    return chains, contracts
+    tokens = {}
+    if os.path.exists(TOKENS_FILE):
+        with open(TOKENS_FILE) as f:
+            raw = json.load(f)
+            for chain, toks in raw.items():
+                if chain.startswith('_'):
+                    continue
+                # filter out dummy entries
+                tokens[chain] = {addr.split('_')[0]: meta for addr, meta in toks.items()
+                                 if addr.startswith('0x') and len(addr.split('_')[0]) == 42}
+    return chains, contracts, tokens
 
 
 def encode_addr(a):
@@ -89,12 +85,10 @@ def encode_addr(a):
 
 
 class MultiRPC:
-    """Async RPC client with per-chain fallback."""
     def __init__(self, chains_config, session: aiohttp.ClientSession, semaphore: asyncio.Semaphore):
         self.chains = chains_config
         self.session = session
         self.sem = semaphore
-        # Stats
         self.calls = 0
         self.fails = 0
 
@@ -108,7 +102,8 @@ class MultiRPC:
             payload = {'jsonrpc': '2.0', 'method': method, 'params': params, 'id': 1}
             for rpc in chain_cfg['rpcs']:
                 try:
-                    async with self.session.post(rpc, json=payload, timeout=aiohttp.ClientTimeout(total=timeout)) as resp:
+                    async with self.session.post(rpc, json=payload,
+                                                 timeout=aiohttp.ClientTimeout(total=timeout)) as resp:
                         if resp.status != 200:
                             continue
                         data = await resp.json()
@@ -120,8 +115,8 @@ class MultiRPC:
             return None
 
 
-async def check_etherdelta_balance(rpc: MultiRPC, chain: str, contract: str, user: str, token: str = '0x0000000000000000000000000000000000000000'):
-    """balanceOf(token, user) - selector 0xf7888aec"""
+async def check_etherdelta_balance(rpc, chain, contract, user, token='0x0000000000000000000000000000000000000000'):
+    """balanceOf(token, user) selector 0xf7888aec"""
     data = '0xf7888aec' + encode_addr(token) + encode_addr(user)
     res = await rpc.call(chain, 'eth_call', [{'to': contract, 'data': data}, 'latest'])
     if res and res != '0x':
@@ -132,8 +127,8 @@ async def check_etherdelta_balance(rpc: MultiRPC, chain: str, contract: str, use
     return 0
 
 
-async def check_erc20_balance(rpc: MultiRPC, chain: str, token: str, user: str):
-    """balanceOf(user) - selector 0x70a08231"""
+async def check_erc20_balance(rpc, chain, token, user):
+    """balanceOf(user) selector 0x70a08231"""
     data = '0x70a08231' + encode_addr(user)
     res = await rpc.call(chain, 'eth_call', [{'to': token, 'data': data}, 'latest'])
     if res and res != '0x':
@@ -144,8 +139,8 @@ async def check_erc20_balance(rpc: MultiRPC, chain: str, token: str, user: str):
     return 0
 
 
-async def check_native_balance(rpc: MultiRPC, chain: str, addr: str):
-    res = await rpc.call(chain, 'eth_getBalance', [addr, 'latest'])
+async def check_native_balance(rpc, chain, user):
+    res = await rpc.call(chain, 'eth_getBalance', [user, 'latest'])
     if res:
         try:
             return int(res, 16)
@@ -154,15 +149,15 @@ async def check_native_balance(rpc: MultiRPC, chain: str, addr: str):
     return 0
 
 
-async def scan_contract(rpc: MultiRPC, contract: dict, user: str):
-    """Scan a single contract for the user's balance."""
+async def scan_contract(rpc, contract, user, tokens_db):
+    """Scan one contract for the user's balance. Returns list of findings."""
     chain = contract['chain']
     addr = contract['address']
     btype = contract.get('balance_check', '')
     findings = []
 
     if btype == 'etherdelta':
-        # Native ETH balance in DEX
+        # Native (ETH) balance in DEX
         bal = await check_etherdelta_balance(rpc, chain, addr, user)
         if bal > 0:
             findings.append({
@@ -171,27 +166,24 @@ async def scan_contract(rpc: MultiRPC, contract: dict, user: str):
                 'symbol': 'ETH',
                 'token': '0x0000000000000000000000000000000000000000',
             })
-        # Token balances on common tokens (only for Ethereum)
-        if chain == 'ethereum':
-            tasks = []
-            tokens_meta = []
-            for tok, (sym, dec) in COMMON_TOKENS_ETHEREUM.items():
-                tasks.append(check_etherdelta_balance(rpc, chain, addr, user, tok))
-                tokens_meta.append((tok, sym, dec))
+        # Token balances - all known tokens for this chain
+        chain_tokens = tokens_db.get(chain, {})
+        if chain_tokens:
+            tasks = [check_etherdelta_balance(rpc, chain, addr, user, tok) for tok in chain_tokens]
+            metas = list(chain_tokens.items())
             results = await asyncio.gather(*tasks, return_exceptions=True)
-            for (tok, sym, dec), res in zip(tokens_meta, results):
-                if isinstance(res, Exception) or res is None:
+            for (tok, meta), res in zip(metas, results):
+                if isinstance(res, Exception) or res is None or res == 0:
                     continue
-                if res > 0:
-                    findings.append({
-                        'amount_raw': res,
-                        'amount': res / (10 ** dec),
-                        'symbol': sym,
-                        'token': tok,
-                    })
+                sym, dec = meta
+                findings.append({
+                    'amount_raw': res,
+                    'amount': res / (10 ** dec),
+                    'symbol': sym,
+                    'token': tok,
+                })
 
     elif btype == 'erc20_self':
-        # ERC-20 balance of user on the contract itself
         bal = await check_erc20_balance(rpc, chain, addr, user)
         if bal > 0:
             dec = contract.get('balance_check_token_decimals', 18)
@@ -203,7 +195,6 @@ async def scan_contract(rpc: MultiRPC, contract: dict, user: str):
             })
 
     elif btype == 'erc20_holder':
-        # User's balance of a SPECIFIC token (e.g. DAO tokens for WithdrawDAO)
         token = contract.get('balance_check_token')
         if token:
             bal = await check_erc20_balance(rpc, chain, token, user)
@@ -220,18 +211,32 @@ async def scan_contract(rpc: MultiRPC, contract: dict, user: str):
     return findings
 
 
-async def scan_address(rpc: MultiRPC, contracts: list, user: str, chains_filter: Optional[set] = None):
+async def scan_address(rpc, contracts, user, tokens_db, chains_filter=None, include_native=False):
     """Scan one user address across all relevant contracts in parallel."""
     user = user.lower()
     eligible = [c for c in contracts if (not chains_filter or c['chain'] in chains_filter)]
 
     print(f'\n{C.BOLD}{C.CYAN}{"=" * 78}{C.RESET}')
     print(f'{C.BOLD}  Address: {user}{C.RESET}')
-    print(f'{C.BOLD}  Scanning {len(eligible)} contracts across chains...{C.RESET}')
+    print(f'{C.BOLD}  Scanning {len(eligible)} contracts + tokens across chains...{C.RESET}')
     print(f'{C.CYAN}{"=" * 78}{C.RESET}')
 
     t_start = time.time()
-    tasks = [scan_contract(rpc, c, user) for c in eligible]
+
+    # 1. Native balances per chain (optional)
+    native_findings = {}
+    if include_native:
+        native_chains = chains_filter if chains_filter else list(rpc.chains.keys())
+        native_tasks = [check_native_balance(rpc, ch, user) for ch in native_chains]
+        native_results = await asyncio.gather(*native_tasks, return_exceptions=True)
+        for ch, res in zip(native_chains, native_results):
+            if isinstance(res, Exception) or res is None or res == 0:
+                continue
+            symbol = rpc.chains[ch].get('native_token', 'ETH')
+            native_findings[ch] = {'amount': res / 1e18, 'symbol': symbol, 'amount_raw': res}
+
+    # 2. Contract scans
+    tasks = [scan_contract(rpc, c, user, tokens_db) for c in eligible]
     results = await asyncio.gather(*tasks, return_exceptions=True)
     elapsed = time.time() - t_start
 
@@ -244,13 +249,18 @@ async def scan_address(rpc: MultiRPC, contracts: list, user: str, chains_filter:
             findings_per_contract[c['address']] = (c, r)
             total_findings += len(r)
 
-    # Group by chain for display
+    # Display
+    if native_findings:
+        print(f'\n  {C.BOLD}[NATIVE WALLET BALANCES]{C.RESET}')
+        for ch, info in native_findings.items():
+            print(f'    {C.BLUE}{ch.upper():12s}{C.RESET}  {info["amount"]:>16,.6f} {info["symbol"]}')
+
     by_chain = {}
     for addr, (c, fs) in findings_per_contract.items():
         by_chain.setdefault(c['chain'], []).append((c, fs))
 
     if not by_chain:
-        print(f'  {C.GRAY}No stuck balances found.{C.RESET}')
+        print(f'\n  {C.GRAY}No stuck balances found in scanned contracts.{C.RESET}')
     else:
         for chain, items in sorted(by_chain.items()):
             print(f'\n  {C.BOLD}[{chain.upper()}]{C.RESET}')
@@ -264,13 +274,14 @@ async def scan_address(rpc: MultiRPC, contracts: list, user: str, chains_filter:
 
     return {
         'address': user,
+        'native_findings': {ch: {**info, 'amount_raw': str(info['amount_raw'])} for ch, info in native_findings.items()},
         'findings_per_contract': {
             addr: {
                 'name': c['name'],
                 'chain': c['chain'],
                 'category': c.get('category', ''),
                 'withdraw_method': c.get('withdraw_method', ''),
-                'balances': fs,
+                'balances': [{**b, 'amount_raw': str(b['amount_raw'])} for b in fs],
             }
             for addr, (c, fs) in findings_per_contract.items()
         },
@@ -279,67 +290,90 @@ async def scan_address(rpc: MultiRPC, contracts: list, user: str, chains_filter:
     }
 
 
-async def main_async(addresses: list, chains_filter: Optional[set], concurrency: int, json_out: Optional[str]):
-    chains, contracts = load_config()
+async def main_async(addresses, chains_filter, concurrency, json_out, watch, interval, include_native):
+    chains, contracts, tokens_db = load_config()
 
     print(f'{C.BOLD}LOST ETH SCANNER v2 - Multi-Chain Edition{C.RESET}')
     print(f'  Database: {len(contracts)} contracts')
+    token_total = sum(len(t) for t in tokens_db.values())
+    print(f'  Tokens:   {token_total} across {len(tokens_db)} chains')
     print(f'  Chains:   {sorted(set(c["chain"] for c in contracts))}')
     print(f'  Filter:   {sorted(chains_filter) if chains_filter else "all"}')
     print(f'  Concurrency: {concurrency}')
     print(f'  Addresses: {len(addresses)}')
+    if watch:
+        print(f'  {C.YELLOW}Watch mode: refresh every {interval}s{C.RESET}')
 
     sem = asyncio.Semaphore(concurrency)
-    ssl_context = ssl.create_default_context(cafile=certifi.where())
-    connector = aiohttp.TCPConnector(limit=concurrency, ssl=ssl_context)
-    async with aiohttp.ClientSession(connector=connector) as session:
-        rpc = MultiRPC(chains, session, sem)
-        all_results = []
-        for addr in addresses:
-            if not (addr.startswith('0x') and len(addr) == 42):
-                print(f'  {C.RED}Skipping invalid address: {addr}{C.RESET}')
-                continue
-            result = await scan_address(rpc, contracts, addr, chains_filter)
-            all_results.append(result)
+    ssl_ctx = ssl.create_default_context(cafile=certifi.where())
+    connector = aiohttp.TCPConnector(limit=concurrency, ssl=ssl_ctx)
 
-        # Final summary
-        print(f'\n\n{C.BOLD}{C.MAGENTA}{"=" * 78}')
-        print('  GRAND TOTAL')
-        print(f'{"=" * 78}{C.RESET}\n')
-        any_found = False
-        for r in all_results:
-            if r['total_findings'] > 0:
-                any_found = True
-                print(f'  {C.BOLD}{r["address"]}{C.RESET}: {r["total_findings"]} balances found')
-                for ca, info in r['findings_per_contract'].items():
-                    for b in info['balances']:
-                        note = f' ({b.get("note","")})' if b.get('note') else ''
-                        print(f'    [{info["chain"]}] {info["name"]:30s}  {b["amount"]:>14,.6f} {b["symbol"]}{note}')
-        if not any_found:
-            print(f'  {C.GRAY}No findings across all addresses and chains.{C.RESET}')
-            print(f'\n  Suggestions:')
-            print(f'    - Try old MetaMask addresses (Settings > Advanced > Show all)')
-            print(f'    - Search emails for "deposit confirmation" 2017-2020')
-            print(f'    - Check hardware wallet derivation paths')
-            print(f'    - L2 addresses might differ - try addresses you used on Arbitrum/Optimism')
+    async def run_once():
+        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=concurrency, ssl=ssl_ctx)) as session:
+            rpc = MultiRPC(chains, session, sem)
+            all_results = []
+            for addr in addresses:
+                if not (addr.startswith('0x') and len(addr) == 42):
+                    print(f'  {C.RED}Skipping invalid address: {addr}{C.RESET}')
+                    continue
+                result = await scan_address(rpc, contracts, addr, tokens_db, chains_filter, include_native)
+                all_results.append(result)
 
-        if json_out:
-            with open(json_out, 'w') as f:
-                json.dump(all_results, f, indent=2, default=str)
-            print(f'\n  {C.GRAY}Results saved to {json_out}{C.RESET}')
+            print(f'\n\n{C.BOLD}{C.MAGENTA}{"=" * 78}')
+            print('  GRAND TOTAL')
+            print(f'{"=" * 78}{C.RESET}\n')
+            any_found = False
+            for r in all_results:
+                if r['total_findings'] > 0 or r.get('native_findings'):
+                    any_found = True
+                    print(f'  {C.BOLD}{r["address"]}{C.RESET}')
+                    if r.get('native_findings'):
+                        for ch, info in r['native_findings'].items():
+                            print(f'    [{ch:10s} wallet]                            {info["amount"]:>14,.6f} {info["symbol"]}')
+                    for ca, info in r['findings_per_contract'].items():
+                        for b in info['balances']:
+                            note = f' ({b.get("note","")})' if b.get('note') else ''
+                            print(f'    [{info["chain"]:10s}] {info["name"][:30]:30s}  {b["amount"]:>14,.6f} {b["symbol"]}{note}')
+            if not any_found:
+                print(f'  {C.GRAY}No findings across all addresses and chains.{C.RESET}')
+
+            if json_out:
+                with open(json_out, 'w') as f:
+                    json.dump(all_results, f, indent=2, default=str)
+                print(f'\n  {C.GRAY}Results saved to {json_out}{C.RESET}')
+
+            return all_results
+
+    if watch:
+        iteration = 0
+        while True:
+            iteration += 1
+            print(f'\n{C.MAGENTA}>>> Watch iteration #{iteration} at {time.strftime("%H:%M:%S")}{C.RESET}')
+            await run_once()
+            print(f'{C.GRAY}Sleeping {interval}s... (Ctrl+C to stop){C.RESET}')
+            await asyncio.sleep(interval)
+    else:
+        await run_once()
 
 
 def main():
     p = argparse.ArgumentParser(description='Lost ETH Scanner v2 - Multi-chain async')
     p.add_argument('addresses', nargs='+', help='Wallet addresses to scan')
-    p.add_argument('--chains', default='', help='Comma-separated chains to scan (default: all)')
+    p.add_argument('--chains', default='', help='Comma-separated chains (default: all)')
     p.add_argument('--concurrency', type=int, default=80, help='Max concurrent RPC calls')
     p.add_argument('--json', default=None, help='Save results to JSON file')
+    p.add_argument('--watch', action='store_true', help='Watch mode - keep scanning periodically')
+    p.add_argument('--interval', type=int, default=60, help='Watch interval in seconds (default 60)')
+    p.add_argument('--include-native', action='store_true', help='Also report direct wallet balances (L1/L2 dust)')
     args = p.parse_args()
 
-    chains_filter = set(args.chains.split(',')) if args.chains else None
+    chains_filter = set(c.strip() for c in args.chains.split(',') if c.strip()) if args.chains else None
 
-    asyncio.run(main_async(args.addresses, chains_filter, args.concurrency, args.json))
+    try:
+        asyncio.run(main_async(args.addresses, chains_filter, args.concurrency,
+                                args.json, args.watch, args.interval, args.include_native))
+    except KeyboardInterrupt:
+        print(f'\n{C.YELLOW}Stopped.{C.RESET}')
 
 
 if __name__ == '__main__':
