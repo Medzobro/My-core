@@ -1,0 +1,59 @@
+name: Test Lost ETH Scanner
+
+on:
+  push:
+    branches: [main, master, "analysis/**"]
+    paths:
+      - 'lost_eth_scanner/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'lost_eth_scanner/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        working-directory: lost_eth_scanner
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests
+        working-directory: lost_eth_scanner
+        run: pytest tests/ -v --tb=short
+
+      - name: Validate JSON databases
+        working-directory: lost_eth_scanner
+        run: |
+          python -c "import json; json.load(open('chains.json'))"
+          python -c "import json; json.load(open('contracts_multichain.json'))"
+          python -c "import json; json.load(open('tokens_multichain.json'))"
+          python -c "import json; json.load(open('dead_contracts_db.json'))"
+          python -c "import json; json.load(open('contracts.json'))"
+
+      - name: CLI smoke test
+        working-directory: lost_eth_scanner
+        run: |
+          python lost_eth.py stats
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        working-directory: lost_eth_scanner
+        run: docker build -t lost-eth-scanner:test .

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { width: 360px; margin: 0; padding: 16px; font-family: system-ui, sans-serif;
+         background: #0a0e1a; color: #e6e6e6; }
+  h2 { margin: 0 0 12px; color: #22d3ee; }
+  input { width: 100%; padding: 8px; background: #1a2238; color: #e6e6e6;
+          border: 1px solid #2a3346; border-radius: 4px; box-sizing: border-box; }
+  button { width: 100%; padding: 10px; margin-top: 8px; background: #4ade80;
+           color: #002200; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+  #results { margin-top: 12px; max-height: 300px; overflow-y: auto; font-size: 12px; }
+  .finding { background: rgba(74,222,128,0.1); padding: 6px; margin-bottom: 4px; border-radius: 4px; }
+  .muted { color: #8a93a8; font-size: 11px; }
+</style>
+</head>
+<body>
+<h2>Lost ETH Scanner</h2>
+<input id="addr" placeholder="0xAddress or use current page" />
+<button id="scan">Scan</button>
+<button id="useTab" style="background:#60a5fa;color:white">Use Current Tab Address</button>
+<div id="results" class="muted">Idle.</div>
+<script src="popup.js"></script>
+</body>
+</html>

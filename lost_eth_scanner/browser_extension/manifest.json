@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Lost ETH Scanner",
+  "version": "3.0.0",
+  "description": "Detect stuck balances in old contracts when browsing Etherscan/Arbiscan/etc.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://etherscan.io/*",
+    "https://arbiscan.io/*",
+    "https://optimistic.etherscan.io/*",
+    "https://basescan.org/*",
+    "https://polygonscan.com/*",
+    "https://*.publicnode.com/*",
+    "https://*.llamarpc.com/*",
+    "https://eth.blockscout.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Lost ETH Scanner"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://etherscan.io/address/*",
+        "https://arbiscan.io/address/*",
+        "https://optimistic.etherscan.io/address/*",
+        "https://basescan.org/address/*",
+        "https://polygonscan.com/address/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

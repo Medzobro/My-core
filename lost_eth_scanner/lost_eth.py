@@ -124,6 +124,33 @@ def cmd_hd(args):
     asyncio.run(main_async(addresses, None, args.concurrency, args.json, False, 0, True))
 
 
+def cmd_discover(args):
+    from discovery import discover
+    asyncio.run(discover(args.address, args.chain, args.max_contracts, args.include_l2))
+
+
+def cmd_db(args):
+    from storage_db import LostEthDB
+    db = LostEthDB()
+    if args.db_action == 'stats':
+        import json as _json
+        print(_json.dumps(db.stats(), indent=2))
+    elif args.db_action == 'add':
+        db.add_address(args.address, args.label or '')
+        print(f'Added {args.address}')
+    elif args.db_action == 'list':
+        import time as _time
+        for a in db.list_addresses():
+            print(f'  {a["address"]}  "{a["label"]}"  added {_time.strftime("%Y-%m-%d", _time.gmtime(a["added_at"]))}')
+    elif args.db_action == 'history':
+        import time as _time
+        for s in db.get_history(args.address):
+            print(f'  scan {s["id"]}: {s["findings_count"]} findings @ {_time.strftime("%Y-%m-%d %H:%M", _time.gmtime(s["timestamp"]))}')
+    elif args.db_action == 'changes':
+        for c in db.detect_changes(args.address):
+            print(f'  {c["type"]}: {c.get("finding") or {"before": c.get("before"), "after": c.get("after")}}')
+
+
 def main():
     p = argparse.ArgumentParser(prog='lost_eth', description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -188,6 +215,21 @@ def main():
     # stats
     s = sp.add_parser('stats', help='Show database statistics')
     s.set_defaults(func=cmd_stats)
+
+    # discover - new powerful tool
+    s = sp.add_parser('discover', help='Discover unknown contracts via tx history analysis')
+    s.add_argument('address')
+    s.add_argument('--chain', default='ethereum')
+    s.add_argument('--include-l2', action='store_true')
+    s.add_argument('--max-contracts', type=int, default=200)
+    s.set_defaults(func=cmd_discover)
+
+    # db - SQLite operations
+    s = sp.add_parser('db', help='SQLite persistent database')
+    s.add_argument('db_action', choices=['stats', 'add', 'list', 'history', 'changes'])
+    s.add_argument('address', nargs='?', default='')
+    s.add_argument('--label', default='')
+    s.set_defaults(func=cmd_db)
 
     args = p.parse_args()
     args.func(args)

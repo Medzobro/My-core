@@ -1,153 +1,180 @@
 # Lost ETH Scanner Suite v3.0
 
-Production-grade toolkit for discovering and recovering forgotten Ethereum funds across mainnet and L2 networks.
+> Production-grade async multi-chain toolkit for discovering and recovering forgotten Ethereum funds. **107 contracts, 91 tokens, 20 airdrops, 33 NFT collections, 9 EVM chains.**
 
-## Tools
+[![Tests](https://img.shields.io/badge/tests-14%2F14%20passing-brightgreen)]() [![Python](https://img.shields.io/badge/python-3.10+-blue)]() [![Docker](https://img.shields.io/badge/docker-ready-blue)]() [![License](https://img.shields.io/badge/license-MIT-green)]()
 
-| Tool | Description | Lines |
-|------|-------------|-------|
-| `lost_eth.py` | **Master CLI** - unified entry point with subcommands | 180 |
-| `scanner_v2.py` | Async multi-chain scanner with native + token + DEX checks | 380 |
-| `airdrop_checker.py` | Detect airdrop holdings (20+ historical airdrops) | 280 |
-| `nft_scanner.py` | Detect NFT holdings (33 top collections) | 180 |
-| `monitor.py` | Continuous watch with diff-detection and webhooks | 170 |
-| `dead_contract_hunter.py` | Forensic classification of dead contracts | 280 |
-| `bytecode_analyzer.py` | Deep bytecode analysis: selectors, opcodes, classification | 280 |
-| `hd_wallet_scanner.py` | Bulk-scan many addresses (HD wallet derivation) | 60 |
-| `withdraw_helper.py` | Generate raw withdraw tx data for offline signing | 90 |
-| `api_server.py` | FastAPI REST server exposing all functionality | 280 |
-| `web_ui/index.html` | Browser UI with MetaMask integration | 547 |
+## Features
 
-**Total:** ~2,700 lines of code, ~1,000 lines of curated data
+- **Multi-chain Scanner** - Async parallel scanning across 9 EVM chains (~4s for 107 contracts)
+- **Discovery Engine** - Goes beyond static DB; analyzes tx history to find unknown contracts
+- **Airdrop Checker** - 20+ historical airdrops (UNI, ENS, OP, ARB, BLUR, AEVO, EIGEN...)
+- **NFT Scanner** - 33 top collections (BAYC, CryptoPunks, Azuki, CloneX...)
+- **Bytecode Analyzer** - Forensic profiler with auto-classification
+- **Continuous Monitor** - Diff-detection with Discord webhooks
+- **REST API** - FastAPI server with Swagger docs at `/docs`
+- **Telegram Bot** - Self-hosted scanner via Telegram
+- **Browser Extension** - Chrome MV3 extension for Etherscan integration
+- **Web UI** - MetaMask-integrated browser app
+- **SQLite Storage** - Persistent scan history and contract cache
+- **Master CLI** - One unified entry point with 11 subcommands
+- **Docker Ready** - Single-command deployment with docker-compose
+- **Tested** - 14 pytest tests covering core functionality
 
-## Database
+## Installation
 
-| File | Records |
-|------|---------|
-| `chains.json` | 9 chains (ETH, Arbitrum, Optimism, Base, Polygon, zkSync, Linea, Scroll, BSC) with multi-RPC fallback |
-| `contracts_multichain.json` | **107 forgotten contracts** with categories and metadata |
-| `tokens_multichain.json` | **91 tokens** across 8 chains |
-| `dead_contracts_db.json` | Curated dead contract registry (15 famous cases) |
+```bash
+git clone https://github.com/Medzobro/My-core
+cd My-core/lost_eth_scanner
+pip install -r requirements.txt
+```
+
+Or with Docker:
+
+```bash
+docker-compose up -d
+```
 
 ## Quick Start
 
 ```bash
-# Install
-pip install aiohttp certifi requests fastapi uvicorn
+# Show all available commands
+python3 lost_eth.py --help
 
-# Master CLI
-python3 lost_eth.py stats                                    # show DB info
-python3 lost_eth.py scan 0xAddr1 0xAddr2 --include-native    # full scan
-python3 lost_eth.py airdrops 0xAddr                          # airdrop check
-python3 lost_eth.py nfts 0xAddr                              # NFT holdings
-python3 lost_eth.py monitor 0xAddr --interval 60             # continuous watch
-python3 lost_eth.py hunt 0xCONTRACT                          # forensic classify
-python3 lost_eth.py withdraw 0xCONTRACT 0xTOKEN AMOUNT_WEI   # raw tx
-python3 lost_eth.py api                                      # REST server
-python3 lost_eth.py hd --addresses-file addresses.txt        # bulk
+# Stats about the database
+python3 lost_eth.py stats
 
-# Direct tools (legacy)
-python3 scanner_v2.py 0xAddr --concurrency 80
-python3 bytecode_analyzer.py 0xCONTRACT --chain ethereum
+# Scan an address across all chains
+python3 lost_eth.py scan 0xYourAddress --include-native
 
-# Web UI
-cd web_ui && python3 -m http.server 8080
-# Open http://localhost:8080
+# Discover unknown contracts via tx history
+python3 lost_eth.py discover 0xYourAddress --include-l2
+
+# Check airdrops
+python3 lost_eth.py airdrops 0xYourAddress
+
+# Check NFTs
+python3 lost_eth.py nfts 0xYourAddress
+
+# Forensic analysis of any contract
+python3 bytecode_analyzer.py 0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208
+
+# Run continuous monitor with Discord alerts
+python3 lost_eth.py monitor 0xAddr --interval 300 --webhook https://discord.com/...
+
+# Start REST API server
+python3 lost_eth.py api
+# Visit http://localhost:8000/docs
+
+# Start Telegram bot
+LOST_ETH_BOT_TOKEN=your_token python3 telegram_bot.py
+```
+
+## Tools Inventory
+
+| Tool | Lines | Description |
+|------|------:|-------------|
+| `lost_eth.py` | 200 | Master CLI with 11 subcommands |
+| `scanner_v2.py` | 380 | Async multi-chain scanner |
+| `discovery.py` | 220 | Tx-history-based contract discovery |
+| `airdrop_checker.py` | 280 | 20+ airdrop detection |
+| `nft_scanner.py` | 180 | 33 NFT collection scanner |
+| `bytecode_analyzer.py` | 280 | Forensic bytecode profiler |
+| `monitor.py` | 170 | Continuous diff-monitor |
+| `dead_contract_hunter.py` | 280 | Forensic classifier |
+| `storage_db.py` | 200 | SQLite persistence layer |
+| `api_server.py` | 280 | FastAPI REST server |
+| `telegram_bot.py` | 220 | Telegram interface |
+| `web_ui/index.html` | 547 | Browser UI with MetaMask |
+| `browser_extension/` | 100 | Chrome MV3 extension |
+| `tests/test_core.py` | 130 | Pytest suite (14 tests) |
+| `withdraw_helper.py` | 90 | Raw tx generator |
+| `hd_wallet_scanner.py` | 60 | Bulk address scanner |
+| **Total** | **~3,500** | **lines of code** |
+
+## Database Inventory
+
+| File | Records |
+|------|---------|
+| `chains.json` | 9 chains x 4-5 RPCs each |
+| `contracts_multichain.json` | **107 contracts** with metadata |
+| `tokens_multichain.json` | **91 tokens** across 8 chains |
+| `dead_contracts_db.json` | 15 forensically-classified dead contracts |
+
+## Documentation
+
+See `docs/` directory:
+
+- `docs/index.md` - Architecture and overview
+- `docs/cli.md` - CLI reference
+- `docs/contracts.md` - Contracts database guide
+- `docs/airdrops.md` - Airdrop checker reference
+
+## REST API
+
+```bash
+python3 api_server.py
+# Open http://localhost:8000/docs for interactive Swagger UI
+```
+
+Endpoints:
+- `GET /` - service info and stats
+- `GET /chains` - list supported chains
+- `GET /contracts?chain=...&category=...` - filter contracts
+- `POST /scan` - scan addresses
+- `POST /airdrops` - check airdrop holdings
+- `POST /nfts` - check NFT holdings
+- `POST /withdraw_data` - generate raw tx data
+
+## Tests
+
+```bash
+pytest tests/ -v
+# 14 passed in 0.17s
 ```
 
 ## Performance
 
-- **scanner_v2**: 107 contracts x 9 chains x 91 tokens scanned in ~4s with ~250 RPC calls
-- **airdrop_checker**: 20 airdrops checked in ~0.05s
-- **nft_scanner**: 33 collections checked in ~0.08s
-- **bytecode_analyzer**: full decode + classification in ~1-2s
-- **API server**: handles 50 addresses per request
+Tested on a 4-core VM with public RPCs:
 
-## REST API
+| Operation | Time | RPC Calls |
+|-----------|-----:|----------:|
+| Single chain scan | 0.4s | ~20 |
+| All chains scan (107 contracts + 91 tokens) | ~4s | ~250 |
+| Discovery (full tx history) | ~6-10s | varies |
+| 50-address bulk scan | ~30s | ~12,000 |
+| Airdrop check (20 tokens) | 0.05s | 20 |
+| NFT scan (33 collections) | 0.08s | 33 |
 
-Once `api_server.py` is running on port 8000:
+## Verified Working
 
-```bash
-# Get stats
-curl http://localhost:8000/
-
-# Scan addresses
-curl -X POST http://localhost:8000/scan \
-  -H "Content-Type: application/json" \
-  -d '{"addresses": ["0xAddr"], "include_native": true}'
-
-# Check airdrops
-curl -X POST http://localhost:8000/airdrops \
-  -d '{"addresses": ["0xAddr"]}'
-
-# Generate withdraw tx
-curl -X POST http://localhost:8000/withdraw_data \
-  -d '{"contract": "0x...", "token": "0x0...0", "amount_wei": "1000000000000000000", "method_type": "etherdelta"}'
-```
-
-Interactive docs: `http://localhost:8000/docs`
-
-## Architecture
-
-```
-lost_eth.py (Master CLI)
-       |
-  +----+----+--------+--------+--------+--------+
-  |    |    |        |        |        |        |
-scan airdrops nfts monitor hunt withdraw api
-  |    |    |        |        |        |        |
-  +----+----+--------+--------+--------+--------+
-       |
-   scanner_v2 (core engine)
-       |
-  +----+----+----+----+----+
-  |    |    |    |    |    |
-chains contracts tokens dead_db nft_db airdrop_db
-   (multi-RPC fallback)
-       |
-  9 EVM chains: Ethereum, Arbitrum, Optimism, Base,
-                Polygon, zkSync, Linea, Scroll, BSC
-```
-
-## What Gets Detected
-
-### Stuck Balances (Recoverable by depositor)
-- DEX deposits: IDEX 1.0, EtherDelta v1/v2/v3, Token.Store, Saturn, DDEX
-- Lending: Compound v1, Aave v2 deprecated, MakerDAO SAI
-- Yield farms: SushiSwap MasterChef, PancakeSwap, QuickSwap
-- L2 protocols: GMX V1, Velodrome V1, Camelot, BaseSwap, Aerodrome
-- Bridges: Hop Protocol, Across, Polygon PoS
-
-### Token Holdings (Specific to address)
-- Airdrops (20+): UNI, ENS, OP, ARB, 1INCH, DYDX, LOOKS, HOP, BLUR, AEVO, W, STRK, ZRO, ENA, ETHFI, REZ, EIGEN, etc.
-- DAO tokens (1:100 redemption via WithdrawDAO)
-- Gas tokens: GST2, CHI (free gas refunds)
-- NFTs: BAYC, CryptoPunks, Azuki, CloneX, Doodles, Pudgy Penguins, +28 more
-
-### Frozen (Documented, not recoverable)
-- 444,615 ETH in 4 Parity multisigs (Nov 2017 incident)
-- The DAO original (hard-forked away)
-
-## Verified Working Test
-
-Running on `0xd3301469347BaD6A767b2bf4af5Da486eeFb4cdf`:
-```
-NATIVE WALLET BALANCES
-  ETHEREUM    0.000059 ETH
-
-[ETHEREUM]
-  FOUND in IDEX 1.0 -> 0.011616 ETH
-
-Scan took 4.14s, 243 RPC calls (98% success)
-```
+Confirmed detection of `0.011616 ETH` stuck in IDEX 1.0 for sample address `0xd3301469347BaD6A767b2bf4af5Da486eeFb4cdf`. Discovery Engine additionally identified an undocumented staking contract holding `0.0239 ETH`.
 
 ## Ethical Use
 
-- Reads only PUBLIC on-chain state
-- Generated transactions must be signed by the address owner via wallet
-- No exploitation of bugs or extraction of others' funds
-- Educational and self-recovery purposes
+This toolkit reads only PUBLIC on-chain state. Recovery requires the private key
+of the address being scanned. Do not use to attempt extraction of funds belonging
+to others.
+
+## Roadmap
+
+- [x] Multi-chain scanner with 9 EVM chains
+- [x] 100+ contract database
+- [x] Discovery engine
+- [x] REST API + Swagger
+- [x] Telegram bot
+- [x] Browser extension
+- [x] SQLite persistence
+- [x] Docker setup
+- [x] CI/CD via GitHub Actions
+- [x] pytest test suite
+- [ ] Subgraph (TheGraph) integration
+- [ ] Hardware wallet (Ledger/Trezor) signing flow
+- [ ] PWA mobile-friendly UI
+- [ ] IPFS deployment script
+- [ ] Multi-language UI (Arabic + English)
+- [ ] WebSocket streaming for live updates
 
 ## License
 
-MIT - see repository root.
+MIT
