@@ -1,0 +1,275 @@
+{
+  "_comment": "Multi-chain forgotten contracts database. Each entry includes chain field. balance_check_type defines how to query the user balance.",
+  "contracts": [
+    {
+      "chain": "ethereum",
+      "name": "IDEX 1.0",
+      "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-09",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdraw(address,uint256)",
+      "category": "USER_DEPOSITS",
+      "balance_eth": 16168
+    },
+    {
+      "chain": "ethereum",
+      "name": "ForkDelta / EtherDelta v3",
+      "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+      "type": "EtherDelta",
+      "deployed": "2017-08",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdraw(uint256), withdrawToken(address,uint256)",
+      "category": "USER_DEPOSITS",
+      "balance_eth": 15221
+    },
+    {
+      "chain": "ethereum",
+      "name": "EtherDelta v2",
+      "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-07",
+      "balance_check": "etherdelta",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Token.Store",
+      "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-12",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdraw(address,uint256)",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Saturn Network DEX",
+      "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2018",
+      "balance_check": "etherdelta",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "ethereum",
+      "name": "WithdrawDAO",
+      "address": "0xbf4ed7b27f1d666546e30d74d50d173d20bca754",
+      "type": "DAO refund",
+      "deployed": "2016-07",
+      "balance_check": "erc20_holder",
+      "balance_check_token": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+      "balance_check_token_name": "DAO",
+      "balance_check_token_decimals": 16,
+      "withdraw_method": "withdraw()",
+      "category": "TOKEN_HOLDER",
+      "balance_eth": 81914,
+      "rate_note": "100 DAO = 1 ETH"
+    },
+    {
+      "chain": "ethereum",
+      "name": "GasToken2 (GST2)",
+      "address": "0x0000000000b3F879cb30FE243b4Dfee438691c04",
+      "type": "Gas saver",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 0,
+      "withdraw_method": "free(uint256)",
+      "category": "TOKEN_HOLDER"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CHI Gas Token",
+      "address": "0x0000000000004946c0e9F43F4Dee607b0eF1fA1c",
+      "type": "Gas saver",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 0,
+      "withdraw_method": "free(uint256)",
+      "category": "TOKEN_HOLDER"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Old SAI (deprecated DAI)",
+      "address": "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359",
+      "type": "Token (deprecated)",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 18,
+      "withdraw_method": "Use migration contract 0xc73e0383F3Aff3215E6f04B0331D58CeCf0Ab849",
+      "category": "TOKEN_HOLDER"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Compound v1 cETH",
+      "address": "0x3FDA67f7583380E67ef93072294a7fAc882FD7E7",
+      "type": "Lending",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 8,
+      "withdraw_method": "withdraw(uint256)",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Compound v1 cDAI",
+      "address": "0x25e46957363e16C4e2D5F2854b062475F9f8d287",
+      "type": "Lending",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 8,
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Hop Protocol L2_AmmWrapper (ETH)",
+      "address": "0x33ceb27b39d2Bb7D2e61F7564d3Df29344020417",
+      "type": "Bridge",
+      "balance_check": "native",
+      "category": "USER_DEPOSITS",
+      "notes": "Old Hop bridge - users with stuck cross-chain transfers"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "GMX V1 Vault",
+      "address": "0x489ee077994B6658eAfA855C308275EAd8097C4A",
+      "type": "Perps",
+      "balance_check": "erc20_self",
+      "category": "USER_DEPOSITS",
+      "notes": "Old GMX V1. Users may have positions to close."
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Camelot V2 Router",
+      "address": "0xc873fEcbd354f5A56E00E710B90EF4201db2448d",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "SushiSwap MasterChefV2",
+      "address": "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+      "type": "Yield farming",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Velodrome V1",
+      "address": "0x9c12939390052919aF3155f41Bf4160Fd3666A6f",
+      "type": "DEX",
+      "deployed": "2022-06",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Synthetix Staking (old)",
+      "address": "0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4",
+      "type": "Staking",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Hop L2_AmmWrapper (ETH)",
+      "address": "0x86cA30bEF97fB651b8d866D45503684b90cb3312",
+      "type": "Bridge",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "base",
+      "name": "BaseSwap V2 Router",
+      "address": "0x327Df1E6de05895d2ab08513aaDD9313Fe505d86",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "base",
+      "name": "Aerodrome Router",
+      "address": "0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "base",
+      "name": "RocketSwap (rugged 2024)",
+      "address": "0x2e708544Bbd1Be9e7eb44dE7C28b6f0e91eA3F03",
+      "type": "DEX (deprecated)",
+      "category": "DEPRECATED",
+      "notes": "Project rugged but old LP positions may still be claimable"
+    },
+    {
+      "chain": "polygon",
+      "name": "QuickSwap V2 Router",
+      "address": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "SushiSwap MiniChefV2",
+      "address": "0x0769fd68dFb93167989C6f7254cd0D766Fb2841F",
+      "type": "Yield farming",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "Aave V2 LendingPool (deprecated)",
+      "address": "0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf",
+      "type": "Lending (deprecated)",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "PoS Bridge - ETH",
+      "address": "0x8484Ef722627bf18ca5Ae6BcF031c23E6e922B30",
+      "type": "Bridge",
+      "category": "USER_DEPOSITS",
+      "notes": "Old Polygon bridge. Users may have stuck withdrawals."
+    },
+    {
+      "chain": "polygon",
+      "name": "Iron Bank (deprecated)",
+      "address": "0xb09Cf345294aDd1066543B22FD7384185f7C6fCA",
+      "type": "Lending",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "zksync",
+      "name": "SyncSwap Router",
+      "address": "0x2da10A1e27bF85cEdD8FFb1AbBe97d4D1c339718",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "linea",
+      "name": "LineaSwap V2",
+      "address": "0xd9C1Bd45EF1B2eE3a5c54aDfD9F6D9A05A0C5e62",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "bsc",
+      "name": "PancakeSwap V2 MasterChef",
+      "address": "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
+      "type": "Yield farming",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "bsc",
+      "name": "PancakeSwap V2 Router",
+      "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "type": "DEX",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polkadot Foundation Parity Multisig",
+      "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+      "type": "Parity multisig (FROZEN)",
+      "category": "FROZEN",
+      "balance_eth": 306276
+    },
+    {
+      "chain": "ethereum",
+      "name": "Iconomi Parity Multisig",
+      "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+      "type": "Parity multisig (FROZEN)",
+      "category": "FROZEN",
+      "balance_eth": 114939
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "_comment": "Multi-chain RPC configuration. Each chain has multiple public RPCs for fallback.",
+  "chains": {
+    "ethereum": {
+      "chain_id": 1,
+      "name": "Ethereum Mainnet",
+      "explorer": "https://etherscan.io",
+      "rpcs": [
+        "https://ethereum-rpc.publicnode.com",
+        "https://eth.llamarpc.com",
+        "https://rpc.ankr.com/eth",
+        "https://cloudflare-eth.com",
+        "https://eth.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "arbitrum": {
+      "chain_id": 42161,
+      "name": "Arbitrum One",
+      "explorer": "https://arbiscan.io",
+      "rpcs": [
+        "https://arbitrum-one-rpc.publicnode.com",
+        "https://arb1.arbitrum.io/rpc",
+        "https://arbitrum.llamarpc.com",
+        "https://arbitrum.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "optimism": {
+      "chain_id": 10,
+      "name": "Optimism",
+      "explorer": "https://optimistic.etherscan.io",
+      "rpcs": [
+        "https://optimism-rpc.publicnode.com",
+        "https://mainnet.optimism.io",
+        "https://optimism.llamarpc.com",
+        "https://optimism.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "base": {
+      "chain_id": 8453,
+      "name": "Base",
+      "explorer": "https://basescan.org",
+      "rpcs": [
+        "https://base-rpc.publicnode.com",
+        "https://mainnet.base.org",
+        "https://base.llamarpc.com",
+        "https://base.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "polygon": {
+      "chain_id": 137,
+      "name": "Polygon PoS",
+      "explorer": "https://polygonscan.com",
+      "rpcs": [
+        "https://polygon-bor-rpc.publicnode.com",
+        "https://polygon-rpc.com",
+        "https://polygon.llamarpc.com",
+        "https://polygon.drpc.org"
+      ],
+      "native_token": "MATIC"
+    },
+    "zksync": {
+      "chain_id": 324,
+      "name": "zkSync Era",
+      "explorer": "https://explorer.zksync.io",
+      "rpcs": [
+        "https://mainnet.era.zksync.io",
+        "https://zksync.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "linea": {
+      "chain_id": 59144,
+      "name": "Linea",
+      "explorer": "https://lineascan.build",
+      "rpcs": [
+        "https://rpc.linea.build",
+        "https://linea.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "scroll": {
+      "chain_id": 534352,
+      "name": "Scroll",
+      "explorer": "https://scrollscan.com",
+      "rpcs": [
+        "https://rpc.scroll.io",
+        "https://scroll.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "bsc": {
+      "chain_id": 56,
+      "name": "BNB Smart Chain",
+      "explorer": "https://bscscan.com",
+      "rpcs": [
+        "https://bsc-rpc.publicnode.com",
+        "https://bsc-dataseed.binance.org",
+        "https://bsc.llamarpc.com"
+      ],
+      "native_token": "BNB"
+    }
+  }
+}
