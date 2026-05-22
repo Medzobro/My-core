@@ -1,0 +1,116 @@
+{
+  "_comment": "Database of known forgotten/dormant Ethereum contracts where users may have stuck funds. ALL these allow the original depositor to withdraw via standard methods.",
+  "contracts": [
+    {
+      "name": "IDEX 1.0",
+      "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-09-27",
+      "balance_method": "balanceOf(address,address)",
+      "balance_selector": "0xf7888aec",
+      "withdraw_method": "withdraw(address,uint256)",
+      "withdraw_selector": "0xf3fef3a3",
+      "status": "active",
+      "notes": "Large amounts still stuck. Active withdrawals in 2026."
+    },
+    {
+      "name": "EtherDelta v3 (final)",
+      "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+      "type": "EtherDelta",
+      "deployed": "2017-08-09",
+      "balance_method": "balanceOf(address,address)",
+      "balance_selector": "0xf7888aec",
+      "withdraw_method": "withdraw(uint256)",
+      "withdraw_selector": "0x2e1a7d4d",
+      "withdraw_token_method": "withdrawToken(address,uint256)",
+      "withdraw_token_selector": "0x9e281a98",
+      "status": "active",
+      "notes": "Most famous DEX of 2017. Also used by ForkDelta frontend."
+    },
+    {
+      "name": "EtherDelta v2",
+      "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-07-15",
+      "balance_method": "balanceOf(address,address)",
+      "balance_selector": "0xf7888aec",
+      "withdraw_method": "withdraw(uint256)",
+      "withdraw_selector": "0x2e1a7d4d",
+      "status": "active"
+    },
+    {
+      "name": "Token.Store",
+      "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2017-12-25",
+      "balance_method": "balanceOf(address,address)",
+      "balance_selector": "0xf7888aec",
+      "withdraw_method": "withdraw(address,uint256)",
+      "withdraw_selector": "0xf3fef3a3",
+      "status": "abandoned",
+      "notes": "Officially abandoned by team. ~$1.4M+ stuck. Funds still withdrawable by depositors."
+    },
+    {
+      "name": "Saturn Network DEX",
+      "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+      "type": "EtherDelta-fork DEX",
+      "deployed": "2018",
+      "balance_method": "balanceOf(address,address)",
+      "balance_selector": "0xf7888aec",
+      "withdraw_method": "withdraw(address,uint256)",
+      "withdraw_selector": "0xf3fef3a3",
+      "status": "active"
+    },
+    {
+      "name": "DDEX (HydroProtocol)",
+      "address": "0x73515A1F6cf69C909a2A03cd1d325ff6C62d2A05",
+      "type": "DEX",
+      "deployed": "2018",
+      "status": "active"
+    },
+    {
+      "name": "Bancor old converter",
+      "address": "0x5f58058C0eC971492166763c8C22632B583F667f",
+      "type": "AMM",
+      "deployed": "2017",
+      "status": "deprecated"
+    },
+    {
+      "name": "AirSwap Light v1",
+      "address": "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA",
+      "type": "OTC swap",
+      "deployed": "2018",
+      "status": "deprecated"
+    },
+    {
+      "name": "0x Protocol v1 Exchange",
+      "address": "0x12459C951127e0c374FF9105DdA097662A027093",
+      "type": "DEX protocol",
+      "deployed": "2017-09",
+      "status": "deprecated"
+    },
+    {
+      "name": "Joyso DEX",
+      "address": "0x73aB0dDa6b86F4Ad257Ce0f0c2FA31c81f7fBF36",
+      "type": "DEX",
+      "deployed": "2018",
+      "status": "abandoned"
+    },
+    {
+      "name": "Compound v1 (cETH original)",
+      "address": "0x3FDA67f7583380E67ef93072294a7fAc882FD7E7",
+      "type": "Lending",
+      "deployed": "2018-09",
+      "status": "deprecated",
+      "notes": "Replaced by Compound v2."
+    },
+    {
+      "name": "MakerDAO SAI",
+      "address": "0x448a5065aeBB8E423F0896E6c5D525C040f59af3",
+      "type": "CDP system",
+      "deployed": "2017",
+      "status": "deprecated",
+      "notes": "Old single-collateral DAI. Some CDPs still hold ETH."
+    }
+  ]
+}
