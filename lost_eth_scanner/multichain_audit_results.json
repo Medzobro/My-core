@@ -1,0 +1,1417 @@
+[
+  {
+    "chain": "ethereum",
+    "name": "Polkadot Foundation Parity Multisig",
+    "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+    "category": "FROZEN",
+    "balance_native": 306276.63553761196,
+    "is_contract": true,
+    "code_size": 925,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 8
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 100 ETH",
+    "address": "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291",
+    "category": "DEPRECATED",
+    "balance_native": 193900.0,
+    "is_contract": true,
+    "code_size": 5191,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 36
+  },
+  {
+    "chain": "ethereum",
+    "name": "Iconomi Parity Multisig",
+    "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+    "category": "FROZEN",
+    "balance_native": 114939.00007763378,
+    "is_contract": true,
+    "code_size": 925,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 8
+  },
+  {
+    "chain": "ethereum",
+    "name": "WithdrawDAO",
+    "address": "0xbf4ed7b27f1d666546e30d74d50d173d20bca754",
+    "category": "TOKEN_HOLDER",
+    "balance_native": 81914.89353817352,
+    "is_contract": true,
+    "code_size": 1122,
+    "permissionless": [
+      "withdraw()"
+    ],
+    "owner": null,
+    "selectors_count": 7
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 10 ETH",
+    "address": "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF",
+    "category": "DEPRECATED",
+    "balance_native": 18180.0,
+    "is_contract": true,
+    "code_size": 5191,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 36
+  },
+  {
+    "chain": "ethereum",
+    "name": "Musiconomi Parity Multisig",
+    "address": "0xc7cd9d874f93f2409f39a95987b3e3c738313925",
+    "category": "FROZEN",
+    "balance_native": 16475.534209330526,
+    "is_contract": true,
+    "code_size": 925,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 8
+  },
+  {
+    "chain": "ethereum",
+    "name": "IDEX 1.0",
+    "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+    "category": "USER_DEPOSITS",
+    "balance_native": 16168.164450952987,
+    "is_contract": true,
+    "code_size": 7325,
+    "permissionless": [],
+    "owner": {
+      "address": "0x6b770f1a6bff9151f437f2eab907fff132dd86a5",
+      "method": "owner()"
+    },
+    "selectors_count": 30
+  },
+  {
+    "chain": "ethereum",
+    "name": "ForkDelta / EtherDelta v3",
+    "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+    "category": "USER_DEPOSITS",
+    "balance_native": 15221.753203131033,
+    "is_contract": true,
+    "code_size": 6613,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": {
+      "address": "0x1ed014aec47fae44c9e55bac7662c0b78ae61798",
+      "method": "admin()"
+    },
+    "selectors_count": 30
+  },
+  {
+    "chain": "ethereum",
+    "name": "Unknown Parity Multisig #4",
+    "address": "0xdb0e7d784d6a7ca2cbda6ce26ac3b1bd348c06f8",
+    "category": "FROZEN",
+    "balance_native": 6925.000001009999,
+    "is_contract": true,
+    "code_size": 925,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 8
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 1 ETH",
+    "address": "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936",
+    "category": "DEPRECATED",
+    "balance_native": 3598.0,
+    "is_contract": true,
+    "code_size": 5191,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 36
+  },
+  {
+    "chain": "base",
+    "name": "Friend.tech",
+    "address": "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4",
+    "category": "USER_DEPOSITS",
+    "balance_native": 927.5155892801157,
+    "is_contract": true,
+    "code_size": 6992,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 22
+  },
+  {
+    "chain": "ethereum",
+    "name": "Token.Store",
+    "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+    "category": "USER_DEPOSITS",
+    "balance_native": 633.4702695141033,
+    "is_contract": true,
+    "code_size": 8651,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": {
+      "address": "0x44a93f553bd529c19386b2ddfa30f458b0bc3b20",
+      "method": "owner()"
+    },
+    "selectors_count": 34
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 0.1 ETH",
+    "address": "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc",
+    "category": "DEPRECATED",
+    "balance_native": 547.6,
+    "is_contract": true,
+    "code_size": 6615,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 41
+  },
+  {
+    "chain": "zksync",
+    "name": "Mute.io Router",
+    "address": "0x8B791913eB07C32779a16750e3868aA8495F5964",
+    "category": "USER_DEPOSITS",
+    "balance_native": 7.172095564299393,
+    "is_contract": true,
+    "code_size": 57888,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 16
+  },
+  {
+    "chain": "ethereum",
+    "name": "ENS Original Resolver",
+    "address": "0x314159265dD8dbb310642f98f50C066173C1259b",
+    "category": "USER_DEPOSITS",
+    "balance_native": 1.36492001,
+    "is_contract": true,
+    "code_size": 538,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 7
+  },
+  {
+    "chain": "polygon",
+    "name": "Balancer V2 Vault",
+    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.91495092,
+    "is_contract": true,
+    "code_size": 24512,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 48
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoKitties Sale Auction",
+    "address": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+    "category": "OWNED",
+    "balance_native": 0.45523223693599824,
+    "is_contract": true,
+    "code_size": 3461,
+    "permissionless": [],
+    "owner": {
+      "address": "0xba52c75764d6f594735dc735be7f1830cdf58ddf",
+      "method": "owner()"
+    },
+    "selectors_count": 22
+  },
+  {
+    "chain": "optimism",
+    "name": "Hop L2_AmmWrapper ETH",
+    "address": "0x86cA30bEF97fB651b8d866D45503684b90cb3312",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.17415031170405035,
+    "is_contract": true,
+    "code_size": 3634,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 19
+  },
+  {
+    "chain": "ethereum",
+    "name": "Aragon DAO Factory v1",
+    "address": "0x12a0E25E62C1dBD32E505446062B26AECB65F028",
+    "category": "DEPRECATED",
+    "balance_native": 0.06321932391201315,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Hop L2_AmmWrapper ETH",
+    "address": "0x33ceb27b39d2Bb7D2e61F7564d3Df29344020417",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.06121009748629772,
+    "is_contract": true,
+    "code_size": 4438,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 18
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Dopex Stake",
+    "address": "0x55594cCe8cC0014eA08C49fd820D731308f204c1",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.009989487003451,
+    "is_contract": true,
+    "code_size": 23,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 1
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Plutus DAO",
+    "address": "0x6dDF9DA4C37DF97CB2458F85050E09994Cbb9C2A",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.005511269305766819,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "The DAO (original)",
+    "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+    "category": "FROZEN",
+    "balance_native": 0.0006,
+    "is_contract": true,
+    "code_size": 10838,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 54
+  },
+  {
+    "chain": "linea",
+    "name": "Velocore",
+    "address": "0x1d0188c4B276A09366D05d6Be06aF61a73bC7535",
+    "category": "DEPRECATED",
+    "balance_native": 0.000116023663394209,
+    "is_contract": true,
+    "code_size": 181,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 2
+  },
+  {
+    "chain": "ethereum",
+    "name": "Old Synthetix Depot",
+    "address": "0x172E09691DfBbC035E37c73B62095caa16Ee2388",
+    "category": "USER_DEPOSITS",
+    "balance_native": 1.373e-15,
+    "is_contract": true,
+    "code_size": 12200,
+    "permissionless": [],
+    "owner": {
+      "address": "0xb0a23f40de7f776a4f20153e8995ed3e7d7c8487",
+      "method": "owner()"
+    },
+    "selectors_count": 74
+  },
+  {
+    "chain": "bsc",
+    "name": "PancakeSwap V2 Router",
+    "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "category": "USER_DEPOSITS",
+    "balance_native": 1e-18,
+    "is_contract": true,
+    "code_size": 21936,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 42
+  },
+  {
+    "chain": "arbitrum",
+    "name": "GMX V1 Vault",
+    "address": "0x489ee077994B6658eAfA855C308275EAd8097C4A",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 23438,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 141
+  },
+  {
+    "chain": "arbitrum",
+    "name": "GMX V1 Router",
+    "address": "0xaBBc5F99639c9B6bCb58544ddf04EFA6802F4064",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 9179,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 53
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Camelot V2 Router",
+    "address": "0xc873fEcbd354f5A56E00E710B90EF4201db2448d",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 14739,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 29
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Camelot V3 Router",
+    "address": "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 12697,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 37
+  },
+  {
+    "chain": "arbitrum",
+    "name": "SushiSwap MasterChefV2",
+    "address": "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 11087,
+    "permissionless": [],
+    "owner": {
+      "address": "0x978982772b8e4055b921bf9295c0d74eb36bc54e",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "arbitrum",
+    "name": "SushiSwap MiniChefV2",
+    "address": "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 11087,
+    "permissionless": [],
+    "owner": {
+      "address": "0x978982772b8e4055b921bf9295c0d74eb36bc54e",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Hop L2_AmmWrapper USDC",
+    "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 4438,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 18
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Trader Joe v2.0",
+    "address": "0xb4315e873dBcf96Ffd0acd8EA43f689D8c20fB30",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 21201,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 88
+  },
+  {
+    "chain": "arbitrum",
+    "name": "Vela Exchange",
+    "address": "0xC4ABADE3a15064F9E3596943c699032748b13352",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 2141,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 11
+  },
+  {
+    "chain": "base",
+    "name": "BaseSwap V2 Router",
+    "address": "0x327Df1E6de05895d2ab08513aaDD9313Fe505d86",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 21928,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 39
+  },
+  {
+    "chain": "base",
+    "name": "Aerodrome Router",
+    "address": "0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 23581,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 101
+  },
+  {
+    "chain": "base",
+    "name": "RocketSwap (rugged)",
+    "address": "0x2e708544Bbd1Be9e7eb44dE7C28b6f0e91eA3F03",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "base",
+    "name": "BaseSwap MasterChef",
+    "address": "0x6Bfd4cFc492EF1Ad3Eb2105e1a45cb0aF0e72A6f",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "base",
+    "name": "Aerodrome Voter",
+    "address": "0x16613524e02ad97eDfeF371bC883F2F5d6C480A5",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 16912,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 123
+  },
+  {
+    "chain": "bsc",
+    "name": "PancakeSwap V2 MasterChef",
+    "address": "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 9156,
+    "permissionless": [],
+    "owner": {
+      "address": "0x6e85689f055b6894803d5135981f7b108c9dafd5",
+      "method": "owner()"
+    },
+    "selectors_count": 46
+  },
+  {
+    "chain": "bsc",
+    "name": "PancakeSwap V3 Router",
+    "address": "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 12154,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 38
+  },
+  {
+    "chain": "bsc",
+    "name": "Venus Comptroller",
+    "address": "0xfD36E2c2a6789Db23113685031d7F16329158384",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 1508,
+    "permissionless": [],
+    "owner": {
+      "address": "0x939bd8d64c0a9583a7dcea9933f7b21697ab6396",
+      "method": "admin()"
+    },
+    "selectors_count": 10
+  },
+  {
+    "chain": "bsc",
+    "name": "BiSwap Router",
+    "address": "0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 24073,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": {
+      "address": "0xc6af770101da859d680e0829380748cccd8f7984",
+      "method": "owner()"
+    },
+    "selectors_count": 47
+  },
+  {
+    "chain": "bsc",
+    "name": "BurgerSwap",
+    "address": "0x20fD8C1fB76a35eC3FA2EAdB0C9F2BB14d63eB1d",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "bsc",
+    "name": "Tenset Staking",
+    "address": "0x53b87f835c2a1dDF42b0A8E56eB73A8Ba0FdE38a",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "bsc",
+    "name": "Bunny (Pancake Bunny)",
+    "address": "0x2EaC9CDBdfB9b9f9b8f5e57619a1c4f1a6C4e9Ad",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "EtherDelta v2",
+    "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "EtherDelta v1",
+    "address": "0x8da0d80f5007ef1e431dd2127178d224e32c2ef4",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3030,
+    "permissionless": [],
+    "owner": {
+      "address": "0x01d9f4d104668cdc0b6d13c45dff5e15d58d8f28",
+      "method": "owner()"
+    },
+    "selectors_count": 9
+  },
+  {
+    "chain": "ethereum",
+    "name": "Saturn Network DEX",
+    "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "DDEX (Hydro)",
+    "address": "0x73515A1F6cf69C909a2A03cd1d325ff6C62d2A05",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "AirSwap Light v1",
+    "address": "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 8249,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 17
+  },
+  {
+    "chain": "ethereum",
+    "name": "AirSwap Indexer",
+    "address": "0x0FfdaeAdDcfa4B45e24a1da29Db3c3a1Eb8C9ef9",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "0x Protocol v1 Exchange",
+    "address": "0x12459C951127e0c374FF9105DdA097662A027093",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 11140,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 27
+  },
+  {
+    "chain": "ethereum",
+    "name": "0x Protocol v2 Exchange",
+    "address": "0x4F833a24e1f95D70F028921e27040Ca56E09AB0b",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 22707,
+    "permissionless": [],
+    "owner": {
+      "address": "0x17992e4ffb22730138e4b62aaa6367fa9d3699a6",
+      "method": "owner()"
+    },
+    "selectors_count": 43
+  },
+  {
+    "chain": "ethereum",
+    "name": "0x Protocol v3",
+    "address": "0x080bf510FCbF18b91105470639e9561022937712",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 23727,
+    "permissionless": [],
+    "owner": {
+      "address": "0x7d3455421bbc5ed534a83c88fd80387dc8271392",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "ethereum",
+    "name": "Joyso DEX",
+    "address": "0x73aB0dDa6b86F4Ad257Ce0f0c2FA31c81f7fBF36",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Switcheo DEX",
+    "address": "0x53D791F18155C211FF8B58671d0F7E9b50e596ad",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Kyber Network v1",
+    "address": "0x9AAb3f75489902f3a48495025729a0AF77d4b11e",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 9699,
+    "permissionless": [],
+    "owner": {
+      "address": "0x6f91118f66fb25df7567bcb71445ab2c8827dc14",
+      "method": "admin()"
+    },
+    "selectors_count": 48
+  },
+  {
+    "chain": "ethereum",
+    "name": "Kyber Reserve old",
+    "address": "0x57f8160e1c59D16C01BbE181FD94db4E56b60495",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 5756,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": {
+      "address": "0xbc33a1f908612640f2849b56b67a4de4d179c151",
+      "method": "admin()"
+    },
+    "selectors_count": 30
+  },
+  {
+    "chain": "ethereum",
+    "name": "Loopring v1",
+    "address": "0x12B7cccF30ba360e5041C6Ce239C9a188B709b2B",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "dYdX Solo v1",
+    "address": "0x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 16851,
+    "permissionless": [],
+    "owner": {
+      "address": "0xba2906b18b069b40c6d2cafd392e76ad479b1b53",
+      "method": "owner()"
+    },
+    "selectors_count": 70
+  },
+  {
+    "chain": "ethereum",
+    "name": "Set Protocol v1",
+    "address": "0xe88b1C90Be07da2A1Ddc9f7eAa30c9eFB13d0095",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Bancor v1 Converter",
+    "address": "0x5f58058C0eC971492166763c8C22632B583F667f",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 14351,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": {
+      "address": "0xdfee8dc240c6cadc2c7f7f9c257c259914dea84e",
+      "method": "owner()"
+    },
+    "selectors_count": 59
+  },
+  {
+    "chain": "ethereum",
+    "name": "Bancor BancorX",
+    "address": "0x6945D8fF026Cb44A45e891A8a25fE25e3A3D3a83",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Compound v1 cETH",
+    "address": "0x3FDA67f7583380E67ef93072294a7fAc882FD7E7",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 19206,
+    "permissionless": [],
+    "owner": {
+      "address": "0x8b8592e9570e96166336603a1b4bd1e8db20fa20",
+      "method": "admin()"
+    },
+    "selectors_count": 54
+  },
+  {
+    "chain": "ethereum",
+    "name": "Compound v1 cDAI",
+    "address": "0x25e46957363e16C4e2D5F2854b062475F9f8d287",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "MakerDAO SAI Tub",
+    "address": "0x448a5065aeBB8E423F0896E6c5D525C040f59af3",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 10370,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 75
+  },
+  {
+    "chain": "ethereum",
+    "name": "MakerDAO SAI Migration",
+    "address": "0xc73e0383F3Aff3215E6f04B0331D58CeCf0Ab849",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 7665,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 29
+  },
+  {
+    "chain": "ethereum",
+    "name": "GasToken2 (GST2)",
+    "address": "0x0000000000b3F879cb30FE243b4Dfee438691c04",
+    "category": "TOKEN_HOLDER",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 4701,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 15
+  },
+  {
+    "chain": "ethereum",
+    "name": "CHI Gas Token",
+    "address": "0x0000000000004946c0e9F43F4Dee607b0eF1fA1c",
+    "category": "TOKEN_HOLDER",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3340,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 24
+  },
+  {
+    "chain": "ethereum",
+    "name": "Old SAI (deprecated DAI)",
+    "address": "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359",
+    "category": "TOKEN_HOLDER",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3379,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 27
+  },
+  {
+    "chain": "ethereum",
+    "name": "Augur v1 Universe",
+    "address": "0xe991247b78F937D7B69cFC00f1A487A293557677",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 663,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 4
+  },
+  {
+    "chain": "ethereum",
+    "name": "Augur v1 REP staking",
+    "address": "0xE94327D07Fc17907b4DB788E5aDf2ed424adDff6",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3276,
+    "permissionless": [],
+    "owner": {
+      "address": "0x7e614ec62cfd5761f20a9c5a2fe2bc0ac7431918",
+      "method": "owner()"
+    },
+    "selectors_count": 20
+  },
+  {
+    "chain": "ethereum",
+    "name": "Veil (Augur frontend)",
+    "address": "0xC5c89D2BfE3617B7A6B9a8EcC7e23C5f547D2bC8",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "ENS Old Registrar",
+    "address": "0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 9991,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 44
+  },
+  {
+    "chain": "ethereum",
+    "name": "Polymath ST20",
+    "address": "0xab8149a77fb43d9e5ff5C56C12C0DC4f7B2F4D17",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Akropolis Old Pool",
+    "address": "0x7ab4a06fCbE6c73a9F3a2ED85eEcCdD1d18170Bf",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "TenX Liquidity",
+    "address": "0x515bA0a2E286AF10115284F151cF398688A69170",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 15135,
+    "permissionless": [],
+    "owner": {
+      "address": "0x185f19b43d818e10a31be68f445ef8edcb8afb83",
+      "method": "owner()"
+    },
+    "selectors_count": 71
+  },
+  {
+    "chain": "ethereum",
+    "name": "OpenSea v1 Wyvern",
+    "address": "0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 19702,
+    "permissionless": [],
+    "owner": {
+      "address": "0xa839d4b5a36265795eba6894651a8af3d0ae2e68",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "ethereum",
+    "name": "OpenSea v2 Wyvern",
+    "address": "0x7f268357A8c2552623316e2562D90e642bB538E5",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 21740,
+    "permissionless": [],
+    "owner": {
+      "address": "0xa839d4b5a36265795eba6894651a8af3d0ae2e68",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "ethereum",
+    "name": "Etheremon Trade",
+    "address": "0x8a36a0928fA32B6F12C84A5980A9DB47e9CA9a4F",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Decentraland Marketplace v1",
+    "address": "0x8e5660b4Ab70168b5a6fEeA0e0315cb49c8Cd539",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 2186,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 12
+  },
+  {
+    "chain": "ethereum",
+    "name": "FunFair Channel",
+    "address": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 6365,
+    "permissionless": [],
+    "owner": {
+      "address": "0x41211648c51acb9a5f39a93c657e894a0bdb88e4",
+      "method": "owner()"
+    },
+    "selectors_count": 35
+  },
+  {
+    "chain": "ethereum",
+    "name": "DACplay Channel",
+    "address": "0xab9a2c1a48c3d9f6a35b3dfb8bc5b5c5a5b5c5d5",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "ethereum",
+    "name": "Ren Bridge Gateway old",
+    "address": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+    "category": "DEPRECATED",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 2428,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 15
+  },
+  {
+    "chain": "ethereum",
+    "name": "Multichain (Anyswap) Router",
+    "address": "0x6b7a87899490EcE95443e979cA9485CBE7E71522",
+    "category": "FROZEN",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 18508,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 53
+  },
+  {
+    "chain": "linea",
+    "name": "LineaSwap V2",
+    "address": "0xd9C1Bd45EF1B2eE3a5c54aDfD9F6D9A05A0C5e62",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "linea",
+    "name": "HorizonDEX",
+    "address": "0x272e156df8da513c69cb41cc7a99185d53f926bb",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 15794,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 36
+  },
+  {
+    "chain": "optimism",
+    "name": "Velodrome V1",
+    "address": "0x9c12939390052919aF3155f41Bf4160Fd3666A6f",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 14280,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 46
+  },
+  {
+    "chain": "optimism",
+    "name": "Velodrome V2",
+    "address": "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 24479,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 90
+  },
+  {
+    "chain": "optimism",
+    "name": "Synthetix Staking",
+    "address": "0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3715,
+    "permissionless": [],
+    "owner": {
+      "address": "0x6d4a64c57612841c2c6745db2a4e4db34f002d20",
+      "method": "owner()"
+    },
+    "selectors_count": 25
+  },
+  {
+    "chain": "optimism",
+    "name": "Synthetix FeePool",
+    "address": "0x4a16A42407AA491564643E1dfc1fd50af29794eF",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 1524,
+    "permissionless": [],
+    "owner": {
+      "address": "0x6d4a64c57612841c2c6745db2a4e4db34f002d20",
+      "method": "owner()"
+    },
+    "selectors_count": 16
+  },
+  {
+    "chain": "optimism",
+    "name": "Across V2",
+    "address": "0x6f26Bf09B1C792e3228e5467807a900A503c0281",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 680,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 3
+  },
+  {
+    "chain": "optimism",
+    "name": "Curve OP staking",
+    "address": "0x061b87122Ed14b9526A813209C8a59a633257bAb",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 45,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "optimism",
+    "name": "Beethoven X",
+    "address": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 3947,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 14
+  },
+  {
+    "chain": "polygon",
+    "name": "QuickSwap V2 Router",
+    "address": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 21943,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 37
+  },
+  {
+    "chain": "polygon",
+    "name": "QuickSwap V3 Router",
+    "address": "0xf5b509bB0909a69B1c207E495f687a596C168E12",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 12697,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 37
+  },
+  {
+    "chain": "polygon",
+    "name": "SushiSwap MiniChefV2",
+    "address": "0x0769fd68dFb93167989C6f7254cd0D766Fb2841F",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 11087,
+    "permissionless": [],
+    "owner": {
+      "address": "0x850a57630a2012b2494779fbc86bbc24f2a7baef",
+      "method": "owner()"
+    },
+    "selectors_count": 44
+  },
+  {
+    "chain": "polygon",
+    "name": "Aave V2 LendingPool",
+    "address": "0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 1779,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 11
+  },
+  {
+    "chain": "polygon",
+    "name": "Aave V2 IncentivesController",
+    "address": "0x357D51124f59836DeD84c8a1730D72B749d8BC23",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 2309,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 16
+  },
+  {
+    "chain": "polygon",
+    "name": "Polygon PoS Bridge ETH",
+    "address": "0x8484Ef722627bf18ca5Ae6BcF031c23E6e922B30",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 12443,
+    "permissionless": [
+      "withdraw(uint256)"
+    ],
+    "owner": null,
+    "selectors_count": 48
+  },
+  {
+    "chain": "polygon",
+    "name": "Iron Bank",
+    "address": "0xb09Cf345294aDd1066543B22FD7384185f7C6fCA",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "polygon",
+    "name": "Curve aave pool",
+    "address": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 22503,
+    "permissionless": [],
+    "owner": {
+      "address": "0x774d1dba98cfbd1f2bc3a1f59c494125e07c48f9",
+      "method": "owner()"
+    },
+    "selectors_count": 70
+  },
+  {
+    "chain": "zksync",
+    "name": "SyncSwap Router",
+    "address": "0x2da10A1e27bF85cEdD8FFb1AbBe97d4D1c339718",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  },
+  {
+    "chain": "zksync",
+    "name": "Maverick Protocol",
+    "address": "0x39E098A153Ad69834a9Dac32f0FCa92066aD03f4",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": true,
+    "code_size": 83232,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 17
+  },
+  {
+    "chain": "zksync",
+    "name": "zkLend",
+    "address": "0x9D0a4EBf30D02a76D8B53F1bf29A11dE60ed35d0",
+    "category": "USER_DEPOSITS",
+    "balance_native": 0.0,
+    "is_contract": false,
+    "code_size": 0,
+    "permissionless": [],
+    "owner": null,
+    "selectors_count": 0
+  }
+]

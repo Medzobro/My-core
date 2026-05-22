@@ -1,5 +1,5 @@
 {
-  "_comment": "Multi-chain RPC configuration. Each chain has multiple public RPCs for fallback.",
+  "_comment": "Multi-chain RPC configuration. Each chain has multiple public RPCs for fallback. v4.0 - 20 chains.",
   "chains": {
     "ethereum": {
       "chain_id": 1,
@@ -102,6 +102,124 @@
         "https://bsc.llamarpc.com"
       ],
       "native_token": "BNB"
+    },
+    "avalanche": {
+      "chain_id": 43114,
+      "name": "Avalanche C-Chain",
+      "explorer": "https://snowtrace.io",
+      "rpcs": [
+        "https://avalanche-c-chain-rpc.publicnode.com",
+        "https://api.avax.network/ext/bc/C/rpc",
+        "https://avalanche.drpc.org"
+      ],
+      "native_token": "AVAX"
+    },
+    "fantom": {
+      "chain_id": 250,
+      "name": "Fantom Opera",
+      "explorer": "https://ftmscan.com",
+      "rpcs": [
+        "https://fantom-rpc.publicnode.com",
+        "https://rpc.ftm.tools",
+        "https://fantom.drpc.org"
+      ],
+      "native_token": "FTM"
+    },
+    "gnosis": {
+      "chain_id": 100,
+      "name": "Gnosis Chain",
+      "explorer": "https://gnosisscan.io",
+      "rpcs": [
+        "https://gnosis-rpc.publicnode.com",
+        "https://rpc.gnosischain.com",
+        "https://gnosis.drpc.org"
+      ],
+      "native_token": "xDAI"
+    },
+    "celo": {
+      "chain_id": 42220,
+      "name": "Celo",
+      "explorer": "https://celoscan.io",
+      "rpcs": [
+        "https://celo-rpc.publicnode.com",
+        "https://forno.celo.org",
+        "https://celo.drpc.org"
+      ],
+      "native_token": "CELO"
+    },
+    "mantle": {
+      "chain_id": 5000,
+      "name": "Mantle",
+      "explorer": "https://mantlescan.xyz",
+      "rpcs": [
+        "https://mantle-rpc.publicnode.com",
+        "https://rpc.mantle.xyz",
+        "https://mantle.drpc.org"
+      ],
+      "native_token": "MNT"
+    },
+    "blast": {
+      "chain_id": 81457,
+      "name": "Blast",
+      "explorer": "https://blastscan.io",
+      "rpcs": [
+        "https://blast-rpc.publicnode.com",
+        "https://rpc.blast.io",
+        "https://blast.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "mode": {
+      "chain_id": 34443,
+      "name": "Mode",
+      "explorer": "https://modescan.io",
+      "rpcs": [
+        "https://mainnet.mode.network",
+        "https://mode.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "cronos": {
+      "chain_id": 25,
+      "name": "Cronos",
+      "explorer": "https://cronoscan.com",
+      "rpcs": [
+        "https://cronos-rpc.publicnode.com",
+        "https://evm.cronos.org",
+        "https://cronos.drpc.org"
+      ],
+      "native_token": "CRO"
+    },
+    "moonbeam": {
+      "chain_id": 1284,
+      "name": "Moonbeam",
+      "explorer": "https://moonscan.io",
+      "rpcs": [
+        "https://moonbeam-rpc.publicnode.com",
+        "https://rpc.api.moonbeam.network",
+        "https://moonbeam.drpc.org"
+      ],
+      "native_token": "GLMR"
+    },
+    "aurora": {
+      "chain_id": 1313161554,
+      "name": "Aurora",
+      "explorer": "https://explorer.aurora.dev",
+      "rpcs": [
+        "https://mainnet.aurora.dev",
+        "https://aurora.drpc.org"
+      ],
+      "native_token": "ETH"
+    },
+    "metis": {
+      "chain_id": 1088,
+      "name": "Metis Andromeda",
+      "explorer": "https://andromeda-explorer.metis.io",
+      "rpcs": [
+        "https://andromeda.metis.io/?owner=1088",
+        "https://metis.drpc.org"
+      ],
+      "native_token": "METIS"
     }
   }
 }
