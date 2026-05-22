@@ -1,0 +1,230 @@
+[
+  {
+    "chain": "ethereum",
+    "name": "ForkDelta / EtherDelta v3",
+    "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+    "balance_eth": 15221.753203131033,
+    "findings": [
+      {
+        "sig": "withdraw(0)",
+        "gas": 27152,
+        "returned": "0x"
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoPunks Marketplace",
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "balance_eth": 3261.4419096914708,
+    "findings": [
+      {
+        "sig": "withdraw()",
+        "gas": 28089,
+        "returned": "0x"
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Token.Store",
+    "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+    "balance_eth": 633.4702695141033,
+    "findings": [
+      {
+        "sig": "withdraw(0)",
+        "gas": 27247,
+        "returned": "0x"
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Ronin Bridge (old)",
+    "address": "0x1A2a1c938CE3eC39b6D47113c7955bAa9DD454F2",
+    "balance_eth": 469.3936796280862,
+    "findings": [
+      {
+        "sig": "withdraw()",
+        "gas": 26676,
+        "returned": "0x"
+      },
+      {
+        "sig": "withdrawAll()",
+        "gas": 26696,
+        "returned": "0x"
+      },
+      {
+        "sig": "exit()",
+        "gas": 26694,
+        "returned": "0x"
+      },
+      {
+        "sig": "sweep()",
+        "gas": 26708,
+        "returned": "0x"
+      },
+      {
+        "sig": "rescue()",
+        "gas": 26673,
+        "returned": "0x"
+      },
+      {
+        "sig": "rescueETH()",
+        "gas": 26673,
+        "returned": "0x"
+      },
+      {
+        "sig": "emergencyWithdraw()",
+        "gas": 26676,
+        "returned": "0x"
+      },
+      {
+        "sig": "emergencyExit()",
+        "gas": 26694,
+        "returned": "0x"
+      },
+      {
+        "sig": "claim()",
+        "gas": 26708,
+        "returned": "0x"
+      },
+      {
+        "sig": "forward()",
+        "gas": 26694,
+        "returned": "0x"
+      },
+      {
+        "sig": "flush()",
+        "gas": 26718,
+        "returned": "0x"
+      },
+      {
+        "sig": "recoverETH()",
+        "gas": 26717,
+        "returned": "0x"
+      },
+      {
+        "sig": "getReward()",
+        "gas": 26676,
+        "returned": "0x"
+      },
+      {
+        "sig": "recover()",
+        "gas": 26717,
+        "returned": "0x"
+      },
+      {
+        "sig": "redeem()",
+        "gas": 26682,
+        "returned": "0x"
+      }
+    ]
+  },
+  {
+    "chain": "zksync",
+    "name": "Mute.io Router",
+    "address": "0x8B791913eB07C32779a16750e3868aA8495F5964",
+    "balance_eth": 7.172095564299393,
+    "findings": [
+      {
+        "sig": "withdraw()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "withdrawAll()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "exit()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "sweep()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "rescue()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "rescueETH()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "emergencyWithdraw()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "emergencyExit()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "claim()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "forward()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "flush()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "recoverETH()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "getReward()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "recover()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "redeem()",
+        "gas": 152621,
+        "returned": "0x"
+      },
+      {
+        "sig": "withdraw(0)",
+        "gas": 153010,
+        "returned": "0x"
+      },
+      {
+        "sig": "withdraw(max)",
+        "gas": 153010,
+        "returned": "0x"
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoPunks (old contract)",
+    "address": "0x6BA6f2207e343923BA692e5Cae646Fb0F566DB8D",
+    "balance_eth": 4.64,
+    "findings": [
+      {
+        "sig": "withdraw()",
+        "gas": 25883,
+        "returned": "0x"
+      }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "chain": "ethereum",
+    "name": "Polygon Plasma Bridge",
+    "address": "0x401F6c983eA34274ec46f84D70b31C151321188b",
+    "category": "BRIDGE_DEPRECATED",
+    "findings": [
+      {
+        "token": "USDC",
+        "token_addr": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "amount": 3952.521525,
+        "usd_estimate": 3952.521525,
+        "rescue_hits": [
+          {
+            "sig": "rescueETH()",
+            "gas": 151713
+          },
+          {
+            "sig": "transferFrom(address,address,uint256)",
+            "gas": 151668
+          },
+          {
+            "sig": "collect()",
+            "gas": 151668
+          },
+          {
+            "sig": "rescueTokens(address,uint256)",
+            "gas": 152204
+          },
+          {
+            "sig": "tokenFallback(address,uint256,bytes)",
+            "gas": 151713
+          }
+        ]
+      },
+      {
+        "token": "WETH",
+        "token_addr": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "amount": 0.011,
+        "usd_estimate": 27.5,
+        "rescue_hits": [
+          {
+            "sig": "sweep(address)",
+            "gas": 152080
+          },
+          {
+            "sig": "recoverERC20(address,uint256)",
+            "gas": 152249
+          },
+          {
+            "sig": "withdrawTokens(address,uint256)",
+            "gas": 151691
+          }
+        ]
+      }
+    ]
+  }
+]
