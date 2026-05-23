@@ -81,7 +81,7 @@ TARGETS = [
 
 
 def main():
-    chains = json.load(open(os.path.join(os.path.dirname(__file__), 'chains.json')))['chains']
+    chains = json.load(open(os.path.join(os.path.dirname(__file__), 'data', 'chains.json')))['chains']
     for chain, addr, name in TARGETS:
         rpc = chains[chain]['rpcs'][0]
         print(f'\n{"="*80}\n  {chain.upper()}  {name}\n  {addr}\n{"="*80}')

@@ -125,8 +125,8 @@ async def fuzz_contract(session, sem, rpcs, c):
 
 
 async def main():
-    chains = json.load(open(os.path.join(SCRIPT_DIR, 'chains.json')))['chains']
-    contracts = json.load(open(os.path.join(SCRIPT_DIR, 'contracts_multichain.json')))['contracts']
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))['chains']
+    contracts = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')))['contracts']
     contracts = [c for c in contracts
                  if not c.get('_comment') and c.get('address', '').startswith('0x')]
 
@@ -175,7 +175,7 @@ async def main():
             for f in r['findings']:
                 print(f"      => {f['sig']:25s} gas={f['gas']:>8}  ret={f['returned']}")
 
-    out = os.path.join(SCRIPT_DIR, 'mev_dust_results.json')
+    out = os.path.join(SCRIPT_DIR, 'results', 'mev_dust_results.json')
     json.dump(candidates, open(out, 'w'), indent=2)
     print(f'\n[*] Saved: {out}')
 

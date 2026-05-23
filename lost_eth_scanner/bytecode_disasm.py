@@ -229,7 +229,7 @@ DEFAULT_TARGETS = [
 
 
 def main():
-    chains = json.load(open(os.path.join(os.path.dirname(__file__), 'chains.json')))['chains']
+    chains = json.load(open(os.path.join(os.path.dirname(__file__), 'data', 'chains.json')))['chains']
     print('=' * 90)
     print('  STATIC ANALYSIS OF withdraw() / claim() / drain functions')
     print('=' * 90)

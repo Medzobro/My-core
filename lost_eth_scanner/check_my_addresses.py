@@ -120,7 +120,7 @@ async def main():
         print('  (one address per line, plain text, starting with 0x)')
         return
 
-    chains = json.load(open(os.path.join(SCRIPT_DIR, 'chains.json')))['chains']
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))['chains']
     rpcs = chains['ethereum']['rpcs']
     sem = asyncio.Semaphore(10)
     ssl_ctx = ssl.create_default_context(cafile=certifi.where())

@@ -19,8 +19,8 @@ import asyncio, json, os, ssl, time
 import aiohttp, certifi
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CHAINS_FILE = os.path.join(SCRIPT_DIR, 'chains.json')
-CONTRACTS_FILE = os.path.join(SCRIPT_DIR, 'contracts_multichain.json')
+CHAINS_FILE = os.path.join(SCRIPT_DIR, 'data', 'chains.json')
+CONTRACTS_FILE = os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')
 
 PERMISSIONLESS_SELECTORS = {
     '3ccfd60b': 'withdraw()',
@@ -193,7 +193,7 @@ async def main():
             print(f"      cat:  {c['category']}")
             print()
 
-    out = os.path.join(SCRIPT_DIR, 'multichain_audit_results.json')
+    out = os.path.join(SCRIPT_DIR, 'results', 'multichain_audit_results.json')
     with open(out, 'w') as f:
         json.dump(results, f, indent=2, default=str)
     print(f'\n[*] Full JSON saved to: {out}')

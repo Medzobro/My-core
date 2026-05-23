@@ -92,7 +92,7 @@ async def query_pending(session, sem, rpcs, contract_addr, user_addr):
 
 
 async def main():
-    chains = json.load(open(os.path.join(SCRIPT_DIR, 'chains.json')))['chains']
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))['chains']
     rpcs = chains['ethereum']['rpcs']
     sem = asyncio.Semaphore(15)
     ssl_ctx = ssl.create_default_context(cafile=certifi.where())
@@ -153,7 +153,7 @@ async def main():
             if len(results) > 30:
                 print(f"  ... and {len(results) - 30} more")
 
-        out = os.path.join(SCRIPT_DIR, 'cryptopunks_pending.json')
+        out = os.path.join(SCRIPT_DIR, 'results', 'cryptopunks_pending.json')
         with open(out, 'w') as f:
             json.dump(results, f, indent=2)
         print(f'\n[*] Saved: {out}')

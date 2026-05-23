@@ -172,8 +172,8 @@ async def scan_contract(session, sem, rpcs, c, tokens):
 
 
 async def main():
-    chains = json.load(open(os.path.join(SCRIPT_DIR, 'chains.json')))['chains']
-    contracts = json.load(open(os.path.join(SCRIPT_DIR, 'contracts_multichain.json')))['contracts']
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))['chains']
+    contracts = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')))['contracts']
     contracts = [c for c in contracts
                  if not c.get('_comment') and c.get('address', '').startswith('0x')]
 
@@ -222,7 +222,7 @@ async def main():
             for h in f['rescue_hits']:
                 print(f"        rescue: {h['sig']:30s} gas={h['gas']}")
 
-    out = os.path.join(SCRIPT_DIR, 'stuck_erc20_results.json')
+    out = os.path.join(SCRIPT_DIR, 'results', 'stuck_erc20_results.json')
     json.dump(candidates, open(out, 'w'), indent=2, default=str)
     print(f'\n[*] Saved: {out}')
 

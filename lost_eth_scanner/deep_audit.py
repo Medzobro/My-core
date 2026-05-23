@@ -337,8 +337,8 @@ async def audit_one(session, sem, chain_cfg, contract):
 
 
 async def main():
-    chains_path = os.path.join(SCRIPT_DIR, 'chains.json')
-    contracts_path = os.path.join(SCRIPT_DIR, 'contracts_multichain.json')
+    chains_path = os.path.join(SCRIPT_DIR, 'data', 'chains.json')
+    contracts_path = os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')
     with open(chains_path) as f:
         chains = json.load(f)['chains']
     with open(contracts_path) as f:
@@ -453,7 +453,7 @@ async def main():
         print(f"  {ch:12s} native={t['native']:>14,.4f}   erc20≈${t['erc20_usd']:>12,.0f}")
 
     # save
-    out = os.path.join(SCRIPT_DIR, 'deep_audit_results.json')
+    out = os.path.join(SCRIPT_DIR, 'results', 'deep_audit_results.json')
     with open(out, 'w') as f:
         json.dump(results, f, indent=2, default=str)
     print(f'\n[*] Full JSON: {out}')

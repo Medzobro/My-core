@@ -25,7 +25,7 @@ import aiohttp
 import certifi
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CHAINS_FILE = os.path.join(SCRIPT_DIR, 'chains.json')
+CHAINS_FILE = os.path.join(SCRIPT_DIR, 'data', 'chains.json')
 
 
 class C:

@@ -80,7 +80,7 @@ async def query_balance(session, sem, rpcs, user):
 
 
 async def main():
-    chains = json.load(open(os.path.join(SCRIPT_DIR, 'chains.json')))['chains']
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))['chains']
     rpcs = chains['ethereum']['rpcs']
     sem = asyncio.Semaphore(20)
     ssl_ctx = ssl.create_default_context(cafile=certifi.where())
