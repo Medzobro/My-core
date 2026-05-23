@@ -3,7 +3,6 @@ lost_eth_scanner/monitor_state.json
 
 
 lost_eth_scanner/lost_eth.db
-lost_eth_scanner/data/
 lost_eth_scanner/.pytest_cache/
 lost_eth_scanner/tests/__pycache__/
 lost_eth_scanner/__pycache__/
