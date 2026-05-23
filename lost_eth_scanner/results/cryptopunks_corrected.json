@@ -1,0 +1,830 @@
+[
+  {
+    "address": "0x8be6ad79f67d1b76eba486b0ef4fd2c9bd1cd067",
+    "pending_eth": 153.45,
+    "address_nonce": 205,
+    "address_balance_eth": 32.88615426484146,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x131b2b74823bec1589fbfd7bf5842a765721c704",
+    "pending_eth": 115.0,
+    "address_nonce": 71,
+    "address_balance_eth": 0.00040554232131,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x0a68c97fc10e77ebe065a4959ae3e7e4896802b6",
+    "pending_eth": 111.9,
+    "address_nonce": 102,
+    "address_balance_eth": 131.6261745955548,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x29664e652ca8f8f2d95de3b33cc0ae7247fc0aa9",
+    "pending_eth": 107.5,
+    "address_nonce": 2122,
+    "address_balance_eth": 143.58039445210238,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xcafbf7952763c7237d2848a553e3146cbdd08602",
+    "pending_eth": 103.349,
+    "address_nonce": 1,
+    "address_balance_eth": 0.0,
+    "is_contract": true,
+    "is_dormant": false,
+    "is_active": false
+  },
+  {
+    "address": "0x062c5432107e3b9ad924512209a7468b5c200fcd",
+    "pending_eth": 95.0,
+    "address_nonce": 283,
+    "address_balance_eth": 205.1526568420985,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x60c7db709ebf1c3cf01057245eaaf79c6796e4e4",
+    "pending_eth": 81.0,
+    "address_nonce": 55,
+    "address_balance_eth": 1.0501482180011332,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x44874658340fa4ebe399546841319655fb606a45",
+    "pending_eth": 75.0,
+    "address_nonce": 94,
+    "address_balance_eth": 0.008404617008554466,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x16a76a88f866b80f9b5f4c916d6d79c953198fcf",
+    "pending_eth": 67.55,
+    "address_nonce": 108,
+    "address_balance_eth": 0.27895099475127294,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x59f4509017edcccc365881ba6d661a3bc63ebb79",
+    "pending_eth": 62.0,
+    "address_nonce": 107,
+    "address_balance_eth": 2.6174074277038737,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x555428363d00b92205216c61db67cecbff7554b2",
+    "pending_eth": 60.0,
+    "address_nonce": 42,
+    "address_balance_eth": 1.6489031947356585,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xa8924506f77f1976bf5b12b0ab819c9eb139b704",
+    "pending_eth": 60.0,
+    "address_nonce": 4,
+    "address_balance_eth": 0.9745029579789538,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xa8e0681d9e870b457084fb9223f13401b20b4ad0",
+    "pending_eth": 59.0,
+    "address_nonce": 562,
+    "address_balance_eth": 2.172129027684788,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x302864d6bb190109a4a4fe734e2bac3a3a27bb57",
+    "pending_eth": 58.88,
+    "address_nonce": 244,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xb8b93fc7461286c34d8d7493a32b3a1e31a0b8fe",
+    "pending_eth": 58.7398,
+    "address_nonce": 92,
+    "address_balance_eth": 164.73655911576458,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xb0906862b2197ed783cf3c74236f0b98ecfbe91b",
+    "pending_eth": 57.99,
+    "address_nonce": 173,
+    "address_balance_eth": 2.027730737041741,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xac208f311616bfd35489a4db58122f380b7abc79",
+    "pending_eth": 55.0,
+    "address_nonce": 35,
+    "address_balance_eth": 52.335636894862915,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x2f2f237d2e655cc0a6f6fef761e5aef13087e71f",
+    "pending_eth": 55.0,
+    "address_nonce": 83,
+    "address_balance_eth": 1146.4639770232068,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x5cfff5e0cdb75d29b46fab7289c28f8f652a41e1",
+    "pending_eth": 53.0,
+    "address_nonce": 10,
+    "address_balance_eth": 33.011852982021686,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xd3d7e517eac437931cd06672198ff55fbcc0496d",
+    "pending_eth": 50.0,
+    "address_nonce": 49,
+    "address_balance_eth": 0.9910381374472796,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x6ec30fd91a504aad948839b985c7263888b2ad68",
+    "pending_eth": 50.0,
+    "address_nonce": 4269,
+    "address_balance_eth": 10.074357814836642,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xad3dbf17e7460352adbb528420aa027cb2409597",
+    "pending_eth": 45.0,
+    "address_nonce": 59,
+    "address_balance_eth": 19.542142096795658,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x4d60c4016f160d7e867ae14e03d631c2aaa146d4",
+    "pending_eth": 43.0,
+    "address_nonce": 1,
+    "address_balance_eth": 0.34943095437512045,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x066b4894be13ac0d49b24fc588668e428ec404e9",
+    "pending_eth": 40.9,
+    "address_nonce": 107,
+    "address_balance_eth": 0.2073277259265051,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x717541ecec745b1996a293a0e663f2aed2340f1a",
+    "pending_eth": 40.0,
+    "address_nonce": 322,
+    "address_balance_eth": 0.12925928352686025,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x4b17bb0d1f75636ea4c677377d29e86bae0038b6",
+    "pending_eth": 39.0,
+    "address_nonce": 14,
+    "address_balance_eth": 0.17959448629378158,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x0f8bd7b597c655869e58b9c1bcfa4ddfe590259d",
+    "pending_eth": 38.0,
+    "address_nonce": 1801,
+    "address_balance_eth": 2.294821591539973,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x9359301a9649b9fb9f29609848da3dbd7fe13fa1",
+    "pending_eth": 33.0,
+    "address_nonce": 382,
+    "address_balance_eth": 0.12377057883563647,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x7263a7c2cc2aec9710011c756fbc51dcfa31bb7c",
+    "pending_eth": 32.89,
+    "address_nonce": 406,
+    "address_balance_eth": 84.7521031296735,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xa20faa5694272e7e0757bfec9e100cef7def7aa7",
+    "pending_eth": 32.65,
+    "address_nonce": 122,
+    "address_balance_eth": 2.481958826228719,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xee50c24a127b23e28d4c1ec222d6915298f048ec",
+    "pending_eth": 32.0,
+    "address_nonce": 176,
+    "address_balance_eth": 0.0899491859895902,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x0a271b33e1b3bc9df4c2a1e34da13ec2df9ec0c6",
+    "pending_eth": 32.0,
+    "address_nonce": 17,
+    "address_balance_eth": 6.34681758239463,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x2707b4537a1d78fda74df35b0a803b66e651972e",
+    "pending_eth": 32.0,
+    "address_nonce": 43,
+    "address_balance_eth": 19.141927359923454,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe937e88591f641a689e2132a6f633d7b6b1a54c8",
+    "pending_eth": 31.1,
+    "address_nonce": 606,
+    "address_balance_eth": 0.09084652430447399,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe59350800a422d8c4b3a370b0c1453beceddef78",
+    "pending_eth": 30.5,
+    "address_nonce": 866,
+    "address_balance_eth": 151.16029144079798,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe23ca6bf02c6d56a410643d8a51cbdd90a714e72",
+    "pending_eth": 29.5,
+    "address_nonce": 9,
+    "address_balance_eth": 1.9283772790724973,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x47452c970e08bf7105c753b798536e685e042231",
+    "pending_eth": 28.89,
+    "address_nonce": 1,
+    "address_balance_eth": 82.665,
+    "is_contract": true,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x98cfea4a7632ef7148b2f6933c5af622d16b956b",
+    "pending_eth": 19.99,
+    "address_nonce": 83,
+    "address_balance_eth": 25.752559103318617,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xa38d13d370cc980ca46c76e241b5268b3ec77b93",
+    "pending_eth": 19.0,
+    "address_nonce": 26,
+    "address_balance_eth": 0.9115322851616458,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x4abc7c959afc493d7fe35cd15c1ce1e44cf087cb",
+    "pending_eth": 5.0,
+    "address_nonce": 654,
+    "address_balance_eth": 0.001047749003757141,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x28c89718f4dab5cf853e37e96735a3cad85c41d5",
+    "pending_eth": 2.5,
+    "address_nonce": 7,
+    "address_balance_eth": 0.006006223999550958,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xfb077c541507ed890abb7e670180b97ccbac0e9c",
+    "pending_eth": 2.0,
+    "address_nonce": 319,
+    "address_balance_eth": 0.099055518,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xf97b0be1fa030646f07272a957e27d60ffcfc93a",
+    "pending_eth": 1.2,
+    "address_nonce": 12,
+    "address_balance_eth": 0.3175932680555487,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x3746e334d79cc605b06455638e303bde01229ef3",
+    "pending_eth": 1.0,
+    "address_nonce": 13,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x4f596fdcf320934380c00a8e40d697c1c30ec215",
+    "pending_eth": 1.0,
+    "address_nonce": 21,
+    "address_balance_eth": 0.4920499911353214,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x7447397496b36962594438e006862c99b21b1689",
+    "pending_eth": 1.0,
+    "address_nonce": 22,
+    "address_balance_eth": 0.005678105,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc8c115dcb2910ee8f3dbac4056b5448c4f624bde",
+    "pending_eth": 1.0,
+    "address_nonce": 10,
+    "address_balance_eth": 0.42276066799991874,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x1757920f5171fbc7ec23f2670b9a73771d05069e",
+    "pending_eth": 1.0,
+    "address_nonce": 5,
+    "address_balance_eth": 0.000251823981669874,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": false
+  },
+  {
+    "address": "0x7d705d99f08677ad095fac43ea20300b5e40fcd5",
+    "pending_eth": 0.98,
+    "address_nonce": 42,
+    "address_balance_eth": 0.0118016258,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x3bb0fe1d19e1f10a457cd3d26cd0db78dfdd677e",
+    "pending_eth": 0.8,
+    "address_nonce": 922,
+    "address_balance_eth": 0.3027220970947315,
+    "is_contract": true,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x8e662143178bb8c797620a3a61f34a71832475b0",
+    "pending_eth": 0.52,
+    "address_nonce": 4787,
+    "address_balance_eth": 19.017019584917893,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x7eb46dd46c583695846b0dc97603086fe6387105",
+    "pending_eth": 0.5,
+    "address_nonce": 175,
+    "address_balance_eth": 0.7494536856212048,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x7c511d35c33aae98d496090c3e1ae173dbd1c530",
+    "pending_eth": 0.35,
+    "address_nonce": 6,
+    "address_balance_eth": 0.03356751998717028,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x12cce16590243983387b681ffe871754de9f7174",
+    "pending_eth": 0.35,
+    "address_nonce": 49,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x05268609226f2697e02c9ffb83c4bb941a20d588",
+    "pending_eth": 0.3,
+    "address_nonce": 9,
+    "address_balance_eth": 0.0009,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x90c62a8a3ecba53a3339efa6be6c6570c649fb1f",
+    "pending_eth": 0.3,
+    "address_nonce": 14,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x5aa83fa569d681e06423479072cb62abbb743a24",
+    "pending_eth": 0.3,
+    "address_nonce": 2,
+    "address_balance_eth": 0.015182119999867053,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": false
+  },
+  {
+    "address": "0x554e3b78364ba3bad078c42a161c4f184597f066",
+    "pending_eth": 0.23,
+    "address_nonce": 38,
+    "address_balance_eth": 0.14266569316583866,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x766bc61d3150232f6f4e1d81633d68f3a94879e3",
+    "pending_eth": 0.2,
+    "address_nonce": 756,
+    "address_balance_eth": 0.4329672677273201,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x6f72f2bea4bd4bc91e35e951cc752b2bc94a185c",
+    "pending_eth": 0.15,
+    "address_nonce": 44,
+    "address_balance_eth": 0.003997422603662847,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc4ebb1f93970a07886bd1eae614e8c8f21626dcc",
+    "pending_eth": 0.15,
+    "address_nonce": 373,
+    "address_balance_eth": 0.15755158933173452,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x58164b2d74c45f06cde451fc307092d55ebe5730",
+    "pending_eth": 0.14,
+    "address_nonce": 643,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x91510281ee0e4ae0ab5199cf89a43f11ded6264f",
+    "pending_eth": 0.14,
+    "address_nonce": 241,
+    "address_balance_eth": 0.006642219858795234,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xbc325bfa28c8a14b67933a64c3ae033e0bf82b93",
+    "pending_eth": 0.1,
+    "address_nonce": 66,
+    "address_balance_eth": 0.000314547996884038,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc842ce7214a14fa98186a010bcb43c7e99e4caf3",
+    "pending_eth": 0.069,
+    "address_nonce": 1471,
+    "address_balance_eth": 0.3131866208863217,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc76df8a6cbf7858213bae55829283172f4643c72",
+    "pending_eth": 0.04,
+    "address_nonce": 918,
+    "address_balance_eth": 0.031784242812427574,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x70580ea14d98a53fd59376dc7e959f4a6129bb9b",
+    "pending_eth": 0.03,
+    "address_nonce": 2927,
+    "address_balance_eth": 0.23005688522313392,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x74857f68e61fe70312df156bf763f7d6dc56b00e",
+    "pending_eth": 0.02,
+    "address_nonce": 64,
+    "address_balance_eth": 0.006981625352525579,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xde84d3a95527a702d1505272a16ffdab12fc451e",
+    "pending_eth": 0.0166,
+    "address_nonce": 34,
+    "address_balance_eth": 0.05538040508167464,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc8751a1b9ed6a5562d009e5ad5067b6131fdb346",
+    "pending_eth": 0.01,
+    "address_nonce": 2242,
+    "address_balance_eth": 0.0003324367853096,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xddb92a96054132801cae3943b2f966fc2c308ac8",
+    "pending_eth": 0.01,
+    "address_nonce": 1491,
+    "address_balance_eth": 0.0929888524767532,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xf942258c095f10efd0ca58e1308150ff40239d47",
+    "pending_eth": 0.01,
+    "address_nonce": 1130,
+    "address_balance_eth": 0.12102256787818973,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x7bef660b110023fd795d101d5d63972a82438661",
+    "pending_eth": 0.01,
+    "address_nonce": 302,
+    "address_balance_eth": 0.822870627216071,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x35fa7d184da98242ce84fee54ebdad3311071947",
+    "pending_eth": 0.007,
+    "address_nonce": 274,
+    "address_balance_eth": 3.611980386e-06,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xf09d1acbf092ec47970a2aa9e16bc658b2ecf15e",
+    "pending_eth": 0.005,
+    "address_nonce": 1037,
+    "address_balance_eth": 6.3183020851e-05,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe066d04ad4ca5641460b19982f827f0c58f0dc36",
+    "pending_eth": 0.003,
+    "address_nonce": 106,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe4e836baada118a60923e98e5cf874153527f1ec",
+    "pending_eth": 0.001,
+    "address_nonce": 619,
+    "address_balance_eth": 0.4355456577681456,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x198efc2236abe82c9713931f49107a6cb43116e9",
+    "pending_eth": 0.001,
+    "address_nonce": 35,
+    "address_balance_eth": 8.073162411628495,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x027747771ce20e60d24344e2a62a1377960cced0",
+    "pending_eth": 0.001,
+    "address_nonce": 594,
+    "address_balance_eth": 0.006385518131979174,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x442dccee68425828c106a3662014b4f131e3bd9b",
+    "pending_eth": 0.001,
+    "address_nonce": 17580,
+    "address_balance_eth": 0.01024307208327228,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x86ff709dda75a52f1fe1bddb539880ae74a251a5",
+    "pending_eth": 0.000681711163952546,
+    "address_nonce": 8995,
+    "address_balance_eth": 0.000312431449754952,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc4f842b2ed481c73010fc1f531469ffb47ee09e9",
+    "pending_eth": 0.000223,
+    "address_nonce": 925,
+    "address_balance_eth": 0.001313864026302218,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x0735b34a9eb4d4cbe656919146d6b7a8807f789c",
+    "pending_eth": 0.0002,
+    "address_nonce": 326,
+    "address_balance_eth": 0.6353857849958916,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x387af9df1a190cfaf420a0470a55f5ce22c5d356",
+    "pending_eth": 0.0001,
+    "address_nonce": 275,
+    "address_balance_eth": 5.316364841136126,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x398646e26814c67edd6f49da25c121be0cf96c40",
+    "pending_eth": 1.62e-05,
+    "address_nonce": 828,
+    "address_balance_eth": 0.019160006124756764,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xceb63ca91bf7bd673e11589c5194e9e927cd5560",
+    "pending_eth": 1e-05,
+    "address_nonce": 340,
+    "address_balance_eth": 16.483116925731377,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0x3689df917b622d8c35e01577bde8198b7e79b83d",
+    "pending_eth": 2e-06,
+    "address_nonce": 211,
+    "address_balance_eth": 3.792149814133472,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xcbd482af76059e2a5e4a825c4cd5ced9f2dfe286",
+    "pending_eth": 1.23e-16,
+    "address_nonce": 2315,
+    "address_balance_eth": 0.3266231956157515,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xc50673edb3a7b94e8cad8a7d4e0cd68864e33edf",
+    "pending_eth": 1.2e-16,
+    "address_nonce": 1,
+    "address_balance_eth": 9.980387329881395,
+    "is_contract": true,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xd5ef7d3d225770bcfc4a46f9cef413f440610dee",
+    "pending_eth": 1e-16,
+    "address_nonce": 1,
+    "address_balance_eth": 0.0,
+    "is_contract": true,
+    "is_dormant": false,
+    "is_active": false
+  },
+  {
+    "address": "0x63e776c2b49b46a2bbc00c31fb5073051b2d6172",
+    "pending_eth": 5e-18,
+    "address_nonce": 114,
+    "address_balance_eth": 0.018485710745889505,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  },
+  {
+    "address": "0xe62842cd7954038642457cccb132943b6d8ac3d8",
+    "pending_eth": 1e-18,
+    "address_nonce": 16,
+    "address_balance_eth": 0.0,
+    "is_contract": false,
+    "is_dormant": false,
+    "is_active": true
+  }
+]
