@@ -1,0 +1,30 @@
+{
+  "all": [
+    {
+      "sym": "USDT",
+      "addr": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "eth": 4.2e-17,
+      "rescue": []
+    },
+    {
+      "sym": "WETH",
+      "addr": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "eth": 2270050.253011862,
+      "rescue": []
+    },
+    {
+      "sym": "stETH",
+      "addr": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+      "eth": 2412.751509788961,
+      "rescue": []
+    },
+    {
+      "sym": "rETH",
+      "addr": "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      "eth": 3884.0658832576046,
+      "rescue": []
+    }
+  ],
+  "candidates": [],
+  "total_eth": 2276347.070404908
+}

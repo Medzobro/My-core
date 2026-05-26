@@ -1,0 +1,44 @@
+[
+  {
+    "chain": "linea",
+    "name": "Velocore",
+    "addr": "0x1d0188c4B276A09366D05d6Be06aF61a73bC7535",
+    "balance": 0.000116023663394209,
+    "native": "ETH"
+  },
+  {
+    "chain": "blast",
+    "name": "Thruster V2",
+    "addr": "0x337827814155ECBf24D20231fCA4444F530C0555",
+    "balance": 3e-18,
+    "native": "ETH"
+  },
+  {
+    "chain": "moonbeam",
+    "name": "Beamswap",
+    "addr": "0x96b244391D98B62D19aE89b1A4dCcf0fc56970C7",
+    "balance": 342.58647290903394,
+    "native": "GLMR"
+  },
+  {
+    "chain": "celo",
+    "name": "Ubeswap Router V1",
+    "addr": "0xE3D8bd6Aed4F159bc8000a9cD47CffDb95F96121",
+    "balance": 12.169023562119232,
+    "native": "CELO"
+  },
+  {
+    "chain": "gnosis",
+    "name": "OmniBridge xDai",
+    "addr": "0x88ad09518695c6c3712AC10a214bE5109a655671",
+    "balance": 32.02430603322284,
+    "native": "xDAI"
+  },
+  {
+    "chain": "zksync",
+    "name": "Mute.io Router",
+    "addr": "0x8B791913eB07C32779a16750e3868aA8495F5964",
+    "balance": 7.172095564299393,
+    "native": "ETH"
+  }
+]
