@@ -1,228 +1,183 @@
-# 🔥 Dead Contract Hunt - تقرير الصيد الكامل
+# 🏴‍☠️ Lost ETH Hunt — Comprehensive Forensic Report
 
-**التاريخ:** 22 مايو 2026  
-**الوقت المستهلك:** ~2 ساعة بحث مكثف  
-**العقود المفحوصة:** 15  
-**إجمالي ETH المكتشفة:** 558,581 ETH (~$1.19 مليار)  
-
----
-
-## 📊 الخلاصة في جدول واحد
-
-| العقد | الرصيد | الفئة | قابلية الاسترداد |
-|------|-------|------|------------------|
-| 🔴 Polkadot Foundation Multisig | 306,276 ETH | Parity-frozen | **مستحيل دائماً** |
-| 🔴 Iconomi Multisig | 114,939 ETH | Parity-frozen | **مستحيل دائماً** |
-| 🟢 **WithdrawDAO** | **81,914 ETH** | Public function | **يحتاج DAO tokens 2016** |
-| 🟡 **IDEX 1.0** | 16,168 ETH | User deposits | للمودِع الأصلي |
-| 🔴 Musiconomi Multisig | 16,475 ETH | Parity-frozen | **مستحيل دائماً** |
-| 🟡 EtherDelta v3 | 15,221 ETH | User deposits | للمودِع الأصلي |
-| 🔴 Unknown Parity #4 | 6,925 ETH | Parity-frozen | **مستحيل دائماً** |
-| 🟡 Token.Store | 633 ETH | User deposits | للمودِع الأصلي |
-| 🟡 Plasma Bridge | 27 ETH | Owned (active) | المالك فقط |
-| ⬜ The DAO الأصلي | 0.0006 ETH | Drained | فاضي |
-| ⬜ EtherDelta v2 | 0 ETH | Empty | فاضي |
-| ⬜ Saturn Network | 0 ETH | Empty | فاضي |
-
-**المجموع:** 558,581 ETH ≈ $1,189,757,750
+> **Goal**: Identify forgotten/dead Ethereum contracts holding recoverable ETH.
+> **Scope**: 365 contracts across 20 chains. Native ETH + 9 stablecoin/wrapped balances.
+> **Status**: ⚡ Active hunt — May 2026
 
 ---
 
-## 🎯 الاكتشاف الذهبي: WithdrawDAO
+## 🎯 KEY FINDING: 2,247 ETH (~$5.6M) UNCLAIMED IN CRYPTOPUNKS
 
-### ما هو؟
+**For the first time in this codebase, we identified individually addressable, recoverable balances.**
 
-عقد قانوني تماماً أُنشأ في **يوليو 2016 بعد الـ DAO hack** الشهير. كان جزءاً من حل الـ hard fork اللي قسم Ethereum إلى ETH/ETC.
+CryptoPunks Marketplace (V2: `0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB`)
+holds **3,332 ETH**. By scanning all 28,538 historical `PunkBought` events
+and querying `pendingWithdrawals(address)` for each of the 6,383 unique
+sellers, we found:
 
-### كيف يعمل؟
+- **94 addresses** with non-zero `pendingWithdrawals`
+- **Total: 2,247.6 ETH** (~$5.6M USD)
+- **Top single address: 153.45 ETH**
 
-```solidity
-// Pseudo-code (الكود مفتوح ومتاح):
-function withdraw() {
-    uint256 balance = mainDAO.balanceOf(msg.sender);  // كم DAO token عندك؟
-    uint256 ethOut = balance / 100;                    // 100 DAO = 1 ETH
-    require(ethOut > 0);
-    mainDAO.transferFrom(msg.sender, this, balance);   // تأخذ منك DAO
-    msg.sender.send(ethOut);                            // ترسل لك ETH
-}
-```
+These funds belong to specific seller addresses. Anyone with the **private key** to
+one of those addresses can call `withdraw()` and claim instantly.
 
-### الأرقام الحاسمة
+📄 Full list: [`cryptopunks_pending.json`](./cryptopunks_pending.json)
 
-- **رصيد العقد:** 81,914 ETH ($174M)
-- **DAO tokens المتبقية:** 8,191,489 token (~12% من العرض الأصلي)  
-- **معدل التحويل:** 100 DAO = 1 ETH
-- **آخر سحب ناجح:** 18 مايو 2026 (قبل 4 أيام!)
-- **الحالة:** 🟢 **نشط ويعمل**
+### Top 10 unclaimed (CryptoPunks V2)
 
-### من يستفيد؟
+| Amount | Address |
+|--------|---------|
+| 153.45 ETH | `0x8be6ad79f67d1b76eba486b0ef4fd2c9bd1cd067` |
+| 115.00 ETH | `0x131b2b74823bec1589fbfd7bf5842a765721c704` |
+| 111.90 ETH | `0x0a68c97fc10e77ebe065a4959ae3e7e4896802b6` |
+| 107.50 ETH | `0x29664e652ca8f8f2d95de3b33cc0ae7247fc0aa9` |
+| 103.35 ETH | `0xcafbf7952763c7237d2848a553e3146cbdd08602` |
+| 95.00 ETH | `0x062c5432107e3b9ad924512209a7468b5c200fcd` |
+| 81.00 ETH | `0x60c7db709ebf1c3cf01057245eaaf79c6796e4e4` |
+| 75.00 ETH | `0x44874658340fa4ebe399546841319655fb606a45` |
+| 67.55 ETH | `0x16a76a88f866b80f9b5f4c916d6d79c953198fcf` |
+| 62.00 ETH | `0x59f4509017edcccc365881ba6d661a3bc63ebb79` |
 
-✅ **شخص يملك DAO tokens من 2016**:
-1. كنت مستثمراً في الـ DAO ICO (مايو-يونيو 2016)
-2. لم تأخذ refund في الـ first window
-3. لازال wallet القديم عندك  
-4. تستدعي `approve` ثم `withdraw()`
-
-❌ **لو ما عندك DAO tokens:** المعاملة تفشل بـ `invalid jump` (شفت 1 منهم في القائمة قبل أيام)
-
-### أين تجد DAO tokens؟
-
-ابحث في:
-1. **MyEtherWallet keystores قديمة** من 2016  
-2. **محافظ exchanges قديمة** (الـ tokens كانت تُتداول في Bittrex, Poloniex, Kraken في 2016)
-3. **Hardware wallets** عمرها 9+ سنوات
-4. **Cold storage** في USB قديم
-
-العنوان الرسمي للـ DAO Token:
-```
-0xbb9bc244d798123fde783fcc1c72d3bb8c189413
+### How to recover (if YOU control any of these addresses)
+```python
+# Using web3.py
+from web3 import Web3
+w3 = Web3(Web3.HTTPProvider('https://ethereum-rpc.publicnode.com'))
+contract = w3.eth.contract(
+    address='0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB',
+    abi=[{'name':'withdraw','type':'function','inputs':[],'outputs':[],
+          'stateMutability':'nonpayable'}])
+acct = w3.eth.account.from_key(MY_PRIVATE_KEY)
+tx = contract.functions.withdraw().build_transaction({
+    'from': acct.address, 'gas': 100000, 'nonce': w3.eth.get_transaction_count(acct.address),
+})
+signed = acct.sign_transaction(tx)
+w3.eth.send_raw_transaction(signed.rawTransaction)
 ```
 
 ---
 
-## 🔴 الـ 444,616 ETH المجمدة (Parity)
+## 📊 GLOBAL SCAN — TOTAL ETH ACROSS 365 CONTRACTS / 20 CHAINS
 
-### قصتها
+| Chain | Native | Stable+Wrapped USD |
+|-------|--------:|-------------------:|
+| Ethereum | 825,095 ETH (~$2.1B) | $509M |
+| Polygon | 34,764 MATIC | $2M |
+| Base | 927.5 ETH | $0 |
+| Moonbeam | 342.6 GLMR | $0 |
+| BSC | trace | $1.5M |
+| Arbitrum | trace | $428K |
+| Gnosis | 32 xDAI | $108K |
+| Optimism | trace | $26K |
+| Celo | 12 CELO | $0 |
+| zkSync | 7.17 ETH | $0 |
 
-- **التاريخ:** 6 نوفمبر 2017
-- **السبب:** مستخدم اسمه `devops199` استدعى `kill()` على Parity Multisig Library بالخطأ، فدمر الـ library
-- **النتيجة:** كل multisig wallets المعتمدة على هذي الـ library فقدت قدرتها على تحريك ETH
-- **الضحية الأكبر:** Polkadot Foundation (306K ETH) - كانوا توا حصلوا فلوس الـ ICO!
+---
 
-### الجدوى من الاسترداد
+## 🔬 CLASSIFIED RECOVERABILITY
 
-| الطريقة | الاحتمال |
-|---------|---------|
-| Hard fork لـ Ethereum يعيد ETH | ❌ المجتمع رفض في 2017-2018 |
-| Vitalik يقترح EIP عليها | ❌ تكرر النقاش وتم رفضه |
-| كسر ECDSA | ❌ يحتاج كمبيوتر كمي ضخم |
-| **الواقع:** | **ETH ميتة دائماً** |
+### A. ❌ PERMANENTLY LOST (~444,617 ETH)
+- Polkadot Foundation Parity multisig: **306,277 ETH**
+- Iconomi Parity multisig: **114,939 ETH**
+- Musiconomi Parity multisig: **16,476 ETH**
+- Unknown Parity Multisig #4: **6,925 ETH**
 
-### تفاصيل تقنية مهمة
+These are all Parity Multi-Sig contracts whose `Library` was suicided in November 2017
+by `devops199`. The wallets call `delegatecall` into a destroyed library, so EVERY
+function reverts. No recovery is possible without an Ethereum hard fork.
 
-العقود الـ 4 الكبرى الأكثر شهرة:
+### B. ❌ CRYPTOGRAPHICALLY LOCKED (~216,225 ETH)
+Tornado Cash pools (100/10/1/0.1 ETH denominations + USDC/USDT/DAI variants).
+Each deposit creates a Poseidon commitment. To withdraw, the user must produce a
+zero-knowledge proof using the secret note generated at deposit time. Without the
+note: zero recovery path. The pools are also OFAC-sanctioned.
+
+### C. ❌ DAO-TOKEN GATED (81,914 ETH)
+**WithdrawDAO** (`0xbf4ed7b27f1d666546e30d74d50d173d20bca754`):
+- `withdraw()` reads `balanceOf(msg.sender)` from the original DAO token
+  (`0xbb9bc244d798123fde783fcc1c72d3bb8c189413`)
+- Pays 1 ETH per 100 DAO tokens to the caller
+- Requires owning DAO tokens minted in May 2016
+
+If you DID participate in The DAO (May 2016), check your DAO balance.
+
+### D. ⚠️ USER-STATE GATED — RECOVERABLE WITH SPECIFIC PRIVATE KEYS
+The big find. These contracts have public `withdraw()`, but the function only pays
+out the caller's **own** stored balance. If you control an address with a non-zero
+internal balance, you can withdraw.
+
+| Contract | Address | Total ETH | Recovery model |
+|----------|---------|-----------|----------------|
+| **CryptoPunks V2** | `0xb47e3cd8...e193BBB` | 3,332 | `pendingWithdrawals[seller]` — see ★ list above |
+| **CryptoPunks V1 (old)** | `0x6BA6f220...66DB8D` | 4.64 | `pendingWithdrawals[seller]` |
+| **IDEX 1.0** | `0x2a0c0DBE...050c208` | 16,168 | `tokens[0x0][user]` (depositor balance) |
+| **ForkDelta / EtherDelta v3** | `0x8d12A197...cC6819` | 15,222 | `tokens[0x0][user]` |
+| **Token.Store** | `0x1ce7AE55...e6Ee33D8` | 633 | `tokens[0x0][user]` |
+| **Friend.tech** (Base) | `0xCF205808...d4A4d4` | 928 | `sellShares()` — need shares |
+
+🛠 To check if YOU have funds in any of these, use:
+```bash
+python3 check_my_addresses.py --file my_addresses.txt
 ```
-0x3bfc20f0...  306,276 ETH  Polkadot Foundation
-0x376c3e55...  114,939 ETH  Iconomi
-0xc7cd9d87...   16,475 ETH  Musiconomi  
-0xdb0e7d78...    6,925 ETH  Unknown
-```
+or edit `MY_ADDRESSES` in `check_my_addresses.py`.
 
-كل واحد منها يحاول استدعاء الـ Parity Library على عنوان `0x863df6bf...` - لكن الـ library تم دمرها (codesize=0). أي محاولة تحريك ETH تفشل بسبب delegatecall لعقد ميت.
+### E. 🟡 OWNER-CONTROLLED (recoverable only by named admin)
+Contracts with `sweep()` / `rescue()` / `recover()` callable only by `owner()`.
 
----
-
-## 🟡 ودائع DEXs (32,049 ETH)
-
-كلها مفصلة في التقرير السابق `IDEX_1.0_FULL_REPORT.md`. الخلاصة:
-
-```
-IDEX 1.0:        16,168 ETH  →  للمودعين الأصليين (1,932 توكن أيضاً)
-EtherDelta v3:   15,221 ETH  →  للمودعين الأصليين  
-Token.Store:        633 ETH  →  للمودعين الأصليين (الفريق متخلى)
-Plasma Bridge:       27 ETH  →  للمالك (active EOA)
-```
-
-**كل واحد يحتاج مفتاح خاص لعنوان أودع في تلك الفترة.** ليس exploit - استرداد طبيعي.
+| Contract | Balance | Owner |
+|----------|---------|-------|
+| dYdX Solo v1 | $6.7M USDC/DAI/WETH | `0xba2906b1...8b1b53` |
+| Synapse Old Bridge | 5.6 ETH + $1.2M USDC | governance multisig |
+| QiDao Old | 34,763 MATIC | `0x3feacf90...` |
+| Wormhole Token Bridge | $320M | governance |
 
 ---
 
-## ⚠️ ملاحظة على الـ Trustee Multisig
+## 📂 FILE INVENTORY
 
-ضمن WithdrawDAO، يوجد دالة `trusteeWithdraw()` تحول ETH إلى multisig wallet (`0xda4a4626...`).
-
-لاحظت محاولات اختراق نشطة على هذا الـ multisig:
-- محاولات `kill()` (نوفمبر 2025)
-- محاولات `removeOwner`, `changeOwner`, `changeRequirement` (يناير 2026)
-- محاولة `m_numOwners` queries
-
-**النتيجة:** كلها فشلت لأن الـ multisig:
-- مالك واحد (`0x47b7655e...`)
-- مطلوب توقيع 1 فقط
-- المالك حي ويستجيب
-
-دل هذا يعني إن **هناك ناس فعلاً يحاولون اختراق هذا الـ multisig**، لكنه آمن.
-
----
-
-## 🎓 الدروس المستفادة
-
-### 1. لا يوجد "ETH حرة للجميع"
-
-من 558,581 ETH تحت يدنا:
-- 444,616 ETH (79.6%) **مجمدة دائماً** - لا أحد يقدر  
-- 81,914 ETH (14.7%) **يحتاج DAO tokens 2016**
-- 32,049 ETH (5.7%) **يحتاج مفتاح المودع الأصلي**
-- **0 ETH (0%)** قابلة للسحب بدون شروط
-
-### 2. MEV bots هم الفلتر النهائي
-
-أي contract فيه دالة withdraw عامة بدون auth، يُستنزف خلال ثوانٍ. الفلوس اللي بقيت 5+ سنوات = الفلوس مقفلة.
-
-### 3. القيمة الحقيقية للأداة هي **الفحص الشخصي**
-
-كل الفلوس "غير المسترجعة" تنتمي لشخص محدد. الفائدة الحقيقية للأداة هي:
-- لو كان عندك wallet قديم → فحص رصيدك في DEXs
-- لو كنت مستثمر DAO 2016 → فحص DAO tokens عندك
-- لو كنت dev في 2017-2018 → فحص test contracts نشرتها
-
-### 4. الـ "exploit hunting" غير مجدية في 2026
-
-Ethereum mainnet نضج جداً. الـ MEV ecosystem بيت السكن للـ bug hunters المحترفين. أي قيمة محتملة تكون قد ضمت من زمان.
+| File | Purpose |
+|------|---------|
+| `chains.json` | RPC config for 20 chains |
+| `contracts_multichain.json` | 365 candidate contracts |
+| `contracts_extra.json` | Failed bridges/DeFi adds (172) |
+| `contracts_airdrops.json` | 86 merkle airdrop claim contracts |
+| `dead_contract_hunter.py` | Initial 16-contract triage |
+| `multichain_audit.py` | Wide async balance + selector scan |
+| `deep_audit.py` | + ERC-20 token balance + sweep heuristics |
+| `bytecode_disasm.py` | EVM static analyzer for `withdraw()` |
+| `exploit_simulator.py` | eth_call fuzzing of public funcs |
+| `source_fetcher_v2.py` | Pulls verified Solidity from Sourcify |
+| `cryptopunks_pending_scan.py` | ★ Found the 2,247 ETH unclaimed |
+| `unclaimed_balances_scan.py` | Same approach for EtherDelta/IDEX/Token.Store |
+| `check_my_addresses.py` | **Personal recovery tool** |
+| `cryptopunks_pending.json` | ★ Output: 94 unclaimed seller balances |
+| `deep_audit_results.json` | Full audit dump |
+| `multichain_audit_results.json` | Wider audit dump |
+| `sources/*.sol` | Verified contract sources for review |
 
 ---
 
-## 🛠 شنو نسوي بعد؟
+## 🚀 NEXT STEPS
 
-### الخيارات الفعلية القيمة:
-
-**أولاً - فحص شخصي (احتمال نجاح حقيقي):**
-- أعطني أي عناوين قديمة تشك إنك ودعت منها (DEX, ICO, exchange)
-- الفحص يستغرق ثوانٍ
-- لو لقينا رصيد، السحب جاهز
-
-**ثانياً - بحث تاريخي/أكاديمي (لمن يحب المعرفة):**
-- توثيق كامل لكل DEX و DEX-fork من 2017
-- خريطة الـ "Lost ETH" الكاملة على mainnet
-- تحليل حالات تاريخية (DAO, Parity, Polymath, إلخ)
-
-**ثالثاً - بناء أداة عامة (للمجتمع):**
-- موقع ويب يفحص أي عنوان ضد 100+ عقد منسي
-- مفتوح المصدر، مجاني
-- يساعد آلاف الناس يستردون فلوسهم
-
-**رابعاً - تحليل سوق توكنات قديمة:**
-- DAO tokens 2016 لازالت تتداول في DEXs غامضة
-- لو لقينا DAO بسعر < $0.01/token، شراء وتحويل لـ ETH عبر WithdrawDAO قد يكون مربح (1 ETH = 100 DAO; سعر DAO اليوم؟)
+- [x] Expand contract DB to 350+
+- [x] Multi-chain scan (20 chains)
+- [x] Stuck ERC-20 detection
+- [x] EVM bytecode static analyzer
+- [x] Sourcify integration
+- [x] CryptoPunks pendingWithdrawals scan
+- [ ] (Running) EtherDelta + IDEX + Token.Store unclaimed-balance scan
+- [ ] HD-wallet sweep against historic deposit lists
+- [ ] Failed-bridge user-position scan (Multichain, Nomad)
+- [ ] Old airdrop merkle proof verification
+- [ ] Etheria 1.0/1.1/1.2 unclaimed plot owner scan
 
 ---
 
-## 📁 الملفات المنتجة
+## ⚖️ ETHICS
 
-| الملف | الوصف |
-|------|------|
-| `dead_contract_hunter.py` | السكريبت الذي يصنف العقود الميتة |
-| `dead_contracts_db.json` | قاعدة بيانات العقود (تتوسع) |
-| `investigation_results.json` | نتائج الفحص الكاملة |
-| `scanner.py` | سكانر الأرصدة الشخصية |
-| `withdraw_helper.py` | مولد المعاملات للسحب |
-| `HUNT_RESULTS.md` | هذا التقرير |
+- **Recovering YOUR OWN funds**: 100% legitimate. Your private key, your right.
+- **Calling `withdraw()` on a contract for an address you don't own**: not possible — the contract pays `msg.sender`.
+- **Trying to exploit a real vulnerability for profit**: criminal in most jurisdictions, regardless of "abandoned" framing.
 
----
-
-## 💡 الخلاصة الصريحة
-
-أخوي، صدقاً - **بحثت بإخلاص ووجدت كل شي ممكن إيجاده**. النتائج لا تكذب:
-
-1. **"ETH ميتة لأي حد"** = أسطورة. كلها إما مقفلة شرعياً أو مملوكة لشخص محدد
-2. **WithdrawDAO** هو أقرب شي لـ "frei für alle" لكن يحتاج DAO tokens (نادرة جداً)
-3. **الفرصة الحقيقية الوحيدة لك** هي إذا كنت مستخدم نشط في 2016-2020 ونسيت رصيدك
-
-الفلوس الـ 558,581 ETH موجودة وراح تبقى موجودة، لكن **مفاتيحها ضائعة عند آخرين، أو محروقة في أكواد ميتة**. لا أحد يقدر يصل لها بدون "إذن" من الكود نفسه.
-
-**شنو خيارك الحين؟**
-1. تعطيني عناوين قديمة لك → نفحصها فوراً
-2. نوسع البحث لـ 100+ عقد إضافي
-3. نبني أداة ويب عامة
-4. نتعلم سوا على عقود محددة (Aragon DAOs, ENS old names, إلخ)
-5. شي آخر؟
+This codebase is for **personal recovery** of forgotten funds you are entitled to claim.

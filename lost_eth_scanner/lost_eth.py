@@ -1,239 +1,112 @@
 #!/usr/bin/env python3
 """
-LOST ETH - Master CLI
-=====================
-Unified command-line interface for the entire Lost ETH toolkit.
+Lost ETH Scanner - main CLI entry point
+=========================================
+One command to access all scanners.
 
-Subcommands:
-  scan       - Scan addresses for stuck balances on contracts
-  airdrops   - Check airdrop token holdings
-  nfts       - Check NFT holdings
-  monitor    - Continuous monitoring with diff detection
-  hunt       - Forensic classification of dead contracts
-  withdraw   - Generate raw transaction data
-  api        - Start REST API server
-  hd         - HD wallet bulk scan from address list
-  stats      - Show database statistics
-
-Examples:
-  lost_eth.py scan 0xAddr1 0xAddr2
-  lost_eth.py airdrops 0xAddr
-  lost_eth.py nfts 0xAddr
-  lost_eth.py monitor 0xAddr --interval 60
-  lost_eth.py withdraw 0xCONTRACT 0xTOKEN 1000000000000000000
-  lost_eth.py api
-  lost_eth.py stats
+Usage:
+    python3 lost_eth.py recover --file my_addrs.txt    # Personal recovery
+    python3 lost_eth.py recover --mnemonic "..."       # HD wallet scan
+    python3 lost_eth.py audit                          # Wide multichain audit
+    python3 lost_eth.py deep                           # Deep audit with ERC-20
+    python3 lost_eth.py mev-hunt                       # MEV-style drain hunter
+    python3 lost_eth.py stuck-erc20                    # Stuck token + rescue scan
+    python3 lost_eth.py cryptopunks                    # CryptoPunks pending scan
+    python3 lost_eth.py etherdelta [start] [end]       # EtherDelta unclaimed scan
+    python3 lost_eth.py analyze <chain> <address>      # Single-contract deep dive
+    python3 lost_eth.py info                           # Show DB stats
 """
-import argparse
-import asyncio
-import json
-import os
 import sys
+import os
+import subprocess
+import json
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def cmd_stats(args):
-    """Show database statistics."""
-    from scanner_v2 import load_config, C
-    chains, contracts, tokens = load_config()
-    print(f'{C.BOLD}LOST ETH DATABASE STATS{C.RESET}\n')
-    print(f'  Chains:    {len(chains)}')
-    for k, v in chains.items():
-        print(f'    {k:12s}  chainId={v.get("chain_id"):<6}  rpcs={len(v.get("rpcs",[]))}  native={v.get("native_token")}')
-    print(f'\n  Contracts: {len(contracts)}')
+def run(script, *args):
+    cmd = ['python3', os.path.join(SCRIPT_DIR, script)] + list(args)
+    print(f'>>> {" ".join(cmd)}')
+    return subprocess.call(cmd)
+
+
+def info():
+    print('🏴‍☠️  Lost ETH Scanner — Database Info')
+    print('=' * 60)
+    chains = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'chains.json')))
+    contracts = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')))
+    airdrops = json.load(open(os.path.join(SCRIPT_DIR, 'data', 'contracts_airdrops.json')))
+    print(f'  Chains supported:        {len(chains["chains"])}')
+    print(f'  Contracts indexed:       {len(contracts["contracts"])}')
+    print(f'  Airdrops indexed:        {len(airdrops["contracts"])}')
+    print()
+    print('Per-chain contract counts:')
     by_chain = {}
-    by_cat = {}
-    total_eth = 0
-    for c in contracts:
-        by_chain[c.get('chain','?')] = by_chain.get(c.get('chain','?'),0)+1
-        by_cat[c.get('category','?')] = by_cat.get(c.get('category','?'),0)+1
-        total_eth += c.get('balance_eth', 0)
-    print(f'    By chain:    {dict(sorted(by_chain.items(), key=lambda x:-x[1]))}')
-    print(f'    By category: {dict(sorted(by_cat.items(), key=lambda x:-x[1]))}')
-    print(f'    Known stuck ETH: {total_eth:,}')
-    print(f'\n  Tokens:    {sum(len(t) for t in tokens.values())} across {len(tokens)} chains')
-    for ch, toks in tokens.items():
-        print(f'    {ch:12s}  {len(toks)} tokens')
+    for c in contracts['contracts']:
+        if c.get('_comment'):
+            continue
+        by_chain.setdefault(c.get('chain', '?'), 0)
+        by_chain[c['chain']] += 1
+    for ch, n in sorted(by_chain.items(), key=lambda x: -x[1]):
+        print(f'    {ch:12s} {n:>4}')
+    print()
+    cp_path = os.path.join(SCRIPT_DIR, 'results', 'cryptopunks_pending.json')
+    if os.path.exists(cp_path):
+        cp = json.load(open(cp_path))
+        total = sum(e['pending_eth'] for e in cp)
+        print(f'★ CryptoPunks unclaimed:  {len(cp)} addresses, {total:,.2f} ETH')
+    print()
+    print('Run `python3 lost_eth.py --help` for available commands.')
 
 
-def cmd_scan(args):
-    from scanner_v2 import main_async
-    chains_filter = set(c.strip() for c in args.chains.split(',') if c.strip()) if args.chains else None
-    asyncio.run(main_async(args.addresses, chains_filter, args.concurrency,
-                            args.json, args.watch, args.interval, args.include_native))
-
-
-def cmd_airdrops(args):
-    from airdrop_checker import check_address
-    asyncio.run(check_address(args.addresses))
-
-
-def cmd_nfts(args):
-    from nft_scanner import main_async
-    asyncio.run(main_async(args.addresses))
-
-
-def cmd_monitor(args):
-    from monitor import monitor
-    chains_filter = set(c.strip() for c in args.chains.split(',') if c.strip()) if args.chains else None
-    try:
-        asyncio.run(monitor(args.addresses, args.interval, args.webhook, chains_filter, args.concurrency))
-    except KeyboardInterrupt:
-        print('\nStopped.')
-
-
-def cmd_hunt(args):
-    from dead_contract_hunter import investigate
-    if args.addresses:
-        results = [investigate(a) for a in args.addresses]
-    else:
-        from dead_contract_hunter import main as hunt_main
-        hunt_main()
-
-
-def cmd_withdraw(args):
-    from withdraw_helper import main as wh_main
-    sys.argv = ['withdraw_helper.py', args.contract, args.token, str(args.amount_wei)]
-    wh_main()
-
-
-def cmd_api(args):
-    try:
-        import uvicorn
-    except ImportError:
-        print('Install: pip install fastapi uvicorn')
-        return
-    from api_server import app
-    uvicorn.run(app, host=args.host, port=args.port)
-
-
-def cmd_hd(args):
-    from scanner_v2 import main_async
-    addresses = list(args.addresses or [])
-    if args.addresses_file:
-        with open(args.addresses_file) as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith('0x') and len(line) == 42:
-                    addresses.append(line)
-    if not addresses:
-        print('No addresses provided.')
-        return
-    print(f'HD Wallet Bulk Scan - {len(addresses)} addresses')
-    asyncio.run(main_async(addresses, None, args.concurrency, args.json, False, 0, True))
-
-
-def cmd_discover(args):
-    from discovery import discover
-    asyncio.run(discover(args.address, args.chain, args.max_contracts, args.include_l2))
-
-
-def cmd_db(args):
-    from storage_db import LostEthDB
-    db = LostEthDB()
-    if args.db_action == 'stats':
-        import json as _json
-        print(_json.dumps(db.stats(), indent=2))
-    elif args.db_action == 'add':
-        db.add_address(args.address, args.label or '')
-        print(f'Added {args.address}')
-    elif args.db_action == 'list':
-        import time as _time
-        for a in db.list_addresses():
-            print(f'  {a["address"]}  "{a["label"]}"  added {_time.strftime("%Y-%m-%d", _time.gmtime(a["added_at"]))}')
-    elif args.db_action == 'history':
-        import time as _time
-        for s in db.get_history(args.address):
-            print(f'  scan {s["id"]}: {s["findings_count"]} findings @ {_time.strftime("%Y-%m-%d %H:%M", _time.gmtime(s["timestamp"]))}')
-    elif args.db_action == 'changes':
-        for c in db.detect_changes(args.address):
-            print(f'  {c["type"]}: {c.get("finding") or {"before": c.get("before"), "after": c.get("after")}}')
+def usage():
+    print(__doc__)
 
 
 def main():
-    p = argparse.ArgumentParser(prog='lost_eth', description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    sp = p.add_subparsers(dest='cmd', required=True)
+    if len(sys.argv) < 2:
+        usage()
+        return 0
 
-    # scan
-    s = sp.add_parser('scan', help='Scan addresses for stuck balances')
-    s.add_argument('addresses', nargs='+')
-    s.add_argument('--chains', default='')
-    s.add_argument('--concurrency', type=int, default=80)
-    s.add_argument('--json', default=None)
-    s.add_argument('--include-native', action='store_true')
-    s.add_argument('--watch', action='store_true')
-    s.add_argument('--interval', type=int, default=60)
-    s.set_defaults(func=cmd_scan)
+    cmd = sys.argv[1].lower()
+    args = sys.argv[2:]
 
-    # airdrops
-    s = sp.add_parser('airdrops', help='Check airdrop holdings')
-    s.add_argument('addresses', nargs='+')
-    s.set_defaults(func=cmd_airdrops)
+    cmds = {
+        'recover': 'check_my_addresses.py',
+        'mnemonic': 'hd_wallet_scanner.py',
+        'audit': 'multichain_audit.py',
+        'deep': 'deep_audit.py',
+        'mev-hunt': 'mev_dust_hunter.py',
+        'mev': 'mev_dust_hunter.py',
+        'stuck-erc20': 'stuck_erc20_hunter.py',
+        'erc20': 'stuck_erc20_hunter.py',
+        'cryptopunks': 'cryptopunks_pending_scan.py',
+        'punks': 'cryptopunks_pending_scan.py',
+        'etherdelta': 'etherdelta_quick_scan.py',
+        'ed': 'etherdelta_quick_scan.py',
+        'analyze': 'analyze_contract.py',
+        'disasm': 'bytecode_disasm.py',
+        'sources': 'source_fetcher_v2.py',
+        'simulate': 'exploit_simulator.py',
+        'unclaimed': 'unclaimed_balances_scan.py',
+        'hunter': 'dead_contract_hunter.py',
+    }
 
-    # nfts
-    s = sp.add_parser('nfts', help='Check NFT holdings')
-    s.add_argument('addresses', nargs='+')
-    s.set_defaults(func=cmd_nfts)
+    if cmd in ('-h', '--help', 'help'):
+        usage()
+        return 0
 
-    # monitor
-    s = sp.add_parser('monitor', help='Continuous watch with alerts')
-    s.add_argument('addresses', nargs='+')
-    s.add_argument('--interval', type=int, default=300)
-    s.add_argument('--webhook', default=None)
-    s.add_argument('--chains', default='')
-    s.add_argument('--concurrency', type=int, default=80)
-    s.set_defaults(func=cmd_monitor)
+    if cmd == 'info':
+        info()
+        return 0
 
-    # hunt
-    s = sp.add_parser('hunt', help='Forensic classify contracts')
-    s.add_argument('addresses', nargs='*')
-    s.set_defaults(func=cmd_hunt)
+    if cmd in cmds:
+        return run(cmds[cmd], *args)
 
-    # withdraw
-    s = sp.add_parser('withdraw', help='Generate raw withdraw tx data')
-    s.add_argument('contract')
-    s.add_argument('token')
-    s.add_argument('amount_wei')
-    s.set_defaults(func=cmd_withdraw)
-
-    # api
-    s = sp.add_parser('api', help='Start REST API server')
-    s.add_argument('--host', default='0.0.0.0')
-    s.add_argument('--port', type=int, default=8000)
-    s.set_defaults(func=cmd_api)
-
-    # hd
-    s = sp.add_parser('hd', help='Bulk scan many addresses (HD wallet style)')
-    s.add_argument('addresses', nargs='*')
-    s.add_argument('--addresses-file', default=None)
-    s.add_argument('--concurrency', type=int, default=120)
-    s.add_argument('--json', default=None)
-    s.set_defaults(func=cmd_hd)
-
-    # stats
-    s = sp.add_parser('stats', help='Show database statistics')
-    s.set_defaults(func=cmd_stats)
-
-    # discover - new powerful tool
-    s = sp.add_parser('discover', help='Discover unknown contracts via tx history analysis')
-    s.add_argument('address')
-    s.add_argument('--chain', default='ethereum')
-    s.add_argument('--include-l2', action='store_true')
-    s.add_argument('--max-contracts', type=int, default=200)
-    s.set_defaults(func=cmd_discover)
-
-    # db - SQLite operations
-    s = sp.add_parser('db', help='SQLite persistent database')
-    s.add_argument('db_action', choices=['stats', 'add', 'list', 'history', 'changes'])
-    s.add_argument('address', nargs='?', default='')
-    s.add_argument('--label', default='')
-    s.set_defaults(func=cmd_db)
-
-    args = p.parse_args()
-    args.func(args)
+    print(f'Unknown command: {cmd}')
+    usage()
+    return 1
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

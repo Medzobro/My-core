@@ -1,6 +1,19 @@
-aiohttp>=3.9
-certifi>=2023
-requests>=2.31
-fastapi>=0.108
-uvicorn[standard]>=0.25
-pydantic>=2.5
+# Core dependencies (always required)
+aiohttp>=3.9.0
+certifi>=2023.0.0
+requests>=2.31.0
+
+# For HD wallet seed phrase derivation (optional, only for hd_wallet_scanner.py)
+eth-account>=0.13.0
+mnemonic>=0.21
+
+# For Telegram bot (optional)
+python-telegram-bot>=20.0
+
+# For web UI (optional)
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# For api_server.py (optional)
+uvicorn>=0.27.0
+fastapi>=0.109.0

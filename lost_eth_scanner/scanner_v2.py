@@ -44,9 +44,9 @@ import aiohttp
 import certifi
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CHAINS_FILE = os.path.join(SCRIPT_DIR, 'chains.json')
-CONTRACTS_FILE = os.path.join(SCRIPT_DIR, 'contracts_multichain.json')
-TOKENS_FILE = os.path.join(SCRIPT_DIR, 'tokens_multichain.json')
+CHAINS_FILE = os.path.join(SCRIPT_DIR, 'data', 'chains.json')
+CONTRACTS_FILE = os.path.join(SCRIPT_DIR, 'data', 'contracts_multichain.json')
+TOKENS_FILE = os.path.join(SCRIPT_DIR, 'data', 'tokens_multichain.json')
 
 
 class C:

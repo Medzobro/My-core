@@ -25,7 +25,7 @@ RPCS = [
 ]
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(SCRIPT_DIR, 'dead_contracts_db.json')
+DB_PATH = os.path.join(SCRIPT_DIR, 'results', 'dead_contracts_db.json')
 
 # Bytecode signatures we look for
 PERMISSIONLESS_PATTERNS = {
@@ -249,7 +249,7 @@ def main():
     print(f'\n  TOTAL ETH IN ANALYZED CONTRACTS: {total_eth:,.2f}')
 
     # Save full results
-    out_path = os.path.join(SCRIPT_DIR, 'investigation_results.json')
+    out_path = os.path.join(SCRIPT_DIR, 'results', 'investigation_results.json')
     with open(out_path, 'w') as f:
         json.dump(results, f, indent=2)
     print(f'\n  Full results saved to: {out_path}')

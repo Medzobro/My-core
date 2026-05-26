@@ -1,0 +1,758 @@
+[
+  {
+    "chain": "ethereum",
+    "name": "Gas Token Forwarder",
+    "address": "0x0000000000007F150Bd6f54c40A34d7C3d5e9f56",
+    "category": "GAS_TOKEN_OLD",
+    "balance_eth": 1.234256e-12,
+    "code_size": 8933,
+    "selfdestruct_sites": [
+      {
+        "pc": 7111,
+        "kind": "CALLER",
+        "hardcoded_addr": null,
+        "evidence": [
+          "CALLER@1bc6"
+        ]
+      }
+    ],
+    "kill_selectors_present": [],
+    "has_caller_target": true,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": false,
+    "score": 100
+  },
+  {
+    "chain": "ethereum",
+    "name": "Etheria v1.0",
+    "address": "0xB21f8684f23Dbb1008508B4DE91a0aaEDEbdB7E4",
+    "category": "NFT_OLD",
+    "balance_eth": 0.0001,
+    "code_size": 10859,
+    "selfdestruct_sites": [
+      {
+        "pc": 2758,
+        "kind": "SLOAD",
+        "hardcoded_addr": null,
+        "evidence": [
+          "SLOAD@abc"
+        ]
+      }
+    ],
+    "kill_selectors_present": [
+      [
+        "41c0e1b5",
+        "kill()"
+      ]
+    ],
+    "has_caller_target": false,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": true,
+    "score": 70
+  },
+  {
+    "chain": "ethereum",
+    "name": "Old Synthetix Depot",
+    "address": "0x172E09691DfBbC035E37c73B62095caa16Ee2388",
+    "category": "USER_DEPOSITS",
+    "balance_eth": 1.373e-15,
+    "code_size": 12200,
+    "selfdestruct_sites": [
+      {
+        "pc": 9791,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      }
+    ],
+    "kill_selectors_present": [
+      [
+        "9cb8a26a",
+        "destruct()"
+      ]
+    ],
+    "has_caller_target": false,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": false,
+    "score": 50
+  },
+  {
+    "chain": "celo",
+    "name": "Ubeswap Router V1",
+    "address": "0xE3D8bd6Aed4F159bc8000a9cD47CffDb95F96121",
+    "category": "DEFI_OLD",
+    "balance_eth": 12.169023562119232,
+    "code_size": 9622,
+    "selfdestruct_sites": [
+      {
+        "pc": 9581,
+        "kind": "SLOAD",
+        "hardcoded_addr": null,
+        "evidence": [
+          "SLOAD@2560"
+        ]
+      }
+    ],
+    "kill_selectors_present": [],
+    "has_caller_target": false,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": true,
+    "score": 20
+  },
+  {
+    "chain": "ethereum",
+    "name": "Etheroll (old)",
+    "address": "0xA52e014B3f5Cc48287c2D483A3E026C32cc76E6d",
+    "category": "DEFUNCT_GAME",
+    "balance_eth": 5.841e-15,
+    "code_size": 11198,
+    "selfdestruct_sites": [
+      {
+        "pc": 5439,
+        "kind": "SLOAD",
+        "hardcoded_addr": null,
+        "evidence": [
+          "SLOAD@152c"
+        ]
+      }
+    ],
+    "kill_selectors_present": [],
+    "has_caller_target": false,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": true,
+    "score": 20
+  },
+  {
+    "chain": "zksync",
+    "name": "Mute.io Router",
+    "address": "0x8B791913eB07C32779a16750e3868aA8495F5964",
+    "category": "USER_DEPOSITS",
+    "balance_eth": 7.172095564299393,
+    "code_size": 57888,
+    "selfdestruct_sites": [
+      {
+        "pc": 6075,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 7315,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 22003,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 22123,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 22475,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 42339,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55132,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55133,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55134,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55135,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55180,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55181,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55182,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55183,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55184,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55185,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55186,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55187,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55188,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55189,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55190,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55191,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55192,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55193,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55194,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55195,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55196,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55197,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55198,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55199,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55200,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55201,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55202,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55203,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55204,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55205,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55206,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55207,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55208,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55209,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55210,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55211,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55455,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 55679,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56152,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56153,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56154,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56155,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56156,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56157,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56158,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56159,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56984,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56985,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56986,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56987,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56988,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56989,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 56990,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57138,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57139,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57140,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57141,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57142,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57143,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57144,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57145,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57146,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57147,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57148,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57149,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57150,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57151,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57400,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57401,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57402,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57403,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57404,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57405,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57406,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57440,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57496,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57497,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57498,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57499,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57500,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57501,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57502,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57624,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57625,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57626,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57627,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57628,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57629,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57630,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57720,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57721,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57722,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57723,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57724,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57725,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      },
+      {
+        "pc": 57726,
+        "kind": "unknown",
+        "hardcoded_addr": null,
+        "evidence": []
+      }
+    ],
+    "kill_selectors_present": [],
+    "has_caller_target": false,
+    "has_const_target": false,
+    "const_addresses": [],
+    "has_sload_target": false,
+    "score": 0
+  }
+]

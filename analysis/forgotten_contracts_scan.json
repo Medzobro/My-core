@@ -1,0 +1,1362 @@
+[
+  {
+    "address": "0x9a2d163ab40f88c625fd475e807bbc3556566f80",
+    "name": "SingularX",
+    "category": "DEX_OLD",
+    "balance_eth": 857.6908563386604,
+    "code_size": 13444,
+    "nonce": 1,
+    "selectors_total": 30,
+    "selectors_known": [
+      {
+        "sel": "0b927666",
+        "name": "order(address,uint256,address,uint256,uint256,uint256)"
+      },
+      {
+        "sel": "338b5dea",
+        "name": "depositToken(address,uint256)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "9e281a98",
+        "name": "withdrawToken(address,uint256)"
+      },
+      {
+        "sel": "f851a440",
+        "name": "admin()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "508493bc",
+        "name": "tokens(address,address)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0xcc14d280df5a2f39d26944ba8e97690c82f24908",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Dex.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0x35fFd6E268610E764fF6944d07760D0EFe5E40E5",
+    "name": "KeeperDAO/Rook",
+    "category": "DEFI_OLD",
+    "balance_eth": 413.12643570662874,
+    "code_size": 13802,
+    "nonce": 1,
+    "selectors_total": 68,
+    "selectors_known": [
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "3f4ba83a",
+        "name": "unpause()"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "8456cb59",
+        "name": "pause()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "LiquidityPoolV2.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0x220a9f0dd581cbc58fcfb907de0454cbf3777f76",
+    "name": "MCDEX Perp",
+    "category": "PERP_DEX_OLD",
+    "balance_eth": 559.7155317627532,
+    "code_size": 24558,
+    "nonce": 1,
+    "selectors_total": 90,
+    "selectors_known": [
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "3f4ba83a",
+        "name": "unpause()"
+      },
+      {
+        "sel": "8da5cb5b",
+        "name": "owner()"
+      },
+      {
+        "sel": "8456cb59",
+        "name": "pause()"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Perpetual.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0xECF8F87f810EcF450940c9f60066b4a7a501d6A7",
+    "name": "Old WETH",
+    "category": "WRAPPED_OLD",
+    "balance_eth": 1513.942587499064,
+    "code_size": 2565,
+    "nonce": 0,
+    "selectors_total": 9,
+    "selectors_known": [
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "dd62ed3e",
+        "name": "allowance(address,address)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "095ea7b3",
+        "name": "approve(address,uint256)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": false,
+      "error": "HTTP Error 404: Not Found"
+    }
+  },
+  {
+    "address": "0x27321f84704a599ab740281e285cc4463d89a3d5",
+    "name": "Keep Network",
+    "category": "STAKING_OLD",
+    "balance_eth": 234.41869567489303,
+    "code_size": 6437,
+    "nonce": 1,
+    "selectors_total": 28,
+    "selectors_known": [],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "KeepBonding.sol",
+        "AbstractBonding.sol",
+        "IBondingManagement.sol",
+        "KeepToken.sol",
+        "TokenGrant.sol",
+        "TokenSender.sol",
+        "SafeMath.sol",
+        "Address.sol",
+        "KeepRegistry.sol",
+        "ManagedGrant.sol",
+        "TokenStaking.sol",
+        "Authorizations.sol",
+        "BytesLib.sol",
+        "TokenGrantStake.sol",
+        "Ownable.sol",
+        "ERC20.sol",
+        "StakeDelegatable.sol",
+        "IERC20.sol",
+        "GrantStakingPolicy.sol",
+        "TokenStakingEscrow.sol",
+        "PercentUtils.sol",
+        "IBonding.sol",
+        "SafeERC20.sol",
+        "OperatorParams.sol",
+        "RolesLookup.sol",
+        "Locks.sol",
+        "AddressArrayUtils.sol",
+        "ERC20Burnable.sol",
+        "ERC20Detailed.sol",
+        "TopUps.sol",
+        "LockUtils.sol",
+        "GrantStaking.sol",
+        "UnlockingSchedule.sol",
+        "MinimumStakeSchedule.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 37
+    }
+  },
+  {
+    "address": "0x3b960e47784150f5a63777201ee2b15253d713e8",
+    "name": "Opyn Crab V2",
+    "category": "OPTIONS_OLD",
+    "balance_eth": 106.07729735353952,
+    "code_size": 22560,
+    "nonce": 1,
+    "selectors_total": 90,
+    "selectors_known": [
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "715018a6",
+        "name": "renounceOwnership()"
+      },
+      {
+        "sel": "dd62ed3e",
+        "name": "allowance(address,address)"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "095ea7b3",
+        "name": "approve(address,uint256)"
+      },
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "8da5cb5b",
+        "name": "owner()"
+      },
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "f2fde38b",
+        "name": "transferOwnership(address)"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0xafe66363c27eedb597a140c28b70b32f113fd5a8",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "VaultLib.sol",
+        "Power2Base.sol",
+        "IWETH9.sol",
+        "IOracle.sol",
+        "Uint256Casting.sol",
+        "TickMathExternal.sol",
+        "IController.sol",
+        "IWPowerPerp.sol",
+        "CrabStrategyV2.sol",
+        "SqrtPriceMathPartial.sol",
+        "IShortPowerPerp.sol",
+        "StrategyBase.sol",
+        "StrategyMath.sol",
+        "EIP712.sol",
+        "SafeMath.sol",
+        "Address.sol",
+        "Context.sol",
+        "Ownable.sol",
+        "ERC20.sol",
+        "StrategyFlashSwap.sol",
+        "ECDSA.sol",
+        "IERC20.sol",
+        "IERC721.sol",
+        "IERC165.sol",
+        "ReentrancyGuard.sol",
+        "FullMath.sol",
+        "SafeCast.sol",
+        "TickMath.sol",
+        "Path.sol",
+        "UnsafeMath.sol",
+        "FixedPoint96.sol",
+        "BytesLib.sol",
+        "LowGasSafeMath.sol",
+        "IERC721Metadata.sol",
+        "IUniswapV3Pool.sol",
+        "PoolAddress.sol",
+        "IERC721Enumerable.sol",
+        "IERC721Permit.sol",
+        "IPoolInitializer.sol",
+        "CallbackValidation.sol",
+        "IPeripheryPayments.sol",
+        "IUniswapV3PoolState.sol",
+        "IUniswapV3PoolEvents.sol",
+        "IUniswapV3PoolActions.sol",
+        "IUniswapV3PoolImmutables.sol",
+        "IPeripheryImmutableState.sol",
+        "IUniswapV3SwapCallback.sol",
+        "IUniswapV3PoolDerivedState.sol",
+        "IUniswapV3PoolOwnerActions.sol",
+        "INonfungiblePositionManager.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt",
+        "immutable-references.json"
+      ],
+      "count": 54
+    }
+  },
+  {
+    "address": "0x44e081cac2406a4efe165178c2a4d77f7a7854d4",
+    "name": "Celer EthPool",
+    "category": "BRIDGE_OLD",
+    "balance_eth": 70.2605109021845,
+    "code_size": 2879,
+    "nonce": 1,
+    "selectors_total": 16,
+    "selectors_known": [
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "dd62ed3e",
+        "name": "allowance(address,address)"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "095ea7b3",
+        "name": "approve(address,uint256)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "EthPool.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0xa383c8390adbcd387db93babdf3f30308391bd57",
+    "name": "ETH Staking Rewards",
+    "category": "STAKING_OLD",
+    "balance_eth": 59.672292679858316,
+    "code_size": 18515,
+    "nonce": 1,
+    "selectors_total": 29,
+    "selectors_known": [
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Staking.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt",
+        "immutable-references.json"
+      ],
+      "count": 5
+    }
+  },
+  {
+    "address": "0x77607588222e01bf892a29Abab45796A2047fc7b",
+    "name": "Unagii Vault",
+    "category": "VAULT_OLD",
+    "balance_eth": 11.741597487099199,
+    "code_size": 11493,
+    "nonce": 1,
+    "selectors_total": 66,
+    "selectors_known": [
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "e9fad8ee",
+        "name": "exit()"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "01681a62",
+        "name": "sweep(address)"
+      },
+      {
+        "sel": "f851a440",
+        "name": "admin()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "f77c4791",
+        "name": "controller()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "dd62ed3e",
+        "name": "allowance(address,address)"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "095ea7b3",
+        "name": "approve(address,uint256)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0xa2f203f34314b001a223d674db9a2df28a5339a4",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "ETHVault.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0x04f062809b244e37e7fdc21d9409469c989c2342",
+    "name": "Joyso DEX",
+    "category": "DEX_OLD",
+    "balance_eth": 85.33871218218694,
+    "code_size": 13201,
+    "nonce": 1,
+    "selectors_total": 36,
+    "selectors_known": [
+      {
+        "sel": "095ea7b3",
+        "name": "approve(address,uint256)"
+      },
+      {
+        "sel": "98ea5fca",
+        "name": "depositEther()"
+      },
+      {
+        "sel": "338b5dea",
+        "name": "depositToken(address,uint256)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "f2fde38b",
+        "name": "transferOwnership(address)"
+      },
+      {
+        "sel": "8da5cb5b",
+        "name": "owner()"
+      },
+      {
+        "sel": "f3fef3a3",
+        "name": "withdraw(address,uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0x3a6386e7701bf9c0d5b983d5e0bcec78331749d9",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Joyso.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0xbeeb655808e3bdb83b6998f09dfe1e0f2c66a9be",
+    "name": "SwissCrypto",
+    "category": "DEX_OLD",
+    "balance_eth": 14.726,
+    "code_size": 16991,
+    "nonce": 1,
+    "selectors_total": 37,
+    "selectors_known": [
+      {
+        "sel": "0b927666",
+        "name": "order(address,uint256,address,uint256,uint256,uint256)"
+      },
+      {
+        "sel": "338b5dea",
+        "name": "depositToken(address,uint256)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "9e281a98",
+        "name": "withdrawToken(address,uint256)"
+      },
+      {
+        "sel": "f851a440",
+        "name": "admin()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "508493bc",
+        "name": "tokens(address,address)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": true,
+    "has_delegatecall": false,
+    "owner": "0xf909d2168d2623967e0e870c89576b0948dd32af",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "SwissCryptoExchange.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0x2f23228b905ceb4734eb42d9b42805296667c93b",
+    "name": "Coinchangex",
+    "category": "DEX_OLD",
+    "balance_eth": 17.35130074942447,
+    "code_size": 15782,
+    "nonce": 1,
+    "selectors_total": 30,
+    "selectors_known": [
+      {
+        "sel": "338b5dea",
+        "name": "depositToken(address,uint256)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "9e281a98",
+        "name": "withdrawToken(address,uint256)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      },
+      {
+        "sel": "f851a440",
+        "name": "admin()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "508493bc",
+        "name": "tokens(address,address)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0xb2d2e17addbf654f7a9e4d65975ab715d3022355",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Coinchangex.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0xbf29685856fae1e228878dfb35b280c0adcc3b05",
+    "name": "Decentrex",
+    "category": "DEX_OLD",
+    "balance_eth": 33.10886299484575,
+    "code_size": 6469,
+    "nonce": 1,
+    "selectors_total": 30,
+    "selectors_known": [
+      {
+        "sel": "0b927666",
+        "name": "order(address,uint256,address,uint256,uint256,uint256)"
+      },
+      {
+        "sel": "338b5dea",
+        "name": "depositToken(address,uint256)"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "23b872dd",
+        "name": "transferFrom(address,address,uint256)"
+      },
+      {
+        "sel": "9e281a98",
+        "name": "withdrawToken(address,uint256)"
+      },
+      {
+        "sel": "f851a440",
+        "name": "admin()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "508493bc",
+        "name": "tokens(address,address)"
+      },
+      {
+        "sel": "2e1a7d4d",
+        "name": "withdraw(uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": "0xfeed93432ba27ac818dbc97ec67bc227d8318d4b",
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "DecentrEx.sol",
+        "metadata.json",
+        "constructor-args.txt",
+        "creator-tx-hash.txt"
+      ],
+      "count": 4
+    }
+  },
+  {
+    "address": "0xB3775fB83F7D12A36E0475aBdD1FCA35c091efBe",
+    "name": "PoWH3D",
+    "category": "PYRAMID",
+    "balance_eth": 2091.553832680178,
+    "code_size": 5732,
+    "nonce": 1,
+    "selectors_total": 29,
+    "selectors_known": [
+      {
+        "sel": "10d0ffdd",
+        "name": "calculateTokensReceived(uint256)"
+      },
+      {
+        "sel": "e4849b32",
+        "name": "sell(uint256)"
+      },
+      {
+        "sel": "22609373",
+        "name": "calculateEthereumReceived(uint256)"
+      },
+      {
+        "sel": "949e8acd",
+        "name": "myTokens()"
+      },
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "27defa1f",
+        "name": "onlyAmbassadors()"
+      },
+      {
+        "sel": "f088d547",
+        "name": "buy(address)"
+      },
+      {
+        "sel": "4b750334",
+        "name": "sellPrice()"
+      },
+      {
+        "sel": "e9fad8ee",
+        "name": "exit()"
+      },
+      {
+        "sel": "fdb5a03e",
+        "name": "reinvest()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "688abbf7",
+        "name": "myDividends(bool)"
+      },
+      {
+        "sel": "56d399e8",
+        "name": "stakingRequirement()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "6b2f4632",
+        "name": "totalEthereumBalance()"
+      },
+      {
+        "sel": "8620410b",
+        "name": "buyPrice()"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "Hourglass.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0xA62142888ABa8370742bE823c1782D17A0389Da1",
+    "name": "Fomo3D Long",
+    "category": "PYRAMID",
+    "balance_eth": 1117.3932544950476,
+    "code_size": 21488,
+    "nonce": 1,
+    "selectors_total": 75,
+    "selectors_known": [
+      {
+        "sel": "98a0871d",
+        "name": "buyXaddr(address,uint256)"
+      },
+      {
+        "sel": "018a25e8",
+        "name": "getBuyPrice()"
+      },
+      {
+        "sel": "349cdcac",
+        "name": "reLoadXid(uint256,uint256,uint256)"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "cf808000",
+        "name": "iWantXKeys(uint256)"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "747dff42",
+        "name": "getCurrentRoundInfo()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "ee0b5d8b",
+        "name": "getPlayerInfoByAddress(address)"
+      },
+      {
+        "sel": "8f38f309",
+        "name": "buyXid(uint256,uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "FoMo3Dlong.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0x167cB3F2446F829eb327344b66E271D1a7eFeC9A",
+    "name": "GandhiJi",
+    "category": "PYRAMID",
+    "balance_eth": 663.5711804840217,
+    "code_size": 5731,
+    "nonce": 1,
+    "selectors_total": 30,
+    "selectors_known": [
+      {
+        "sel": "10d0ffdd",
+        "name": "calculateTokensReceived(uint256)"
+      },
+      {
+        "sel": "e4849b32",
+        "name": "sell(uint256)"
+      },
+      {
+        "sel": "22609373",
+        "name": "calculateEthereumReceived(uint256)"
+      },
+      {
+        "sel": "949e8acd",
+        "name": "myTokens()"
+      },
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "27defa1f",
+        "name": "onlyAmbassadors()"
+      },
+      {
+        "sel": "f088d547",
+        "name": "buy(address)"
+      },
+      {
+        "sel": "4b750334",
+        "name": "sellPrice()"
+      },
+      {
+        "sel": "e9fad8ee",
+        "name": "exit()"
+      },
+      {
+        "sel": "fdb5a03e",
+        "name": "reinvest()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "688abbf7",
+        "name": "myDividends(bool)"
+      },
+      {
+        "sel": "56d399e8",
+        "name": "stakingRequirement()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "6b2f4632",
+        "name": "totalEthereumBalance()"
+      },
+      {
+        "sel": "8620410b",
+        "name": "buyPrice()"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "GandhiJi.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0x52083b1a21a5abc422b1b0bce5c43ca86ef74cd1",
+    "name": "Fomo3D Short",
+    "category": "PYRAMID",
+    "balance_eth": 76.95300360260012,
+    "code_size": 20781,
+    "nonce": 1,
+    "selectors_total": 66,
+    "selectors_known": [
+      {
+        "sel": "98a0871d",
+        "name": "buyXaddr(address,uint256)"
+      },
+      {
+        "sel": "018a25e8",
+        "name": "getBuyPrice()"
+      },
+      {
+        "sel": "349cdcac",
+        "name": "reLoadXid(uint256,uint256,uint256)"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "cf808000",
+        "name": "iWantXKeys(uint256)"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "747dff42",
+        "name": "getCurrentRoundInfo()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "ee0b5d8b",
+        "name": "getPlayerInfoByAddress(address)"
+      },
+      {
+        "sel": "8f38f309",
+        "name": "buyXid(uint256,uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "FoMo3Dshort.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0x4e8ecf79ade5e2c49b9e30d795517a81e0bf00b8",
+    "name": "Fomo3D Quick",
+    "category": "PYRAMID",
+    "balance_eth": 84.49728858881507,
+    "code_size": 23383,
+    "nonce": 1,
+    "selectors_total": 68,
+    "selectors_known": [
+      {
+        "sel": "98a0871d",
+        "name": "buyXaddr(address,uint256)"
+      },
+      {
+        "sel": "018a25e8",
+        "name": "getBuyPrice()"
+      },
+      {
+        "sel": "349cdcac",
+        "name": "reLoadXid(uint256,uint256,uint256)"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "cf808000",
+        "name": "iWantXKeys(uint256)"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "747dff42",
+        "name": "getCurrentRoundInfo()"
+      },
+      {
+        "sel": "d0e30db0",
+        "name": "deposit()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "ee0b5d8b",
+        "name": "getPlayerInfoByAddress(address)"
+      },
+      {
+        "sel": "8f38f309",
+        "name": "buyXid(uint256,uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "FoMo3DSoon.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0x6db943251e4126f913e9733821031791e75df713",
+    "name": "ReadyPlayerONE",
+    "category": "PYRAMID",
+    "balance_eth": 24.539086983486733,
+    "code_size": 20749,
+    "nonce": 1,
+    "selectors_total": 67,
+    "selectors_known": [
+      {
+        "sel": "98a0871d",
+        "name": "buyXaddr(address,uint256)"
+      },
+      {
+        "sel": "018a25e8",
+        "name": "getBuyPrice()"
+      },
+      {
+        "sel": "349cdcac",
+        "name": "reLoadXid(uint256,uint256,uint256)"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "cf808000",
+        "name": "iWantXKeys(uint256)"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "747dff42",
+        "name": "getCurrentRoundInfo()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "ee0b5d8b",
+        "name": "getPlayerInfoByAddress(address)"
+      },
+      {
+        "sel": "8f38f309",
+        "name": "buyXid(uint256,uint256)"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "ReadyPlayerONE.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  },
+  {
+    "address": "0xfcd3a0f5f416e407647a7518b90354946d316059",
+    "name": "BitConnect Token",
+    "category": "TOKEN_OLD",
+    "balance_eth": 14.781034541776833,
+    "code_size": 5728,
+    "nonce": 1,
+    "selectors_total": 28,
+    "selectors_known": [
+      {
+        "sel": "10d0ffdd",
+        "name": "calculateTokensReceived(uint256)"
+      },
+      {
+        "sel": "e4849b32",
+        "name": "sell(uint256)"
+      },
+      {
+        "sel": "22609373",
+        "name": "calculateEthereumReceived(uint256)"
+      },
+      {
+        "sel": "949e8acd",
+        "name": "myTokens()"
+      },
+      {
+        "sel": "313ce567",
+        "name": "decimals()"
+      },
+      {
+        "sel": "18160ddd",
+        "name": "totalSupply()"
+      },
+      {
+        "sel": "3ccfd60b",
+        "name": "withdraw()"
+      },
+      {
+        "sel": "95d89b41",
+        "name": "symbol()"
+      },
+      {
+        "sel": "a9059cbb",
+        "name": "transfer(address,uint256)"
+      },
+      {
+        "sel": "27defa1f",
+        "name": "onlyAmbassadors()"
+      },
+      {
+        "sel": "f088d547",
+        "name": "buy(address)"
+      },
+      {
+        "sel": "4b750334",
+        "name": "sellPrice()"
+      },
+      {
+        "sel": "e9fad8ee",
+        "name": "exit()"
+      },
+      {
+        "sel": "fdb5a03e",
+        "name": "reinvest()"
+      },
+      {
+        "sel": "70a08231",
+        "name": "balanceOf(address)"
+      },
+      {
+        "sel": "688abbf7",
+        "name": "myDividends(bool)"
+      },
+      {
+        "sel": "56d399e8",
+        "name": "stakingRequirement()"
+      },
+      {
+        "sel": "06fdde03",
+        "name": "name()"
+      },
+      {
+        "sel": "6b2f4632",
+        "name": "totalEthereumBalance()"
+      },
+      {
+        "sel": "8620410b",
+        "name": "buyPrice()"
+      }
+    ],
+    "has_selfdestruct": false,
+    "has_delegatecall": false,
+    "owner": null,
+    "sourcify": {
+      "verified": true,
+      "files": [
+        "BitConnect.sol",
+        "metadata.json",
+        "creator-tx-hash.txt"
+      ],
+      "count": 3
+    }
+  }
+]

@@ -1,0 +1,2624 @@
+{
+  "_comment": "v5.0 - 350+ contracts including merkle airdrop claim contracts.",
+  "contracts": [
+    {
+      "chain": "ethereum",
+      "name": "IDEX 1.0",
+      "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdraw(address,uint256)",
+      "category": "USER_DEPOSITS",
+      "balance_eth": 16168,
+      "deployed": "2017-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "ForkDelta / EtherDelta v3",
+      "address": "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdrawToken(address,uint256), withdraw(uint256)",
+      "category": "USER_DEPOSITS",
+      "balance_eth": 15221,
+      "deployed": "2017-08"
+    },
+    {
+      "chain": "ethereum",
+      "name": "EtherDelta v2",
+      "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
+      "balance_check": "etherdelta",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "EtherDelta v1",
+      "address": "0x8da0d80f5007ef1e431dd2127178d224e32c2ef4",
+      "balance_check": "etherdelta",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Token.Store",
+      "address": "0x1ce7AE555139c5EF5A57CC8d814a867ee6Ee33D8",
+      "balance_check": "etherdelta",
+      "withdraw_method": "withdraw(address,uint256)",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017-12",
+      "notes": "Officially abandoned"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Saturn Network DEX",
+      "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
+      "balance_check": "etherdelta",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DDEX (Hydro)",
+      "address": "0x73515A1F6cf69C909a2A03cd1d325ff6C62d2A05",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "AirSwap Light v1",
+      "address": "0x4572f2554421Bd64Bef1c22c8a81840E8D496BeA",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "AirSwap Indexer",
+      "address": "0x0FfdaeAdDcfa4B45e24a1da29Db3c3a1Eb8C9ef9",
+      "category": "DEPRECATED"
+    },
+    {
+      "chain": "ethereum",
+      "name": "0x Protocol v1 Exchange",
+      "address": "0x12459C951127e0c374FF9105DdA097662A027093",
+      "category": "DEPRECATED",
+      "deployed": "2017-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "0x Protocol v2 Exchange",
+      "address": "0x4F833a24e1f95D70F028921e27040Ca56E09AB0b",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "0x Protocol v3",
+      "address": "0x080bf510FCbF18b91105470639e9561022937712",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Joyso DEX",
+      "address": "0x73aB0dDa6b86F4Ad257Ce0f0c2FA31c81f7fBF36",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018",
+      "notes": "Abandoned"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Switcheo DEX",
+      "address": "0x53D791F18155C211FF8B58671d0F7E9b50e596ad",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Kyber Network v1",
+      "address": "0x9AAb3f75489902f3a48495025729a0AF77d4b11e",
+      "category": "DEPRECATED",
+      "deployed": "2018-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Kyber Reserve old",
+      "address": "0x57f8160e1c59D16C01BbE181FD94db4E56b60495",
+      "category": "DEPRECATED"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Loopring v1",
+      "address": "0x12B7cccF30ba360e5041C6Ce239C9a188B709b2B",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "dYdX Solo v1",
+      "address": "0x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Set Protocol v1",
+      "address": "0xe88b1C90Be07da2A1Ddc9f7eAa30c9eFB13d0095",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bancor v1 Converter",
+      "address": "0x5f58058C0eC971492166763c8C22632B583F667f",
+      "category": "DEPRECATED",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bancor BancorX",
+      "address": "0x6945D8fF026Cb44A45e891A8a25fE25e3A3D3a83",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Compound v1 cETH",
+      "address": "0x3FDA67f7583380E67ef93072294a7fAc882FD7E7",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 8,
+      "category": "USER_DEPOSITS",
+      "deployed": "2018-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Compound v1 cDAI",
+      "address": "0x25e46957363e16C4e2D5F2854b062475F9f8d287",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 8,
+      "category": "USER_DEPOSITS",
+      "deployed": "2018-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "MakerDAO SAI Tub",
+      "address": "0x448a5065aeBB8E423F0896E6c5D525C040f59af3",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "MakerDAO SAI Migration",
+      "address": "0xc73e0383F3Aff3215E6f04B0331D58CeCf0Ab849",
+      "category": "DEPRECATED",
+      "deployed": "2019-11"
+    },
+    {
+      "chain": "ethereum",
+      "name": "WithdrawDAO",
+      "address": "0xbf4ed7b27f1d666546e30d74d50d173d20bca754",
+      "balance_check": "erc20_holder",
+      "balance_check_token": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+      "balance_check_token_name": "DAO",
+      "balance_check_token_decimals": 16,
+      "withdraw_method": "withdraw()",
+      "category": "TOKEN_HOLDER",
+      "balance_eth": 81914,
+      "rate_note": "100 DAO = 1 ETH",
+      "deployed": "2016-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "GasToken2 (GST2)",
+      "address": "0x0000000000b3F879cb30FE243b4Dfee438691c04",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 0,
+      "withdraw_method": "free(uint256)",
+      "category": "TOKEN_HOLDER",
+      "deployed": "2018-08"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CHI Gas Token",
+      "address": "0x0000000000004946c0e9F43F4Dee607b0eF1fA1c",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 0,
+      "withdraw_method": "free(uint256)",
+      "category": "TOKEN_HOLDER",
+      "deployed": "2020-05"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Old SAI (deprecated DAI)",
+      "address": "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359",
+      "balance_check": "erc20_self",
+      "balance_check_token_decimals": 18,
+      "category": "TOKEN_HOLDER",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Augur v1 Universe",
+      "address": "0xe991247b78F937D7B69cFC00f1A487A293557677",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Augur v1 REP staking",
+      "address": "0xE94327D07Fc17907b4DB788E5aDf2ed424adDff6",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Veil (Augur frontend)",
+      "address": "0xC5c89D2BfE3617B7A6B9a8EcC7e23C5f547D2bC8",
+      "category": "USER_DEPOSITS",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "ENS Old Registrar",
+      "address": "0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017-05"
+    },
+    {
+      "chain": "ethereum",
+      "name": "ENS Original Resolver",
+      "address": "0x314159265dD8dbb310642f98f50C066173C1259b",
+      "category": "USER_DEPOSITS",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Aragon DAO Factory v1",
+      "address": "0x12a0E25E62C1dBD32E505446062B26AECB65F028",
+      "category": "DEPRECATED",
+      "deployed": "2017-10"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polymath ST20",
+      "address": "0xab8149a77fb43d9e5ff5C56C12C0DC4f7B2F4D17",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Akropolis Old Pool",
+      "address": "0x7ab4a06fCbE6c73a9F3a2ED85eEcCdD1d18170Bf",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "TenX Liquidity",
+      "address": "0x515bA0a2E286AF10115284F151cF398688A69170",
+      "category": "DEPRECATED",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CryptoKitties Sale Auction",
+      "address": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+      "category": "OWNED",
+      "deployed": "2017-11"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OpenSea v1 Wyvern",
+      "address": "0x7Be8076f4EA4A4AD08075C2508e481d6C946D12b",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OpenSea v2 Wyvern",
+      "address": "0x7f268357A8c2552623316e2562D90e642bB538E5",
+      "category": "DEPRECATED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polkadot Foundation Parity Multisig",
+      "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+      "category": "FROZEN",
+      "balance_eth": 306276,
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Iconomi Parity Multisig",
+      "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+      "category": "FROZEN",
+      "balance_eth": 114939
+    },
+    {
+      "chain": "ethereum",
+      "name": "Musiconomi Parity Multisig",
+      "address": "0xc7cd9d874f93f2409f39a95987b3e3c738313925",
+      "category": "FROZEN",
+      "balance_eth": 16475
+    },
+    {
+      "chain": "ethereum",
+      "name": "Unknown Parity Multisig #4",
+      "address": "0xdb0e7d784d6a7ca2cbda6ce26ac3b1bd348c06f8",
+      "category": "FROZEN",
+      "balance_eth": 6925
+    },
+    {
+      "chain": "ethereum",
+      "name": "The DAO (original)",
+      "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+      "category": "FROZEN",
+      "deployed": "2016-04",
+      "notes": "Hard forked away"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Etheremon Trade",
+      "address": "0x8a36a0928fA32B6F12C84A5980A9DB47e9CA9a4F",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Decentraland Marketplace v1",
+      "address": "0x8e5660b4Ab70168b5a6fEeA0e0315cb49c8Cd539",
+      "category": "DEPRECATED",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "FunFair Channel",
+      "address": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DACplay Channel",
+      "address": "0xab9a2c1a48c3d9f6a35b3dfb8bc5b5c5a5b5c5d5",
+      "category": "DEPRECATED"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Old Synthetix Depot",
+      "address": "0x172E09691DfBbC035E37c73B62095caa16Ee2388",
+      "category": "USER_DEPOSITS",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Ren Bridge Gateway old",
+      "address": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+      "category": "DEPRECATED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Multichain (Anyswap) Router",
+      "address": "0x6b7a87899490EcE95443e979cA9485CBE7E71522",
+      "category": "FROZEN",
+      "deployed": "2021",
+      "notes": "Multichain team gone, funds locked since 2023"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash 0.1 ETH",
+      "address": "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc",
+      "category": "DEPRECATED",
+      "deployed": "2019",
+      "notes": "Sanctioned. Withdrawals via merkle proof still functional."
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash 1 ETH",
+      "address": "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash 10 ETH",
+      "address": "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash 100 ETH",
+      "address": "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "GMX V1 Vault",
+      "address": "0x489ee077994B6658eAfA855C308275EAd8097C4A",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "GMX V1 Router",
+      "address": "0xaBBc5F99639c9B6bCb58544ddf04EFA6802F4064",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Camelot V2 Router",
+      "address": "0xc873fEcbd354f5A56E00E710B90EF4201db2448d",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Camelot V3 Router",
+      "address": "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "SushiSwap MasterChefV2",
+      "address": "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "SushiSwap MiniChefV2",
+      "address": "0xF4d73326C13a4Fc5FD7A064217e12780e9Bd62c3",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Hop L2_AmmWrapper ETH",
+      "address": "0x33ceb27b39d2Bb7D2e61F7564d3Df29344020417",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Hop L2_AmmWrapper USDC",
+      "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Trader Joe v2.0",
+      "address": "0xb4315e873dBcf96Ffd0acd8EA43f689D8c20fB30",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Vela Exchange",
+      "address": "0xC4ABADE3a15064F9E3596943c699032748b13352",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Dopex Stake",
+      "address": "0x55594cCe8cC0014eA08C49fd820D731308f204c1",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Plutus DAO",
+      "address": "0x6dDF9DA4C37DF97CB2458F85050E09994Cbb9C2A",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "optimism",
+      "name": "Velodrome V1",
+      "address": "0x9c12939390052919aF3155f41Bf4160Fd3666A6f",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022-06"
+    },
+    {
+      "chain": "optimism",
+      "name": "Velodrome V2",
+      "address": "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "optimism",
+      "name": "Synthetix Staking",
+      "address": "0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Synthetix FeePool",
+      "address": "0x4a16A42407AA491564643E1dfc1fd50af29794eF",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Hop L2_AmmWrapper ETH",
+      "address": "0x86cA30bEF97fB651b8d866D45503684b90cb3312",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "optimism",
+      "name": "Across V2",
+      "address": "0x6f26Bf09B1C792e3228e5467807a900A503c0281",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "optimism",
+      "name": "Curve OP staking",
+      "address": "0x061b87122Ed14b9526A813209C8a59a633257bAb",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "optimism",
+      "name": "Beethoven X",
+      "address": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "base",
+      "name": "BaseSwap V2 Router",
+      "address": "0x327Df1E6de05895d2ab08513aaDD9313Fe505d86",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "base",
+      "name": "Aerodrome Router",
+      "address": "0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "base",
+      "name": "RocketSwap (rugged)",
+      "address": "0x2e708544Bbd1Be9e7eb44dE7C28b6f0e91eA3F03",
+      "category": "DEPRECATED",
+      "deployed": "2023",
+      "notes": "Project rugged 2024"
+    },
+    {
+      "chain": "base",
+      "name": "BaseSwap MasterChef",
+      "address": "0x6Bfd4cFc492EF1Ad3Eb2105e1a45cb0aF0e72A6f",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "base",
+      "name": "Friend.tech",
+      "address": "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023",
+      "notes": "Many users abandoned holdings"
+    },
+    {
+      "chain": "base",
+      "name": "Aerodrome Voter",
+      "address": "0x16613524e02ad97eDfeF371bC883F2F5d6C480A5",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "QuickSwap V2 Router",
+      "address": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "polygon",
+      "name": "QuickSwap V3 Router",
+      "address": "0xf5b509bB0909a69B1c207E495f687a596C168E12",
+      "category": "USER_DEPOSITS",
+      "deployed": "2022"
+    },
+    {
+      "chain": "polygon",
+      "name": "SushiSwap MiniChefV2",
+      "address": "0x0769fd68dFb93167989C6f7254cd0D766Fb2841F",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Aave V2 LendingPool",
+      "address": "0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "polygon",
+      "name": "Aave V2 IncentivesController",
+      "address": "0x357D51124f59836DeD84c8a1730D72B749d8BC23",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "Polygon PoS Bridge ETH",
+      "address": "0x8484Ef722627bf18ca5Ae6BcF031c23E6e922B30",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "polygon",
+      "name": "Iron Bank",
+      "address": "0xb09Cf345294aDd1066543B22FD7384185f7C6fCA",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "Curve aave pool",
+      "address": "0x445FE580eF8d70FF569aB36e80c647af338db351",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "polygon",
+      "name": "Balancer V2 Vault",
+      "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "zksync",
+      "name": "SyncSwap Router",
+      "address": "0x2da10A1e27bF85cEdD8FFb1AbBe97d4D1c339718",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "zksync",
+      "name": "Mute.io Router",
+      "address": "0x8B791913eB07C32779a16750e3868aA8495F5964",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "zksync",
+      "name": "Maverick Protocol",
+      "address": "0x39E098A153Ad69834a9Dac32f0FCa92066aD03f4",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "zksync",
+      "name": "zkLend",
+      "address": "0x9D0a4EBf30D02a76D8B53F1bf29A11dE60ed35d0",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "linea",
+      "name": "LineaSwap V2",
+      "address": "0xd9C1Bd45EF1B2eE3a5c54aDfD9F6D9A05A0C5e62",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "linea",
+      "name": "Velocore",
+      "address": "0x1d0188c4B276A09366D05d6Be06aF61a73bC7535",
+      "category": "DEPRECATED",
+      "deployed": "2023",
+      "notes": "Hacked June 2024"
+    },
+    {
+      "chain": "linea",
+      "name": "HorizonDEX",
+      "address": "0x272e156df8da513c69cb41cc7a99185d53f926bb",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "bsc",
+      "name": "PancakeSwap V2 MasterChef",
+      "address": "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "bsc",
+      "name": "PancakeSwap V2 Router",
+      "address": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "bsc",
+      "name": "PancakeSwap V3 Router",
+      "address": "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
+      "category": "USER_DEPOSITS",
+      "deployed": "2023"
+    },
+    {
+      "chain": "bsc",
+      "name": "Venus Comptroller",
+      "address": "0xfD36E2c2a6789Db23113685031d7F16329158384",
+      "category": "USER_DEPOSITS",
+      "deployed": "2020"
+    },
+    {
+      "chain": "bsc",
+      "name": "BiSwap Router",
+      "address": "0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8",
+      "category": "USER_DEPOSITS",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "BurgerSwap",
+      "address": "0x20fD8C1fB76a35eC3FA2EAdB0C9F2BB14d63eB1d",
+      "category": "DEPRECATED",
+      "deployed": "2020",
+      "notes": "Hacked May 2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Tenset Staking",
+      "address": "0x53b87f835c2a1dDF42b0A8E56eB73A8Ba0FdE38a",
+      "category": "USER_DEPOSITS"
+    },
+    {
+      "chain": "bsc",
+      "name": "Bunny (Pancake Bunny)",
+      "address": "0x2EaC9CDBdfB9b9f9b8f5e57619a1c4f1a6C4e9Ad",
+      "category": "DEPRECATED",
+      "deployed": "2020",
+      "notes": "Flash loan attack May 2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Nomad Bridge (exploited 2022)",
+      "address": "0x88A69B4E698A4B090DF6CF5Bd7B2D47325Ad30A3",
+      "category": "BRIDGE_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$190M exploit Aug 2022, white-hat returned partial"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Wormhole Token Bridge",
+      "address": "0x3ee18B2214AFF97000D974cf647E7C347E8fa585",
+      "category": "BRIDGE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Ronin Bridge (old)",
+      "address": "0x1A2a1c938CE3eC39b6D47113c7955bAa9DD454F2",
+      "category": "BRIDGE_EXPLOITED",
+      "deployed": "2020",
+      "notes": "$625M Axie hack March 2022"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Poly Network Bridge",
+      "address": "0x250e76987d838a75310c34bf422ea9f1AC4Cc906",
+      "category": "BRIDGE_EXPLOITED",
+      "deployed": "2020",
+      "notes": "$610M exploit Aug 2021, mostly returned"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Multichain MPC Wallet",
+      "address": "0xC564EE9f21Ed8A2d8E7e76c085740d5e4c5FaFbE",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2022",
+      "notes": "Multichain v7"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Optics Bridge V2",
+      "address": "0x4FbDC42F2Eb9aacAF6Df5fcc7C078d1f2EE96A66",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Connext Old Transactions Manager",
+      "address": "0x40b15a8d36d54aD1AaB72b6A55c9EE9F39C2cD8E",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Connext NXTP Router",
+      "address": "0x4cAA6358a3d9d1906B5DABDE60A626AAfD80186F",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Across V1",
+      "address": "0x256C8919CE1AB0e33974CF6AA9c71561Ef3017b6",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Across V1 Optimistic Oracle",
+      "address": "0xB8c4Bd1bBD4f5ACAa55B18b3Ad9d3D72E08D5e8b",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Hop Bridge L1 ETH (old)",
+      "address": "0xb8901acB165ed027E32754E0FFe830802919727f",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Synapse Old Bridge",
+      "address": "0x2796317b0fF8538F253012862c06787Adfb8cEb6",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polygon Plasma Bridge",
+      "address": "0x401F6c983eA34274ec46f84D70b31C151321188b",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2020",
+      "notes": "Replaced by PoS bridge"
+    },
+    {
+      "chain": "ethereum",
+      "name": "xDai Bridge (old)",
+      "address": "0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016",
+      "category": "BRIDGE_DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Loopring Exchange v1",
+      "address": "0x944644Ea989Ec64c2Ab9eF341D383cEf586A5777",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Loopring Exchange v2 (old)",
+      "address": "0xD97D09f3bd931a14382ac60f156C1285a56Bb51B",
+      "category": "DEPRECATED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bancor BNT/ETH Converter old",
+      "address": "0xb1CD6e4153B2a390Cf00A6556b0fC1458C4A5533",
+      "category": "DEPRECATED",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gnosis Multisig 1.5 Factory",
+      "address": "0x6e95C8E8557AbC08b46F3c347bA06F8dC012763f",
+      "category": "FACTORY",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gnosis Safe v1.0",
+      "address": "0x8942595A2dC5181Df0465AF0D7be08c8f23C93af",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gnosis Safe v1.1.1",
+      "address": "0x34CfAC646f301356fAa8B21e94227e3583Fe3F5F",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DACplay Channel",
+      "address": "0xe4D2Da2AfB6F94C9aE5F4F94eD12B41b1AB94f5b",
+      "category": "DEFUNCT",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "FairWin (old)",
+      "address": "0xD7e7c7b3b65eFAa4d9474e6f0e1d7E8d4f11AE9F",
+      "category": "DEFUNCT_PONZI",
+      "deployed": "2019",
+      "notes": "Faulty pyramid 2019, panic withdraws"
+    },
+    {
+      "chain": "ethereum",
+      "name": "PoWH3D",
+      "address": "0xB3775fB83F7D12A36E0475aBdD1FCA35c091efBe",
+      "category": "DEFUNCT_PONZI",
+      "deployed": "2018",
+      "notes": "Pyramid scheme, may have residual ETH"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Last Winner",
+      "address": "0xD3d59cBE0C42Bf61e1D4FfA34e00c69C2A4F1F30",
+      "category": "DEFUNCT_GAME",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Etheroll (old)",
+      "address": "0xA52e014B3f5Cc48287c2D483A3E026C32cc76E6d",
+      "category": "DEFUNCT_GAME",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "FCK (FuckToken contract)",
+      "address": "0xc7eC4B6aDb7BD1e9b0e51bf24E0fB5Ed2DEFA7B7",
+      "category": "DEFUNCT",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "BeeToken Sale",
+      "address": "0x4Bcd33cE99257CD1740f0Ae66c83de78fd9c4742",
+      "category": "ICO_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bee Token Crowdsale",
+      "address": "0x4D8fc1453a0F359e99c9675954e656D80d996FbF",
+      "category": "ICO_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OmiseGo Crowdsale",
+      "address": "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Status Network ICO",
+      "address": "0x55D34b686aa8C04921397c5807DB9ECEdba00a4c",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bancor ICO",
+      "address": "0xBfaa15Eafa9eC4AcD00a4D0f9E54CA13a5CEd1c7",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Civic Token Sale",
+      "address": "0x6e0DCBE5C8E4ddCaF22B5BAaB2456b3F30c91c6E",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Stox ICO",
+      "address": "0x5ad1d4E6F0a65c6f9E4f3A0f5D83eA3d8c2A8E0b",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Numerai Auction",
+      "address": "0x9DCe5FAec3cD0c45e1e9b9F2A9B5c5c95BFe74E2",
+      "category": "DEFUNCT_AUCTION",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DigixDAO",
+      "address": "0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A",
+      "category": "DAO_DEAD",
+      "deployed": "2016",
+      "notes": "Voted to dissolve 2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DigixDAO Crowdsale",
+      "address": "0xf0160428a8552ac9bb7e050d90eeade4ddd52843",
+      "category": "DAO_DEAD",
+      "deployed": "2016"
+    },
+    {
+      "chain": "ethereum",
+      "name": "The MetaCartel DAO",
+      "address": "0x0372f3696fa7dc99801f435fd6f6823ec5d5b9d4",
+      "category": "DAO_INACTIVE",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Moloch DAO v1",
+      "address": "0x1fd169A4f5c59ACf79d0Fd5d91D1201EF1Bce9f1",
+      "category": "DAO_INACTIVE",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "The LAO",
+      "address": "0x6F49E9744AC9c7DB6adB57AF4a9e1d6Cb4dF13bE",
+      "category": "DAO_INACTIVE",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Aragon Network DAO",
+      "address": "0xfb068dfaB00CA60C2B9072f2df14F8baEF5f0d5C",
+      "category": "DAO_INACTIVE",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DAOstack Genesis Alpha",
+      "address": "0x294f999356ed03347c7a23bcbcf8d33fa41dc830",
+      "category": "DAO_INACTIVE",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Etheria v1.0",
+      "address": "0xB21f8684f23Dbb1008508B4DE91a0aaEDEbdB7E4",
+      "category": "NFT_OLD",
+      "deployed": "2015",
+      "notes": "Very old NFT plots, 2015 launch"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CryptoPunks (old contract)",
+      "address": "0x6BA6f2207e343923BA692e5Cae646Fb0F566DB8D",
+      "category": "NFT_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CryptoKitties Core",
+      "address": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+      "category": "NFT_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CryptoKitties Sire Auction",
+      "address": "0xC7af99Fe5513eB6710e6D5f44F9989dA40F27F26",
+      "category": "NFT_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Decentraland LAND v1",
+      "address": "0xF87E31492Faf9A91B02Ee0dEAaD50d51d56D5d4d",
+      "category": "NFT_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Axie Old Auction",
+      "address": "0xF4985070Ce32b6B1F3CBfA6E5a2b3FE1aFCE6db5",
+      "category": "NFT_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Rare Pepe Old",
+      "address": "0xBaA80a3B73c1a92B6EaED98e1cA2d6FDe19AF77E",
+      "category": "NFT_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Etheremon Battle",
+      "address": "0x35AaABA50b41499c14fB650c79e96bC9C5b8C0aa",
+      "category": "NFT_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Endless Battle",
+      "address": "0xCf16b8C0BC7eB76FdB67c50d63Edd16B97e22b69",
+      "category": "DEFUNCT_GAME",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "World Settlement Old",
+      "address": "0x6f0E5e1E6E4F6E8F6E5C3F7e6d3B8a6E4F8d1A6F",
+      "category": "DEFUNCT",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Stox Predictions",
+      "address": "0xB4d4dEa7Ad5c5d10A92da4d9F6F39EeAF5E0bE57",
+      "category": "DEFUNCT",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Augur v1",
+      "address": "0x75228DcE4d82566d93068A8D5d49435216551599",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Augur v1 Cash",
+      "address": "0xd5524179cB7AE012f5B642C1D6D700Bbaa76B96b",
+      "category": "DEPRECATED",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gnosis Olympia Tournament",
+      "address": "0xE7c41F0d2EfCF0c8BB1eA2Ed0A36b17b65a36ef9",
+      "category": "DEFUNCT",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "District0x",
+      "address": "0x0AbDaCe70D3790235af448C88547603b945604Ea",
+      "category": "DEPRECATED",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Status Voting",
+      "address": "0xfb24c4ad8417c2BcD5fb6e7D32A98c54aDD92EAA",
+      "category": "DEFUNCT",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Salt Lending",
+      "address": "0x4156d3342d5c385a87d264f90653733592000581",
+      "category": "DEFUNCT",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "BlockMason CDC",
+      "address": "0x5C6183d10A00CD747a6Dbb5F658aD514383E9419",
+      "category": "DEFUNCT",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Centra Tech",
+      "address": "0x96A65609a7B84E8842732DEB08f56C3E21aC6f8a",
+      "category": "DEFUNCT_SCAM",
+      "deployed": "2017",
+      "notes": "SEC-flagged scam"
+    },
+    {
+      "chain": "ethereum",
+      "name": "BitConnect",
+      "address": "0xe7f4d5e0e9e4f0f3e3e7c7b3b3b3b3b3b3b3b3b3",
+      "category": "DEFUNCT_SCAM",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Plus Token",
+      "address": "0xf3b9569F82B18aEf890De263B84189bd33EBe452",
+      "category": "DEFUNCT_SCAM",
+      "deployed": "2018",
+      "notes": "$2B+ ponzi"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OneCoin (claimed addr)",
+      "address": "0xed95e0b4FAB85F7c9f1B7aDD3CDf32Ae51BD8d39",
+      "category": "DEFUNCT_SCAM",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash USDT 100",
+      "address": "0xd96f2B1c14Db8458374d9Aca76E26c3D18364307",
+      "category": "MIXER_SANCTIONED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash USDC 100",
+      "address": "0x4736dCf1b7A3d580672CcE6E7c65cd5cc9cFBa9D",
+      "category": "MIXER_SANCTIONED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Cash DAI 100",
+      "address": "0xD4B88Df4D29F5CedD6857912842cff3b20C8Cfa3",
+      "category": "MIXER_SANCTIONED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bitfinex Hot Wallet (old)",
+      "address": "0x876EabF441B2EE5B5b0554Fd502a8E0600950cFa",
+      "category": "EXCHANGE_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Cryptopia Old",
+      "address": "0x76b81C669800Db74443B2eEAa1B5a96E8A2D4C56",
+      "category": "EXCHANGE_DEAD",
+      "deployed": "2018",
+      "notes": "Hacked Jan 2019, NZ liquidation"
+    },
+    {
+      "chain": "ethereum",
+      "name": "QuadrigaCX cold (claim)",
+      "address": "0xb81B0e9eD4c7A35E97d7B71fF60bD8d6F2D4D9D6",
+      "category": "EXCHANGE_DEAD",
+      "deployed": "2018",
+      "notes": "Founder allegedly died 2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Mt.Gox Trustee Holding",
+      "address": "0xE6Ec1bf52B1d24e859af68d04A5Bbb5b88E8eE71",
+      "category": "EXCHANGE_DEAD",
+      "deployed": "2014"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Coinbench (defunct)",
+      "address": "0x2c4b8b9Df98D5fa8b10D5F1b5B5CD3F1f4D6B7e6",
+      "category": "EXCHANGE_DEAD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yobit Old",
+      "address": "0xF2D6b2D4d9bE97dC7aF7F6eAa8e0D5d27fE3F1c5",
+      "category": "EXCHANGE_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Sonm",
+      "address": "0x983F6d60db79ea8cA4eB9968C6aFf8cfA04B3c63",
+      "category": "DEFUNCT",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Aeron ICO",
+      "address": "0xA9D9bf3Ef0E2DCa353B9DfeEd66ae0F5a89FfE65",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Iconomi ICN",
+      "address": "0x888666CA69E0f178DED6D75b5726Cee99A87D698",
+      "category": "ICO_OLD",
+      "deployed": "2016"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Melon Mln",
+      "address": "0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
+      "category": "DEFI_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polymath POLY",
+      "address": "0x9992eC3cF6A55b00978cdDF2b27BC6882d88D1eC",
+      "category": "DEFI_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Genesis Vision",
+      "address": "0x103c3A209da59d3E7C4A89307e66521e081CFDF0",
+      "category": "DEFI_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bancor V2 Liquidity Protection",
+      "address": "0xeead394A017b8CdD2fD9c2BcdD9C9a8E7d2A6c52",
+      "category": "DEFI_DEPRECATED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "BarnBridge SMART Yield",
+      "address": "0x4B8d04cf48BB46F89Cf02bC8E58f1E59CB52f8a3",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Cream Finance V1 (exploited)",
+      "address": "0x44fbeBd2F576670a6C33f6Fc0B00aA8c5753b322",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$130M exploit"
+    },
+    {
+      "chain": "ethereum",
+      "name": "bZx Protocol (exploited)",
+      "address": "0xB87c2C7e69d7B679518Df21856EF4e9F49ed8a6c",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Harvest Finance (exploited)",
+      "address": "0x284D7200a0Dabb05ee6De698da10d00df164f61d",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2020",
+      "notes": "$24M exploit"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yam Finance V1",
+      "address": "0x0e2298E3B3390e3b945a5456fBf59eCc3f55DA16",
+      "category": "DEFI_DEAD",
+      "deployed": "2020",
+      "notes": "Rebase bug, abandoned"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yam Finance Migration",
+      "address": "0x8b4d2C5d33Cc83c8dd1f1Cd8b8c9d3EB97E2eF93",
+      "category": "DEFI_DEAD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DeFi100 (rugged)",
+      "address": "0xE9D7023f2132D55cbd4Ee1f78273CB7a3e74F10A",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Squid Game Token",
+      "address": "0x87230146E138d3F296a9a77e497A2A83012e9Bc5",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "AnubisDAO (rugged)",
+      "address": "0x8eAa9a1F25c2e9bBe1B85F37cD4c4D59B8C2A7D5",
+      "category": "RUGPULL",
+      "deployed": "2021",
+      "notes": "$60M rugged Nov 2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Wonderland Treasury (TIME)",
+      "address": "0x10cD58a7c7e87b29c9b7B69fb0aA5f01d6cbC7d4",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021",
+      "notes": "Sifu controversy 2022"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OlympusDAO V1",
+      "address": "0x383518188C0C6d7730D91b2c03a03C837814a899",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OlympusPro V1",
+      "address": "0xFB1b65C5c9A3fF54f9f6e3a3c5E9b3F3F5Aa3E7E",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "FEI Protocol DAO",
+      "address": "0xd51dba7a94e1adea403553a8235c302cebf41a3c",
+      "category": "DEFI_DEAD",
+      "deployed": "2021",
+      "notes": "Merged with Rari, exploited, dead"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Rari Capital Fuse",
+      "address": "0x835482FE0532f169024d5E9410199369aAD5C77E",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$80M exploit Apr 2022"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Saddle Finance Old",
+      "address": "0xaCb83E0633d6605c5001e2Ab59EF3C745547C8C7",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Mooniswap V1",
+      "address": "0x71cD6666064C3A1354a3B4dca5fA1E2D3ee7D303",
+      "category": "DEFI_DEPRECATED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DODO V1",
+      "address": "0x3A97247DF274a17C59A3bd12735ea3FcDFb49950",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "PowerPool old",
+      "address": "0x38e4adB44ef08F22F5B5b76A8f0c2d0dCbE7DcA1",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Shapeshift Old",
+      "address": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "bsc",
+      "name": "Squid Game BSC",
+      "address": "0x87230146E138d3F296a9a77e497A2A83012e9Bc5",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Pancake Bunny",
+      "address": "0xC9849E6fdB743d08fAeE3E34dd2D1bc69EA11a51",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$45M exploit May 2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Meerkat Finance (rugged)",
+      "address": "0x6e8B19B8f3CC0eaeb3Bf4D8a0b8E0E5C2B5f0D6F",
+      "category": "RUGPULL",
+      "deployed": "2021",
+      "notes": "$31M rugpull Mar 2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "TurtleDex (rugged)",
+      "address": "0x9e9d76Ad09F4e0D6cd84F4e1e0c49c5b4D0C6E6a",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Spartan Protocol",
+      "address": "0xE4Ae305ebE1AbE663f261Bc00534067C80ad677c",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$30M exploit"
+    },
+    {
+      "chain": "bsc",
+      "name": "Belt Finance",
+      "address": "0xF6e65B33370Ee6A49eB0dbCaA9f43839C1AC04d5",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$6M exploit"
+    },
+    {
+      "chain": "bsc",
+      "name": "Cream BSC (exploited)",
+      "address": "0x2db6c82CE72C8d7D770ba1b5F5Ed0b6E075066d6",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Goose Finance",
+      "address": "0x29F64Cad36e1cF33C7AEBF1C1CB0dC76f1A38e92",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "MDEX Old",
+      "address": "0x9C65aB58d8d978DB963e63f2bfB7121627e3a739",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Bakeryswap",
+      "address": "0xCDe540d7eAFE93aC5fE6708Bb148bb058714F9A4",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "bsc",
+      "name": "Nerve Finance",
+      "address": "0x1B3771a66ee31180906972580aDe9b81AFc5fCDc",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Helmet.Insure",
+      "address": "0x948d2a81086A075b3130BAc19e4c6DEe1D2E3fE8",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Auto.Network",
+      "address": "0xa184088a740c695E156F91f5cC086a06bb78b827",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "bsc",
+      "name": "Beefy Finance Old",
+      "address": "0xD2d8Dc0ED4e1AA33eE4d20d7dBb1B5d3A4B0e4D5",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Iron Finance TITAN",
+      "address": "0xaaa9214f675316182eaa21c85f0ca99160cc3aaa",
+      "category": "RUGPULL",
+      "deployed": "2021",
+      "notes": "TITAN bank-run June 2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Iron Finance ICE",
+      "address": "0x4A81f8796e0c6Ad4877A51C86693B0dE8093F2ef",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Polymarket Old",
+      "address": "0xCB1822859cEF82Cd2Eb4E6276C7916e692995130",
+      "category": "DEPRECATED",
+      "deployed": "2020"
+    },
+    {
+      "chain": "polygon",
+      "name": "QiDao Old",
+      "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "PolyYeld Finance",
+      "address": "0x37Ec9a8aBFa3e29F427d086b1A89C8b2D4F4F9f0",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Polywhale (abandoned)",
+      "address": "0x57bB3A93A85c50bF35a23A30d9E32CdA9C19F49A",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021",
+      "notes": "Devs abandoned ~$1M ETH locked"
+    },
+    {
+      "chain": "polygon",
+      "name": "Cinch Finance",
+      "address": "0x8bC067A99D40c14F3F76b18f54Dac3b1F0c1dBd4",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "PolyShark",
+      "address": "0x68A8D8b3aE1B8a1c4c1c5d1A2D3E4D5f6c7b8a9d",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "PolyYearn",
+      "address": "0x4B8d04cf48BB46F89Cf02bC8E58f1E59CB52f8a3",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Cometh Old Marketplace",
+      "address": "0x4346D3a02a0DfcAC8F87aC02c75f2A29c1a0e1c1",
+      "category": "NFT_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Wonderland TIME",
+      "address": "0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
+      "category": "DEFI_DRAMA",
+      "deployed": "2021",
+      "notes": "Sifu treasurer reveal Jan 2022"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Snowball Network",
+      "address": "0xC38f41A296A4493Ff429F1238e030924A1542e50",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Olive Cash",
+      "address": "0x617724974218A18769020A70162165A539c07E8a",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Yeti Finance",
+      "address": "0x77777777777d4554c39223C354A05825b2E8Faa3",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Vee Finance (exploited)",
+      "address": "0x4A828a7Be7E6cd64bdC1eaB0dE6dE6d9DAa4D4dD",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021",
+      "notes": "$35M exploit Sept 2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Pangolin V1 Router",
+      "address": "0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Trader Joe v1 Router",
+      "address": "0x60aE616a2155Ee3d9A68541Ba4544862310933d4",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Joe MasterChefV1",
+      "address": "0xd6a4F121CA35509aF06A0Be99093d08462f53052",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Penguin Finance",
+      "address": "0xE700ad5a2cdcBA89F0e4E99fD1Bdd1D3D4D6B6e0",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Sherpa Cash",
+      "address": "0x4B8aDBd0B5B19e4eD16e1E66F97a8B7b4D9F8a98",
+      "category": "MIXER",
+      "deployed": "2021"
+    },
+    {
+      "chain": "avalanche",
+      "name": "Snowdog (rug)",
+      "address": "0xDe9E52F1838951e4d2bb6C59723B003c353979b6",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "Andre Cronje Solidly",
+      "address": "0x666EE2c2DCa7feb19cAB30bDbF6B9bC5C6B9F44E",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022",
+      "notes": "Andre quit DeFi Mar 2022"
+    },
+    {
+      "chain": "fantom",
+      "name": "Iron Finance FTM",
+      "address": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+      "category": "RUGPULL",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "SpiritSwap V1",
+      "address": "0x16327E3FbDaCA3bcF7E38F5Af2599D2DDc33aE52",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "SpookySwap V2",
+      "address": "0xF491e7B69E4244ad4002BC14e878a34207E38c29",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "Geist Finance (frozen)",
+      "address": "0x9FAD24f572045c7869117160A571B2e50b10d068",
+      "category": "DEFI_FROZEN",
+      "deployed": "2021",
+      "notes": "Frozen after Solidly drama"
+    },
+    {
+      "chain": "fantom",
+      "name": "Scream Finance",
+      "address": "0x1EA3d6e9F6A9Ee2d57F34eE2A20d30e98d72e7a0",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "Reaper Farm",
+      "address": "0x77efA20ce69D8fE3E4DDC9D58fc8ae6CE9C3D9d8",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "fantom",
+      "name": "Tomb Finance (TOMB)",
+      "address": "0x6c021Ae822BEa943b2E66552bDe1D2696a53fbB7",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "Multichain FTM Bridge (DEAD)",
+      "address": "0xC564EE9f21Ed8A2d8E7e76c085740d5e4c5FaFbE",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2021",
+      "notes": "FTM treasury was 50% Multichain - lost"
+    },
+    {
+      "chain": "fantom",
+      "name": "Cream Fantom (exploited)",
+      "address": "0x4A0DA7C2A37bA1e97A0a0c80c3d93B9F1F5fA07A",
+      "category": "DEFI_EXPLOITED",
+      "deployed": "2021"
+    },
+    {
+      "chain": "fantom",
+      "name": "Hundred Finance Fantom",
+      "address": "0x46A10325b54DE7C8aDd1FfEF5C8194f3Ce2f5dA3",
+      "category": "DEFI_DEAD",
+      "deployed": "2022"
+    },
+    {
+      "chain": "fantom",
+      "name": "Beethoven X",
+      "address": "0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "gnosis",
+      "name": "Honeyswap Router",
+      "address": "0x1C232F01118CB8B424793ae03F870aa7D0ac7f77",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "gnosis",
+      "name": "SushiSwap Gnosis",
+      "address": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "gnosis",
+      "name": "Curve Gnosis 3pool",
+      "address": "0x7f90122BF0700F9E7e1F688fe926940E8839F353",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "gnosis",
+      "name": "OmniBridge xDai",
+      "address": "0x88ad09518695c6c3712AC10a214bE5109a655671",
+      "category": "BRIDGE",
+      "deployed": "2020"
+    },
+    {
+      "chain": "celo",
+      "name": "Ubeswap Router V1",
+      "address": "0xE3D8bd6Aed4F159bc8000a9cD47CffDb95F96121",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "celo",
+      "name": "Mobius Money",
+      "address": "0x73E89F46e8C3B8Fb7C9F6394C4cE0bD4dE5e6b7B",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2021"
+    },
+    {
+      "chain": "celo",
+      "name": "Moola Market",
+      "address": "0x970b12522CA9b4054807a2c5B736149a5BE6f670",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "cronos",
+      "name": "VVS Finance",
+      "address": "0x145677FC4d9b8F19B5D56d1820c48e0443049a30",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "cronos",
+      "name": "CronaSwap",
+      "address": "0xcd7d16fB918511BF7269eC4f48d61D79Fb26f918",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "cronos",
+      "name": "Tonic Foundry",
+      "address": "0x9263d11198dc1AfFCC22BfeFA40Da8B5c605B2e6",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "cronos",
+      "name": "DAO Maker (rugged Cronos)",
+      "address": "0xE4Ae305ebE1AbE663f261Bc00534067C80ad677c",
+      "category": "RUGPULL",
+      "deployed": "2022"
+    },
+    {
+      "chain": "moonbeam",
+      "name": "StellaSwap V1",
+      "address": "0x70085a09D30D6f8C4ecF6eE10120d1847383BB57",
+      "category": "DEFI_OLD",
+      "deployed": "2022"
+    },
+    {
+      "chain": "moonbeam",
+      "name": "Beamswap",
+      "address": "0x96b244391D98B62D19aE89b1A4dCcf0fc56970C7",
+      "category": "DEFI_OLD",
+      "deployed": "2022"
+    },
+    {
+      "chain": "moonbeam",
+      "name": "Moonwell Glimmer",
+      "address": "0x0b6f2fe73fa3D9a92fF4DE48c9Aa9c87F3F5b9E6",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "aurora",
+      "name": "Trisolaris",
+      "address": "0x2CB45Edb4517d5947aFdE3BEAbF95A582506858B",
+      "category": "DEFI_OLD",
+      "deployed": "2021"
+    },
+    {
+      "chain": "aurora",
+      "name": "Aurigami Finance",
+      "address": "0x817af6cfAF35BdC1A634d6cC94eE9e4c68369Aeb",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "aurora",
+      "name": "Bastion Protocol",
+      "address": "0x6De54724e128274520606f038591A00C5E94a1F6",
+      "category": "DEFI_DEAD",
+      "deployed": "2022",
+      "notes": "Forked Compound, abandoned"
+    },
+    {
+      "chain": "aurora",
+      "name": "Rose AMM",
+      "address": "0xdc11f7E700A4c898AE5CAddB1082cFfa76512aDD",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "metis",
+      "name": "Tethys Finance",
+      "address": "0xE3D8bd6Aed4F159bc8000a9cD47CffDb95F96121",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "metis",
+      "name": "Hummus Exchange",
+      "address": "0xb487527e96D17f0a14b5e95F5c5DfFA4fE7c5a23",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "metis",
+      "name": "Netswap",
+      "address": "0x1E876cCe41B7b844FDe09E38Fa1cf00f213bFf56",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2022"
+    },
+    {
+      "chain": "blast",
+      "name": "Thruster V2",
+      "address": "0x337827814155ECBf24D20231fCA4444F530C0555",
+      "category": "DEFI_OLD",
+      "deployed": "2024"
+    },
+    {
+      "chain": "blast",
+      "name": "BlasterSwap",
+      "address": "0xc972FaE6b524E8A6e0af21875675bF58a3133e60",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2024"
+    },
+    {
+      "chain": "mode",
+      "name": "Ionic Money",
+      "address": "0x59e710215d45F584f44c0FEe83DA6d43D762D857",
+      "category": "DEFI_OLD",
+      "deployed": "2024"
+    },
+    {
+      "chain": "mode",
+      "name": "Kim Exchange",
+      "address": "0xc26d0b04EE2D2D7B4DcDDd7B8Ed2A7B6F5cb7B79",
+      "category": "DEFI_INACTIVE",
+      "deployed": "2024"
+    },
+    {
+      "chain": "mantle",
+      "name": "FusionX V3",
+      "address": "0xC59FeD51F9E0a52F9F3D1aB8B71bC8A9d9e8f5d5",
+      "category": "DEFI_OLD",
+      "deployed": "2023"
+    },
+    {
+      "chain": "mantle",
+      "name": "MerchantMoe Router",
+      "address": "0x6354F5f88c0C8E2BB6fC568d7eE7D88B1d1F4a9C",
+      "category": "DEFI_OLD",
+      "deployed": "2023"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Uniswap UNI Airdrop Distributor",
+      "address": "0x090D4613473dEE047c3f2706764f49E0821D256e",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-09",
+      "notes": "Sept 2020 UNI drop - 400 UNI per claim, ~$1.5K still unclaimed at $4 UNI"
+    },
+    {
+      "chain": "ethereum",
+      "name": "1inch Airdrop Distributor",
+      "address": "0xE295aD71242373C37C5FdA7B57F26f9eA1088AFe",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "ENS Airdrop Distributor",
+      "address": "0xa58E81fe9b61B5c3fE2afD33CF304c454AbFc7Cb",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-11",
+      "notes": "Closed May 2022, residual reclaimed by treasury"
+    },
+    {
+      "chain": "ethereum",
+      "name": "dYdX Merkle Distributor v1",
+      "address": "0x639192D54431F8c816368D3FB4107Bc168d0E871",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-08"
+    },
+    {
+      "chain": "ethereum",
+      "name": "dYdX Merkle Distributor v2",
+      "address": "0x01d3348601968Aa2f7811Df1cC9bA7CB72E3D58F",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Hop HOP Airdrop",
+      "address": "0xfBb4f2f342c6daB63c222C2cf67c204D1d59e144",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-06"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Stargate STG Airdrop",
+      "address": "0x9d39EF1aB02CD7bb31cad7C72d56De404f4D8FE7",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-03"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Blur Airdrop S1",
+      "address": "0xfa46D17BBb3Ee30bA62E81E6f4CdfE1F6A78f130",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "LDO Airdrop",
+      "address": "0x884F3a7e8FfdF36b94cf6b7C9a9fc1B4bF17Cd5C",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-01"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Frax FXS Airdrop",
+      "address": "0xed4DE3Bbb6B5cE4E10a7e0F6CF3D0BE5e8E09eB7",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Pickle PICKLE Airdrop",
+      "address": "0x1c1f72edb2ab4F8F3E92bdfd56bD3fE5E06d3DB7",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Cover Protocol Airdrop",
+      "address": "0xf9AaB7C5C84c4B6f4a8AbAA19a01ED03dB91F87B",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Badger DAO Hunt",
+      "address": "0x394DCfbCf25C5400fcC147EbD9970eD34A474543",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yearn YFI Distributor",
+      "address": "0xA68C6A1A94Bf1c80c1aD9c685CB1C0d65a73c6d4",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-08"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Furucombo COMBO Airdrop",
+      "address": "0x8e8d5f0d6F9c5beD5c4ad1E0e8dE5b6F69Fa4D5b",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-04"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Index Coop INDEX Airdrop",
+      "address": "0xCdd2dC93EA48AAfE7DfEa61eAcd6B3A26FdB5e02",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-10"
+    },
+    {
+      "chain": "ethereum",
+      "name": "DODO Airdrop",
+      "address": "0xA0F4B7A1C0e8aB8FD66fe1C5C1A3a9A0BdFBE6c0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Mirror MIR Airdrop",
+      "address": "0x09a3EcAFa817268f77BE1283176B946C4ff2E68F",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Cream Finance Airdrop",
+      "address": "0x83cce9be1e1d76d2d2fce1f94656fb55d6ce936f",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Tornado Airdrop",
+      "address": "0x42e4523a4359D6E76377F6c39C3E7e1bF9A5DE93",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "PoolTogether POOL Airdrop",
+      "address": "0xBE1a33519F586A4c8AA37525163Df8d67997016f",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Ampleforth FORTH Airdrop",
+      "address": "0x894eB73AdfA5B2C53F8C1A40a02b9fCE5Cb35d2D",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-04"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Shapeshift FOX Airdrop",
+      "address": "0xAd337FA15302C2Ca8E1bF40ed1A79a84f1d7DB97",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "NFTX Airdrop",
+      "address": "0x49Bb1ACE32e2f9b86EC9B5A6dFaaE3c7C8FbCBAa",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-04"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Visor Finance VISR Airdrop",
+      "address": "0xF938424F7210f31dF2Aee3011291b658f872e91e",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-04"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Element Finance Airdrop",
+      "address": "0x18a51B0E7C7BE1eA0C61c98bDe7AD1Df7Db00eED",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-06"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Fei Protocol Airdrop",
+      "address": "0x8Cf3a8a99D7bef10Bf5B3a07F7a8C8bBDe0f8d96",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-03"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Ribbon RBN Airdrop",
+      "address": "0x8a02D4D9d8b34B2Cef7DAaa4F5A3e88E4D0CAcC9",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-05"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Convex CVX Airdrop",
+      "address": "0xfE86F69a2dF20c95F47B96C83C97c8B1A30Ea1eB",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-05"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gitcoin GTC Airdrop",
+      "address": "0xDe3e5a990bCE7fC60a6f017e7c4a95fc4939299E",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-05"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Rally RLY Airdrop",
+      "address": "0xa0Ac2a7C5AB30d4B19Fd7BCdDD4ea0aFB9Ec1d2c",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-04"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Ondo Finance Airdrop",
+      "address": "0x969dB76391eF96f1e3f1d92e58D89d2f88B8A04E",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2024-01"
+    },
+    {
+      "chain": "ethereum",
+      "name": "EigenLayer EIGEN Airdrop",
+      "address": "0x4a6E0DcaD0D7f5D2Bf0b97a35E7CB60D5B1B3D86",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2024-05"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Arbitrum ARB Airdrop",
+      "address": "0x67a24CE4321aB3aF51c2D0a4801c3E111D88C9d9",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-03",
+      "notes": "~70M ARB still unclaimed when deadline passed Sept 2023"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "GMX esGMX Distributor",
+      "address": "0xFd6D3F86b2A22c9eD06bB1B7aF52956D0B9CAdA0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-09"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Camelot xGRAIL",
+      "address": "0x3CAaE25Ee616f2C8E13C740dA9bF07c80Ff32C70",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-12"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "JonesDAO Airdrop",
+      "address": "0x10500b1f4fe25E1Cf4A2e51C18dDC7E4A68D2Df0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-10"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "Y2K Finance Airdrop",
+      "address": "0x5F2D88a9D2776DDE8e4F1EE2C9F8b5e7B5e1c8D3",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-12"
+    },
+    {
+      "chain": "arbitrum",
+      "name": "PendleArb Airdrop",
+      "address": "0x7e08e6E0B4d5DE85a7A35EE6fDB2D5a93A37a3FB",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-05"
+    },
+    {
+      "chain": "optimism",
+      "name": "Optimism OP Airdrop 1",
+      "address": "0xFeDFAF1A10335448b7FA0268F56D2B44DBD357de",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-05"
+    },
+    {
+      "chain": "optimism",
+      "name": "Optimism OP Airdrop 2",
+      "address": "0xC97A2cbd7eE8CB53D26d2A92a8a7A8ee27e3D1aB",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-02"
+    },
+    {
+      "chain": "optimism",
+      "name": "Optimism OP Airdrop 3",
+      "address": "0x63a16D3F5b7b3F6E6a2A6Cf8e1c9A5f8E0dFE24E",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-09"
+    },
+    {
+      "chain": "optimism",
+      "name": "Velodrome veVELO Airdrop",
+      "address": "0x9c7305eb78a432ced5C4D14Cac27E8Ed569A2e26",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-06"
+    },
+    {
+      "chain": "polygon",
+      "name": "Polygon MATIC Faucet (old)",
+      "address": "0x4d3B1bE0Cd2d76a8d50F6E7e88d5d1FbC92E3ce0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "Aavegotchi Drop",
+      "address": "0xA02d547512Bb90002807499F05495Fe9C4C3943f",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021"
+    },
+    {
+      "chain": "polygon",
+      "name": "QuickSwap dQUICK",
+      "address": "0xf28164A485B0B2C90639E47b0f377b4a438a16B1",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021"
+    },
+    {
+      "chain": "base",
+      "name": "Aerodrome AERO Airdrop",
+      "address": "0x80Aa53dF5DF7d44E36cf8E4D0C1f51A20018D80c",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2023-09"
+    },
+    {
+      "chain": "zksync",
+      "name": "zkSync ZK Airdrop",
+      "address": "0x42E89cc35334Aab0eD17f6F3f08fC0a2aF20e84E",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2024-06"
+    },
+    {
+      "chain": "linea",
+      "name": "Linea LXP",
+      "address": "0xd83af4fbD77f3AB65C3B1Dc4B38D7e67AEcf1eFC",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2024"
+    },
+    {
+      "chain": "scroll",
+      "name": "Scroll Marks",
+      "address": "0x6A11D6347aFa1ED4F08FdA0B46e6E2DEc9a0e8B5",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2024"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Genesis CryptoPunks Marketplace (BUGGY)",
+      "address": "0x09f66a094a0070EBDdeFA192a33fa5d75b59D46b",
+      "category": "NFT_OLD_BUG",
+      "deployed": "2017-06",
+      "notes": "The OG buggy CryptoPunks marketplace withdrawn"
+    },
+    {
+      "chain": "ethereum",
+      "name": "CryptoPunks Marketplace",
+      "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+      "category": "NFT_OLD",
+      "deployed": "2017-06",
+      "notes": "Current CryptoPunks - has pendingWithdrawals[]"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Gas Token Forwarder",
+      "address": "0x0000000000007F150Bd6f54c40A34d7C3d5e9f56",
+      "category": "GAS_TOKEN_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Status SNT Airdrop",
+      "address": "0xed014aec47fae44c9e55bac7662c0b78ae61798E",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Polkastarter Airdrop",
+      "address": "0x9a31C1f4F5B8Bf9c3be0e92d8B99B9d2A54E8b4D",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Curve veCRV Airdrop",
+      "address": "0x575CCD8e2D300e2377B43478339E364000318E2c",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2020-08"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Looksrare LOOKS Airdrop",
+      "address": "0xA35dCe3e0E6ceB67A30b8D7f4aEe721c949B5970",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-01",
+      "notes": "Famously open vampire airdrop, mostly claimed"
+    },
+    {
+      "chain": "ethereum",
+      "name": "X2Y2 Airdrop",
+      "address": "0x6F0A0c27CA58CB2Dd6F5C8E3C1aC81E16A48D6dA",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-02"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OpenDAO SOS Airdrop",
+      "address": "0x3b484b82567a09e2588A13D54D032153f0c0aEe0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2021-12"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Apecoin APE Drop",
+      "address": "0x4BdE5c7a566aDFf50CB8d048D2cb04ebE85b95E0",
+      "category": "AIRDROP_CLAIM",
+      "deployed": "2022-03"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Rocketpool RPL Old",
+      "address": "0xB4EFd85c19999D84251304bDA99E90B92300Bd93",
+      "category": "DEFI_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "YearnFinance Old (yYFI)",
+      "address": "0xBA37B002AbaFDd8E89a1995dA52740bbC013D992",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Curve Old Pool 3pool",
+      "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "category": "DEFI_OLD",
+      "deployed": "2020-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Curve Old Pool sETH",
+      "address": "0xc5424B857f758E906013F3555Dad202e4bdB4567",
+      "category": "DEFI_OLD",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Curve Old Pool stETH",
+      "address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "WBTC Cafe (deprecated)",
+      "address": "0x4DfE7770F8B98a4dF6f70EF2EA51E5e4bDFE1cD6",
+      "category": "DEFI_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "renBTC Bridge Old",
+      "address": "0x9955C44c9Eb22E7Ed4d6C7e8a4aB0e1f4A4f5E6f",
+      "category": "BRIDGE_DEAD",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Hegic IBCO",
+      "address": "0xCB5be0eEAc4B2B7e09b9d6B9d9d0d4a0d13eef4D",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yearn YFI v1 Vault",
+      "address": "0xACd43E627e64355f1861cEC6d3a6688B31a6F952",
+      "category": "DEFI_OLD",
+      "deployed": "2020-07"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yearn yWETH",
+      "address": "0xa9fE4601811213c340e850ea305481afF02f5b28",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Synthetix Old Exchange",
+      "address": "0xfeefeefeefeeFEefeEFEEFeeFeefEefeefEEFEEf",
+      "category": "DEPRECATED",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "PoolTogether v2",
+      "address": "0x47A22dB0bA0c34c79Ed3DD739c10C40D2D1eDE63",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "PoolTogether v1",
+      "address": "0xf6a67dE7eD1eFCEa8E15a3D5BFAA8C49A50b7C40",
+      "category": "DEFI_OLD",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "OmegaOne Sale",
+      "address": "0xCDB8D9Ad6dB81Ad42a0F4B4c7A94De5CBA3DA0a3",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Bnktothefuture BFT",
+      "address": "0x01ff50f8b7f74e4f00580d9596cd3d0d6d6e326f",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "AdEx ADX",
+      "address": "0x4470BB87d77b963A013DB939BE332f927f2b992e",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Eidoo EDO",
+      "address": "0xCeD4E93198734dDaFf8492d525Bd258D49eb388E",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Cindicator CND",
+      "address": "0xd4c435f5b09f855c3317c8524cb1f586e42795fa",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Telcoin TEL Old",
+      "address": "0x85e076361cc813a908ff672f9bad1541474402b2",
+      "category": "ICO_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Spectrecoin",
+      "address": "0x97cb3F7253E0bE3e57A8d2f3bea74cF8e5a98F8B",
+      "category": "ICO_OLD",
+      "deployed": "2017"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Babbage Compound",
+      "address": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
+      "category": "DEFI_OLD",
+      "deployed": "2018-09"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Compound Comptroller",
+      "address": "0x3d9819210A31b4961b30EF54bE2aeD79B9c9Cd3B",
+      "category": "DEFI_OLD",
+      "deployed": "2019"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Curve Aave Pool old",
+      "address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Yearn yCRV",
+      "address": "0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8",
+      "category": "DEFI_OLD",
+      "deployed": "2020"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Numerai Compete (old)",
+      "address": "0xA1d8d972560C2f8144AF871Db508F0B0B10a3fBf",
+      "category": "DEFI_OLD",
+      "deployed": "2018"
+    },
+    {
+      "chain": "ethereum",
+      "name": "Decentraland Estate",
+      "address": "0x959e104E1a4dB6317fA58F8295F586e1A978c297",
+      "category": "NFT_OLD",
+      "deployed": "2018"
+    }
+  ]
+}
