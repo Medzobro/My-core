@@ -1,0 +1,12 @@
+{
+  "powh3d": {
+    "total_eth": 2091.5538,
+    "total_supply_p3d": 354808.56,
+    "avg_eth_per_token": 0.005894879762765589,
+    "buy_price_from_contract": 0.003903,
+    "sell_price_to_contract": 0.003193,
+    "fee_pct": 18.191135024340245,
+    "recoverable_by": "existing P3D holders only",
+    "dividends_claimable": "depends on holder, dividendsOf(addr)"
+  }
+}
