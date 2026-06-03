@@ -287,6 +287,53 @@
       "type": "Pension pool",
       "deployed": "2018",
       "category": "DEPRECATED"
+    },
+    {
+      "name": "DigixDAO Refund (Project Ragnarok)",
+      "address": "0x78988D377227c8801905E517C042e61d85601a75",
+      "type": "DAO dissolution refund",
+      "deployed": "2020",
+      "withdraw_method": "approve(spender,amount) on DGD then burn()",
+      "category": "TOKEN_HOLDER",
+      "balance_eth": 11098,
+      "requires": "DGD tokens at 0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A",
+      "rate": "0.193054 ETH per DGD",
+      "notes": "DigixDAO dissolved via Project Ragnarok. ~6,014 addresses unclaimed."
+    },
+    {
+      "name": "Old WETH (2016 Canonical)",
+      "address": "0xECF8F87f810EcF450940c9f60066b4a7a501d6A7",
+      "type": "Legacy WETH wrapper",
+      "deployed": "2016-06",
+      "withdraw_method": "withdraw(uint256)",
+      "category": "TOKEN_HOLDER",
+      "balance_eth": 3258,
+      "notes": "Pre-WETH9 wrapper. ~987 addresses hold old WETH. Unwrap via withdraw()."
+    },
+    {
+      "name": "Foundation NFT Escrow",
+      "address": "0xcDA72070E455bb31C7690a170224Ce43623d0B6e",
+      "type": "NFT marketplace escrow",
+      "deployed": "2021-02",
+      "withdraw_method": "withdrawAvailableBalance()",
+      "category": "DEPRECATED",
+      "notes": "Foundation shut down. Escrow balances still claimable."
+    },
+    {
+      "name": "Aave v1 aETH",
+      "address": "0x3a3A65aAb0dd2A17E3F1947bA16138cd37d08c04",
+      "type": "Lending (deprecated)",
+      "deployed": "2020-01",
+      "category": "TOKEN_HOLDER",
+      "notes": "Aave v1 deprecated. Redemptions for aETH to ETH still open."
+    },
+    {
+      "name": "Gnosis Auction",
+      "address": "0x0b7fFc1f4AD541A4Ed16b40D8c37f0929158D101",
+      "type": "Batch auction",
+      "deployed": "2021",
+      "category": "USER_DEPOSITS",
+      "notes": "Unclaimed WETH from auctions still retrievable."
     }
   ]
 }
