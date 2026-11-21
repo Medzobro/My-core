@@ -166,7 +166,8 @@
       "balance_check": "erc20_self",
       "balance_check_token_decimals": 8,
       "category": "USER_DEPOSITS",
-      "deployed": "2018-09"
+      "deployed": "2018-09",
+      "balance_check_token_name": "cETH"
     },
     {
       "chain": "ethereum",
@@ -175,7 +176,8 @@
       "balance_check": "erc20_self",
       "balance_check_token_decimals": 8,
       "category": "USER_DEPOSITS",
-      "deployed": "2018-09"
+      "deployed": "2018-09",
+      "balance_check_token_name": "cDAI"
     },
     {
       "chain": "ethereum",
@@ -213,7 +215,8 @@
       "balance_check_token_decimals": 0,
       "withdraw_method": "free(uint256)",
       "category": "TOKEN_HOLDER",
-      "deployed": "2018-08"
+      "deployed": "2018-08",
+      "balance_check_token_name": "GST2"
     },
     {
       "chain": "ethereum",
@@ -223,7 +226,8 @@
       "balance_check_token_decimals": 0,
       "withdraw_method": "free(uint256)",
       "category": "TOKEN_HOLDER",
-      "deployed": "2020-05"
+      "deployed": "2020-05",
+      "balance_check_token_name": "CHI"
     },
     {
       "chain": "ethereum",
@@ -232,7 +236,8 @@
       "balance_check": "erc20_self",
       "balance_check_token_decimals": 18,
       "category": "TOKEN_HOLDER",
-      "deployed": "2017"
+      "deployed": "2017",
+      "balance_check_token_name": "SAI"
     },
     {
       "chain": "ethereum",
@@ -2379,7 +2384,9 @@
       "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
       "category": "NFT_OLD",
       "deployed": "2017-06",
-      "notes": "Current CryptoPunks - has pendingWithdrawals[]"
+      "notes": "Current CryptoPunks - has pendingWithdrawals[]",
+      "balance_check": "cryptopunks",
+      "withdraw_method": "withdraw()"
     },
     {
       "chain": "ethereum",

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مستحقاتي — افحص إن كان لك مال عالق على السلسلة</title>
+<meta name="description" content="فحص للقراءة فقط يكشف أرصدتك العالقة في عقود Ethereum الميتة والمنصات المغلقة، مع خطوات الاسترداد.">
+<meta property="og:title" content="مستحقاتي — فحص الأرصدة العالقة">
+<meta property="og:description" content="أدخل عنوان محفظتك واحصل على تقرير بكل رصيد قابل للاسترداد وخطوات سحبه.">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">⛏</span>
+      <div>
+        <div class="brand-name">مستحقاتي</div>
+        <div class="brand-sub">stuck-funds audit</div>
+      </div>
+    </div>
+    <div class="score none" id="score">
+      <div class="score-value" id="scoreValue">—</div>
+      <div class="score-label" id="scoreLabel">غير مفحوص</div>
+    </div>
+  </header>
+
+  <section class="lead" id="lead">
+    <h1>هل تركت مالاً على السلسلة؟</h1>
+    <p>كثيرون أودعوا في منصات أُغلقت، أو باعوا NFT ولم يسحبوا قيمته. أدخل عنوانك واعرف <span class="em">ما هو عالق باسمك</span> — أثناء دقيقة واحدة.</p>
+  </section>
+
+  <form class="audit" id="form" autocomplete="off">
+    <div class="field">
+      <input id="address" name="address" type="text" inputmode="latin" spellcheck="false"
+             placeholder="0x… عنوان محفظتك" aria-label="عنوان المحفظة" maxlength="42">
+      <button class="primary" id="submit" type="submit">افحص الآن</button>
+    </div>
+    <div class="hints">
+      <button type="button" class="chip" data-addr="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045">جرّب عنواناً للتجربة</button>
+      <span class="chip">لا نطلب مفتاحك الخاص — أبداً</span>
+      <span class="chip">قراءة فقط من السلسلة</span>
+    </div>
+  </form>
+
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+  <div id="result"></div>
+
+  <footer class="foot">
+    <p><b>ما يفحصه:</b> عقود معروفة على Ethereum والـ L2 — منصات تداول مغلقة (EtherDelta / ForkDelta / IDEX 1.0)، توكنات غاز، Compound v1، WithdrawDAO، وأرصدة بيع CryptoPunks غير المسحوبة.</p>
+    <p><b>حدوده بصراحة:</b> التقرير يغطي العقود المعروفة فقط، ولا يخمّن. الأموال العالقة في عقود أخرى تبقى خارج التغطية.</p>
+    <p><b>تحذير:</b> أي «خدمة استرداد» تطلب رسوماً مقدماً أو عبارة الاسترداد الخاصة بك هي عملية نصب.</p>
+  </footer>
+</main>
+<script src="/static/app.js" defer></script>
+</body>
+</html>
