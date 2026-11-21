@@ -12,8 +12,10 @@ GET  /api/stats        aggregate numbers for the landing page
 from __future__ import annotations
 
 import asyncio
+import logging
 import os
 import time
+import uuid
 from collections import deque
 from typing import Optional
 
@@ -31,9 +33,13 @@ STATIC_DIR = os.path.join(HERE, "static")
 
 REPORT_TTL = 600
 MAX_CACHED = 500
+MAX_CLIENTS = 10_000
 SCAN_TIMEOUT = 45.0
 RATE_LIMIT = 20
 RATE_WINDOW = 300.0
+TRUST_PROXY = os.environ.get("TRUST_PROXY", "").lower() in {"1", "true", "yes"}
+
+security_log = logging.getLogger("mustahaqati.security")
 
 app = FastAPI(title="Mustahaqati — Stuck Funds Audit", version="1.0.0")
 if os.path.isdir(STATIC_DIR):
@@ -42,6 +48,35 @@ if os.path.isdir(STATIC_DIR):
 _reports: dict[str, tuple[float, Report]] = {}
 _hits: dict[str, deque] = {}
 _served = {"audits": 0, "findings": 0}
+
+
+@app.middleware("http")
+async def _security_and_timing(request: Request, call_next):
+    """Attach hardening headers and log one line per request with its latency."""
+    request_id = uuid.uuid4().hex[:12]
+    started = time.perf_counter()
+    response = await call_next(request)
+    response.headers["X-Request-ID"] = request_id
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+        "font-src 'self' https://fonts.gstatic.com; "
+        "script-src 'self'; img-src 'self' data:; connect-src 'self'; "
+        "frame-ancestors 'none'"
+    )
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    security_log.info(
+        "%s %s %s %d %.0fms",
+        request_id,
+        request.method,
+        request.url.path,
+        response.status_code,
+        elapsed_ms,
+    )
+    return response
 
 
 class AuditRequest(BaseModel):
@@ -59,8 +94,24 @@ class AuditRequest(BaseModel):
         return value.lower()
 
 
+def _client_ip(request: Request) -> str:
+    """Best-effort client identity for rate limiting.
+
+    X-Forwarded-For is only honoured when TRUST_PROXY is set, because the header
+    is trivially spoofed on a directly exposed server.
+    """
+    if TRUST_PROXY:
+        forwarded = request.headers.get("x-forwarded-for", "")
+        if forwarded:
+            return forwarded.split(",")[0].strip()
+    return (request.client.host if request.client else "unknown") or "unknown"
+
+
 def _rate_limited(ip: str) -> bool:
     now = time.time()
+    if len(_hits) > MAX_CLIENTS:  # keep the bucket table from growing forever
+        for stale_ip in [k for k, v in _hits.items() if not v or now - v[-1] > RATE_WINDOW][:1000]:
+            _hits.pop(stale_ip, None)
     bucket = _hits.setdefault(ip, deque())
     while bucket and now - bucket[0] > RATE_WINDOW:
         bucket.popleft()
@@ -129,8 +180,7 @@ async def _validation_handler(request: Request, exc: RequestValidationError) -> 
 
 @app.post("/api/audit")
 async def api_audit(payload: AuditRequest, request: Request) -> JSONResponse:
-    ip = (request.client.host if request.client else "unknown") or "unknown"
-    if _rate_limited(ip):
+    if _rate_limited(_client_ip(request)):
         raise HTTPException(status_code=429, detail="عدد الفحوصات كبير، انتظر قليلاً")
     was_cached = _cached(payload.address) is not None
     report = await _run(payload.address, payload.chains, payload.include_native)

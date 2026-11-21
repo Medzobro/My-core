@@ -148,3 +148,29 @@ def test_landing_page_served(client):
     response = client.get("/")
     assert response.status_code == 200
     assert "مستحقاتي" in response.text
+
+
+def test_security_headers_present(client):
+    response = client.get("/")
+    assert response.headers["x-content-type-options"] == "nosniff"
+    assert response.headers["x-frame-options"] == "DENY"
+    assert "default-src 'self'" in response.headers["content-security-policy"]
+    assert len(response.headers["x-request-id"]) == 12
+
+
+def test_rate_limit_blocks_after_quota(client, monkeypatch):
+    monkeypatch.setattr(server, "RATE_LIMIT", 3)
+    codes = [client.post("/api/audit", json={"address": USER}).status_code for _ in range(4)]
+    assert codes[:3] == [200, 200, 200]
+    assert codes[3] == 429
+
+
+def test_client_ip_ignores_forwarded_header_by_default(monkeypatch):
+    class FakeRequest:
+        headers = {"x-forwarded-for": "1.2.3.4, 10.0.0.1"}
+        client = type("C", (), {"host": "9.9.9.9"})()
+
+    monkeypatch.setattr(server, "TRUST_PROXY", False)
+    assert server._client_ip(FakeRequest()) == "9.9.9.9"
+    monkeypatch.setattr(server, "TRUST_PROXY", True)
+    assert server._client_ip(FakeRequest()) == "1.2.3.4"
