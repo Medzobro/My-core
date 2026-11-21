@@ -31,14 +31,32 @@ from core.util import (  # noqa: E402
     wei_to_float,
 )
 
-from audit import guide  # noqa: E402
+from audit import calldata, guide  # noqa: E402
 
 DATA_DIR = os.path.join(PKG, "data")
 PUNKS_CONTRACT = "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb"
 # keccak256("pendingWithdrawals(address)")[:4]
 PENDING_WITHDRAWALS_SELECTOR = "0xf3f43703"
+# keccak256("weiPerNanoDGD()")[:4] on the DigixDAO Acid refund contract.
+DIGIXDAO_RATE_SELECTOR = "0x456a7cd8"
 
 DIFFICULTY_RANK = {"easy": 0, "medium": 1, "hard": 2}
+
+
+@dataclass
+class Hit:
+    """One balance returned by a contract check, before it becomes a finding."""
+
+    symbol: str
+    amount_raw: int
+    token: str
+    decimals: int
+    # Present when the recovered asset is ETH but the check read a gate token
+    # (DigixDAO: burn DGD, receive ETH at a fixed on-chain rate).
+    source_symbol: Optional[str] = None
+    source_amount_raw: Optional[int] = None
+    source_decimals: Optional[int] = None
+    source_token: Optional[str] = None
 
 
 @dataclass
@@ -61,6 +79,11 @@ class Finding:
     note_en: Optional[str] = None
     withdraw_method: Optional[str] = None
     usd: Optional[float] = None
+    source_symbol: Optional[str] = None
+    source_amount: Optional[float] = None
+    source_raw: Optional[int] = None
+    source_token: Optional[str] = None
+    calldata: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -80,6 +103,11 @@ class Finding:
             "note_en": self.note_en,
             "withdraw_method": self.withdraw_method,
             "usd": self.usd,
+            "source_symbol": self.source_symbol,
+            "source_amount": self.source_amount,
+            "source_raw": str(self.source_raw) if self.source_raw is not None else None,
+            "source_token": self.source_token,
+            "calldata": self.calldata,
             "etherscan": guide.etherscan_url(self.contract, is_token=False),
         }
 
@@ -161,31 +189,29 @@ def _hex_int(value: Any) -> int:
         return 0
 
 
-async def _scan_contract(
-    rpc: ChainRPC, contract: dict, user: str, tokens_db: dict
-) -> list[tuple[str, int, str, int]]:
-    """Return (symbol, raw_amount, token_address, decimals) for one contract."""
+async def _scan_contract(rpc: ChainRPC, contract: dict, user: str, tokens_db: dict) -> list[Hit]:
+    """Return every balance this contract reports for ``user``."""
     chain = contract["chain"]
     address = contract["address"]
     check = contract.get("balance_check")
-    found: list[tuple[str, int, str, int]] = []
+    found: list[Hit] = []
 
     if check == "etherdelta":
         raw = await _dex_deposit(rpc, chain, address, user, ZERO_ADDRESS)
         if raw > 0:
-            found.append(("ETH", raw, ZERO_ADDRESS, 18))
+            found.append(Hit("ETH", raw, ZERO_ADDRESS, 18))
         for token_addr, meta in tokens_db.get(chain, {}).items():
             symbol, decimals = meta[0], int(meta[1])
             raw = await _dex_deposit(rpc, chain, address, user, token_addr)
             if raw > 0:
-                found.append((symbol, raw, token_addr, decimals))
+                found.append(Hit(symbol, raw, token_addr, decimals))
 
     elif check == "erc20_self":
         raw = await _erc20_balance(rpc, chain, address, user)
         if raw > 0:
             decimals = int(contract.get("balance_check_token_decimals", 18))
             symbol = contract.get("balance_check_token_name") or contract["name"][:12]
-            found.append((symbol, raw, address, decimals))
+            found.append(Hit(symbol, raw, address, decimals))
 
     elif check == "erc20_holder":
         token = contract.get("balance_check_token")
@@ -194,14 +220,42 @@ async def _scan_contract(
             if raw > 0:
                 decimals = int(contract.get("balance_check_token_decimals", 18))
                 symbol = contract.get("balance_check_token_name", "TOKEN")
-                found.append((symbol, raw, token, decimals))
+                found.append(Hit(symbol, raw, token, decimals))
 
     elif check == "cryptopunks":
         data = PENDING_WITHDRAWALS_SELECTOR + encode_addr(user)
         res = await rpc.call(chain, "eth_call", [{"to": PUNKS_CONTRACT, "data": data}, "latest"])
         raw = _hex_int(res)
         if raw > 0:
-            found.append(("ETH", raw, ZERO_ADDRESS, 18))
+            found.append(Hit("ETH", raw, ZERO_ADDRESS, 18))
+
+    elif check == "digixdao":
+        # Acid.burn() pays ETH at a fixed on-chain rate for the caller's whole
+        # DGD balance. Both numbers come from chain state, not from a constant
+        # in this repository.
+        dgd_token = contract.get("balance_check_token")
+        if dgd_token:
+            rate = _hex_int(
+                await rpc.call(
+                    chain,
+                    "eth_call",
+                    [{"to": address, "data": DIGIXDAO_RATE_SELECTOR}, "latest"],
+                )
+            )
+            dgd_raw = await _erc20_balance(rpc, chain, dgd_token, user)
+            if rate > 0 and dgd_raw > 0:
+                found.append(
+                    Hit(
+                        "ETH",
+                        dgd_raw * rate,
+                        ZERO_ADDRESS,
+                        18,
+                        source_symbol=contract.get("balance_check_token_name", "DGD"),
+                        source_amount_raw=dgd_raw,
+                        source_decimals=int(contract.get("balance_check_token_decimals", 9)),
+                        source_token=dgd_token,
+                    )
+                )
 
     return found
 
@@ -273,22 +327,38 @@ async def audit_address(
         for contract, result in zip(contracts, scans, strict=False):
             if isinstance(result, BaseException):
                 continue
-            for symbol, raw, token_addr, decimals in result:
+            for hit in result:
                 entry = guide.guide_for(
                     contract["address"], contract.get("balance_check"), contract["name"]
                 )
-                amount = wei_to_float(raw, decimals)
-                usd = round(amount * price, 2) if price and symbol == "ETH" else None
+                amount = wei_to_float(hit.amount_raw, hit.decimals)
+                usd = round(amount * price, 2) if price and hit.symbol == "ETH" else None
+                source_amount = (
+                    wei_to_float(hit.source_amount_raw, hit.source_decimals or 18)
+                    if hit.source_amount_raw is not None
+                    else None
+                )
+                try:
+                    steps = calldata.build_steps(
+                        contract.get("calldata_kind"),
+                        contract=contract["address"],
+                        token=hit.token,
+                        amount_raw=hit.amount_raw,
+                        source_token=hit.source_token,
+                        source_raw=hit.source_amount_raw,
+                    )
+                except ValueError:
+                    steps = []
                 report.findings.append(
                     Finding(
                         chain=contract["chain"],
                         contract=contract["address"],
                         contract_name=contract["name"],
                         category=contract.get("category", ""),
-                        symbol=symbol,
+                        symbol=hit.symbol,
                         amount=amount,
-                        amount_raw=raw,
-                        token=token_addr,
+                        amount_raw=hit.amount_raw,
+                        token=hit.token,
                         check_type=contract.get("balance_check", ""),
                         difficulty=entry.get("difficulty", "medium"),
                         title_ar=entry.get("title_ar", contract["name"]),
@@ -297,6 +367,11 @@ async def audit_address(
                         note_en=entry.get("note_en"),
                         withdraw_method=contract.get("withdraw_method"),
                         usd=usd,
+                        source_symbol=hit.source_symbol,
+                        source_amount=source_amount,
+                        source_raw=hit.source_amount_raw,
+                        source_token=hit.source_token,
+                        calldata=steps,
                     )
                 )
 

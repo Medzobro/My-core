@@ -27,7 +27,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from audit.engine import audit_address  # noqa: E402
+from audit.engine import audit_address, load_data  # noqa: E402
 from core.util import Colors, format_amount  # noqa: E402
 
 
@@ -63,6 +63,11 @@ def cmd_audit(args: argparse.Namespace) -> int:
         )
         for index, step in enumerate(finding.steps, 1):
             print(f"      {index}. {step['ar']}")
+        for step in finding.calldata:
+            print(
+                f"      {C.CYAN}{step['function']}{C.RESET} -> {step['to']}\n"
+                f"        {C.GRAY}{step['data']}{C.RESET}"
+            )
         if finding.note_ar:
             print(f"      {C.YELLOW}note:{C.RESET} {finding.note_ar}")
         print()
@@ -155,8 +160,39 @@ def cmd_server(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_doctor(args: argparse.Namespace) -> int:
+    from audit.doctor import doctor
+
+    result = asyncio.run(doctor(concurrency=args.concurrency))
+    C = Colors
+    print(f"\n{C.BOLD}CONTRACT DOCTOR{C.RESET}  ({result['checked']} checks)\n")
+    for item in result["contracts"]:
+        if not item["is_contract"]:
+            state = f"{C.RED}DEAD{C.RESET}"
+        elif item["expected_found"] is False:
+            state = f"{C.YELLOW}WARN{C.RESET}"
+        else:
+            state = f"{C.GREEN}OK  {C.RESET}"
+        note = f"  {C.GRAY}{item['note']}{C.RESET}" if item["note"] else ""
+        print(
+            f"  {state} {item['name'][:34]:<34} {item['chain']:<10} "
+            f"{item['address']} bytes={item['code_bytes']}{note}"
+        )
+    print(
+        f"\n  {C.BOLD}{result['healthy']}{C.RESET} live · "
+        f"{C.RED}{result['dead']}{C.RESET} dead · "
+        f"{C.YELLOW}{result['selector_warnings']}{C.RESET} selector warnings\n"
+    )
+    if args.json:
+        with open(args.json, "w", encoding="utf-8") as handle:
+            json.dump(result, handle, indent=2, ensure_ascii=False)
+        print(f"  saved: {args.json}")
+    if args.fail_on_dead and (result["dead"] or result["selector_warnings"]):
+        return 1
+    return 0
+
+
 def cmd_stats(_args: argparse.Namespace) -> int:
-    from audit.engine import load_data
 
     chains, contracts, tokens = load_data()
     C = Colors
@@ -168,7 +204,7 @@ def cmd_stats(_args: argparse.Namespace) -> int:
     for contract in contracts:
         by_chain[contract["chain"]] = by_chain.get(contract["chain"], 0) + 1
     print(f"  by chain:  {dict(sorted(by_chain.items(), key=lambda kv: -kv[1]))}")
-    print(f"  checks:    {sorted({c.get('balance_check') for c in contracts if c.get('balance_check')})}\n")
+    print(f"  checks:    {sorted({c['balance_check'] for c in contracts if c.get('balance_check')})}\n")
     return 0
 
 
@@ -233,6 +269,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--port", type=int, default=8010)
     p.add_argument("--log-level", default="info")
     p.set_defaults(func=cmd_server)
+
+    p = subs.add_parser("doctor", help="check every scanned contract against live bytecode")
+    p.add_argument("--json", default=None)
+    p.add_argument("--fail-on-dead", action="store_true")
+    p.add_argument("--concurrency", type=int, default=10)
+    p.set_defaults(func=cmd_doctor)
 
     p = subs.add_parser("stats", help="show what the engine will scan")
     p.set_defaults(func=cmd_stats)

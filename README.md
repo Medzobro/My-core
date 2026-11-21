@@ -24,17 +24,19 @@ Honest scope, because the interesting part of this repo is what it *refuses* to 
 | Contract | What is checked | Recovery |
 |---|---|---|
 | CryptoPunks Marketplace | `pendingWithdrawals(address)` | `withdraw()` |
-| ForkDelta / EtherDelta v3 | `tokens[token][user]` for ETH + 39 tokens | `withdraw` / `withdrawToken` |
+| ForkDelta / EtherDelta v3 | `balanceOf(token,user)` for ETH + 39 tokens | `withdraw` / `withdrawToken` |
 | IDEX 1.0 | same mapping | `withdraw(address,uint256)` |
 | Token.Store | same mapping | `withdraw(address,uint256)` |
-| EtherDelta v1 / v2, Saturn | same mapping | legacy |
-| Compound v1 cETH / cDAI | `balanceOf(address)` | `redeem(uint256)` |
+| DigixDAO Acid refund | `balanceOf(DGD)` × `weiPerNanoDGD()` | `approve` then `burn()` |
 | WithdrawDAO (The DAO) | DAO token balance | `approve` then `withdraw()` |
 | GasToken2 / CHI | token balance | `free(uint256)` |
 | Old SAI | token balance | deprecated, no path |
 
-13 contracts on Ethereum mainnet, one address, ~250 RPC calls, ~3 seconds. The legacy CLI
-also carries 20 chain configurations for its wider (non-recovery) scans.
+9 live contracts on Ethereum mainnet, one address, ~120 RPC calls, ~1 second. Four
+entries that looked scannable were removed after bytecode checks: EtherDelta v1/v2 and
+Saturn have no live runtime code, and the two Compound v1 addresses were a Timelock and a
+reverting market, not user-balance getters. The legacy CLI also carries 20 chain
+configurations for its wider (non-recovery) scans.
 
 Anything outside that table is **not** covered, and the report says so instead of guessing.
 
@@ -71,6 +73,21 @@ print(asyncio.run(audit_address("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045")).t
 PY
 ```
 
+## DigixDAO recovery kit
+
+The DGD dissolution refund is deep enough to deserve its own page instead of one card:
+
+```bash
+curl -s localhost:8010/api/kit/digixdao/0xb3fEE89D04D02Dc4B522d487c24c810ad8E5809c \
+  | jq '{dgd, rate_per_dgd, eth, solvent, has_balance}'
+# open http://localhost:8010/kit/digixdao/0xb3fEE89D04D02Dc4B522d487c24c810ad8E5809c
+```
+
+It reads `balanceOf(DGD)`, `weiPerNanoDGD()` and the Acid contract's ETH balance, then
+returns the two transactions (`approve` + `burn`) with exact calldata, a pool-coverage
+bar, and Etherscan links to verify each number. The Acid contract still holds ~11,595 ETH;
+the rate is read on-chain, never hardcoded.
+
 ## Architecture
 
 ```
@@ -80,13 +97,16 @@ lost_eth_scanner/
 │   ├── pricing.py    # ETH→USD, two feeds, cached, degrades to None
 │   └── util.py       # ABI encoding, address validation, formatting
 ├── audit/
-│   ├── engine.py     # address → Report (13 checks + native balances)
+│   ├── engine.py     # address → Report (9 checks + native balances)
 │   ├── guide.py      # bilingual recovery steps per contract
+│   ├── calldata.py   # exact approve/withdraw/burn bytes, pinned selectors
+│   ├── kit.py        # DigixDAO: DGD balance × on-chain rate, pool coverage
+│   ├── kit_render.py # deep single-contract recovery page
 │   ├── render.py     # server-rendered, shareable HTML report
-│   ├── server.py     # FastAPI: /, /api/audit, /report/{addr}, /health
-│   └── static/       # RTL dark UI (Cairo, no framework, ~20KB)
+│   ├── server.py     # FastAPI: /, /api/audit, /report, /kit, /health
+│   └── static/       # RTL dark UI (Cairo, no framework, ~25KB)
 ├── data/             # chains, contracts, tokens (plain JSON, reviewable)
-├── tests/            # 44 tests, all offline (fake RPC)
+├── tests/            # 72 tests, all offline (fake RPC)
 ├── discovery.py      # derive contracts from your own tx history
 └── bytecode_analyzer.py  # selector/opcode/proxy forensics
 ```
@@ -107,6 +127,8 @@ Design notes:
 |---|---|---|
 | `POST` | `/api/audit` | `{"address": "0x..", "include_native": true}` → JSON report |
 | `GET` | `/report/{address}` | shareable HTML report |
+| `GET` | `/kit/digixdao/{address}` | deep DGD recovery kit (HTML) |
+| `GET` | `/api/kit/digixdao/{address}` | same kit as JSON |
 | `GET` | `/health` | liveness + cache counters |
 | `GET` | `/api/stats` | aggregate counters |
 

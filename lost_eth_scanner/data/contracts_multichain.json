@@ -3,6 +3,21 @@
   "contracts": [
     {
       "chain": "ethereum",
+      "name": "DigixDAO Acid Refund",
+      "address": "0x23Ea10CC1e6EBdB499D24E45369A35f43627062f",
+      "balance_check": "digixdao",
+      "calldata_kind": "digixdao",
+      "balance_check_token": "0xe0b7927c4af23765cb51314a0e0521a9645f0e2a",
+      "balance_check_token_decimals": 9,
+      "balance_check_token_name": "DGD",
+      "withdraw_method": "approve(DGD, Acid) then burn()",
+      "category": "DAO_REFUND",
+      "balance_eth": 11595,
+      "deployed": "2020-03",
+      "notes": "Fixed rate read from weiPerNanoDGD(); burn() sends ETH for the caller's whole DGD balance"
+    },
+    {
+      "chain": "ethereum",
       "name": "IDEX 1.0",
       "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
       "balance_check": "etherdelta",
@@ -19,23 +34,26 @@
       "withdraw_method": "withdrawToken(address,uint256), withdraw(uint256)",
       "category": "USER_DEPOSITS",
       "balance_eth": 15221,
-      "deployed": "2017-08"
+      "deployed": "2017-08",
+      "calldata_kind": "etherdelta"
     },
     {
       "chain": "ethereum",
       "name": "EtherDelta v2",
       "address": "0x4aBB0f5fd529cD8C3F80FB6C2e5249084B7CfA63",
-      "balance_check": "etherdelta",
       "category": "USER_DEPOSITS",
-      "deployed": "2017-07"
+      "deployed": "2017-07",
+      "balance_check_removed": "etherdelta",
+      "notes": "removed: no live bytecode / no user-balance getter (verified 2026-11-21)"
     },
     {
       "chain": "ethereum",
       "name": "EtherDelta v1",
       "address": "0x8da0d80f5007ef1e431dd2127178d224e32c2ef4",
-      "balance_check": "etherdelta",
       "category": "USER_DEPOSITS",
-      "deployed": "2017-02"
+      "deployed": "2017-02",
+      "balance_check_removed": "etherdelta",
+      "notes": "removed: no live bytecode / no user-balance getter (verified 2026-11-21)"
     },
     {
       "chain": "ethereum",
@@ -45,15 +63,17 @@
       "withdraw_method": "withdraw(address,uint256)",
       "category": "USER_DEPOSITS",
       "deployed": "2017-12",
-      "notes": "Officially abandoned"
+      "notes": "Officially abandoned",
+      "calldata_kind": "idex"
     },
     {
       "chain": "ethereum",
       "name": "Saturn Network DEX",
       "address": "0x1d52da498be2c862b0bbe2f053adda85f02c44df",
-      "balance_check": "etherdelta",
       "category": "USER_DEPOSITS",
-      "deployed": "2018"
+      "deployed": "2018",
+      "balance_check_removed": "etherdelta",
+      "notes": "removed: no live bytecode / no user-balance getter (verified 2026-11-21)"
     },
     {
       "chain": "ethereum",
@@ -163,21 +183,23 @@
       "chain": "ethereum",
       "name": "Compound v1 cETH",
       "address": "0x3FDA67f7583380E67ef93072294a7fAc882FD7E7",
-      "balance_check": "erc20_self",
       "balance_check_token_decimals": 8,
       "category": "USER_DEPOSITS",
       "deployed": "2018-09",
-      "balance_check_token_name": "cETH"
+      "balance_check_token_name": "cETH",
+      "balance_check_removed": "erc20_self",
+      "notes": "removed: no live bytecode / no user-balance getter (verified 2026-11-21)"
     },
     {
       "chain": "ethereum",
       "name": "Compound v1 cDAI",
       "address": "0x25e46957363e16C4e2D5F2854b062475F9f8d287",
-      "balance_check": "erc20_self",
       "balance_check_token_decimals": 8,
       "category": "USER_DEPOSITS",
       "deployed": "2018-09",
-      "balance_check_token_name": "cDAI"
+      "balance_check_token_name": "cDAI",
+      "balance_check_removed": "erc20_self",
+      "notes": "removed: no live bytecode / no user-balance getter (verified 2026-11-21)"
     },
     {
       "chain": "ethereum",
@@ -205,7 +227,8 @@
       "category": "TOKEN_HOLDER",
       "balance_eth": 81914,
       "rate_note": "100 DAO = 1 ETH",
-      "deployed": "2016-07"
+      "deployed": "2016-07",
+      "calldata_kind": "withdrawdao"
     },
     {
       "chain": "ethereum",
@@ -216,7 +239,8 @@
       "withdraw_method": "free(uint256)",
       "category": "TOKEN_HOLDER",
       "deployed": "2018-08",
-      "balance_check_token_name": "GST2"
+      "balance_check_token_name": "GST2",
+      "calldata_kind": "gastoken"
     },
     {
       "chain": "ethereum",
@@ -227,7 +251,8 @@
       "withdraw_method": "free(uint256)",
       "category": "TOKEN_HOLDER",
       "deployed": "2020-05",
-      "balance_check_token_name": "CHI"
+      "balance_check_token_name": "CHI",
+      "calldata_kind": "gastoken"
     },
     {
       "chain": "ethereum",
@@ -237,7 +262,8 @@
       "balance_check_token_decimals": 18,
       "category": "TOKEN_HOLDER",
       "deployed": "2017",
-      "balance_check_token_name": "SAI"
+      "balance_check_token_name": "SAI",
+      "calldata_kind": "none"
     },
     {
       "chain": "ethereum",
@@ -2386,7 +2412,8 @@
       "deployed": "2017-06",
       "notes": "Current CryptoPunks - has pendingWithdrawals[]",
       "balance_check": "cryptopunks",
-      "withdraw_method": "withdraw()"
+      "withdraw_method": "withdraw()",
+      "calldata_kind": "cryptopunks"
     },
     {
       "chain": "ethereum",

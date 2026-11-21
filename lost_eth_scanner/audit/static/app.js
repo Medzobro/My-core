@@ -57,7 +57,66 @@
     statusBox.replaceChildren();
   }
 
-  function renderFinding(finding) {
+  function legacyCopy(text) {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.appendChild(area);
+    area.select();
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (err) {
+      ok = false;
+    }
+    document.body.removeChild(area);
+    return ok;
+  }
+
+  function copyText(text, button) {
+    const done = (ok) => {
+      button.textContent = ok ? "تم النسخ" : "تعذّر النسخ";
+      setTimeout(() => {
+        button.textContent = "نسخ calldata";
+      }, 1600);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => done(true))
+        .catch(() => done(legacyCopy(text)));
+      return;
+    }
+    done(legacyCopy(text));
+  }
+
+  function renderCalldata(finding) {
+    const steps = finding.calldata || [];
+    if (!steps.length) return null;
+    const items = steps.map((step) => {
+      const button = el("button", { class: "copy", type: "button" }, "نسخ calldata");
+      button.addEventListener("click", () => copyText(step.data, button));
+      return el(
+        "li",
+        {},
+        el("div", { class: "fn" }, `${step.label_ar} `, el("span", { dir: "ltr" }, `(${step.function})`)),
+        el("div", { class: "fn" }, "إلى: ", el("code", { dir: "ltr" }, step.to)),
+        el("code", { class: "hex", dir: "ltr" }, step.data),
+        button
+      );
+    });
+    return el(
+      "details",
+      { class: "recovery" },
+      el("summary", {}, "بيانات المعاملة الجاهزة (calldata)"),
+      el("p", { class: "hint" }, "الصقها في محفظة تدعم «البيانات المخصصة»، أو استخدم Write Contract في Etherscan. راجعها قبل التوقيع — نحن لا نوقّع ولا نرسل شيئاً."),
+      el("ul", { class: "calldata" }, items)
+    );
+  }
+
+  function renderFinding(finding, address) {
     const steps = el(
       "ol",
       { class: "steps" },
@@ -85,7 +144,14 @@
         "div",
         { class: "amount" },
         el("div", { class: "big num", dir: "ltr" }, fmt(finding.amount, finding.symbol)),
-        finding.usd ? el("span", { class: "usd" }, `≈ $${Math.round(finding.usd).toLocaleString("en-US")}`) : null
+        finding.usd ? el("span", { class: "usd" }, `≈ $${Math.round(finding.usd).toLocaleString("en-US")}`) : null,
+        finding.source_symbol && finding.source_amount != null
+          ? el(
+              "span",
+              { class: "source", dir: "ltr" },
+              `${fmt(finding.source_amount, finding.source_symbol)} → ${fmt(finding.amount, finding.symbol)}`
+            )
+          : null
       )
     );
 
@@ -95,6 +161,10 @@
       head,
       steps,
       finding.note_ar ? el("p", { class: "note" }, finding.note_ar) : null,
+      renderCalldata(finding),
+      finding.check_type === "digixdao"
+        ? el("a", { class: "cta ghost", href: `/kit/digixdao/${address}` }, "عدّة الاسترداد الكاملة ↗")
+        : null,
       el("a", { class: "cta", href: finding.etherscan, target: "_blank", rel: "noopener" }, "افتح العقد في Etherscan ↗")
     );
   }
@@ -135,7 +205,7 @@
     nodes.push(actions);
 
     if (findings.length) {
-      nodes.push(el("section", { class: "findings" }, el("h2", {}, "الأرصدة القابلة للاسترداد"), findings.map(renderFinding)));
+      nodes.push(el("section", { class: "findings" }, el("h2", {}, "الأرصدة القابلة للاسترداد"), findings.map((finding) => renderFinding(finding, data.address))));
     } else {
       nodes.push(
         el(

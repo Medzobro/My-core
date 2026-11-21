@@ -4,3 +4,4 @@ requests>=2.31
 fastapi>=0.108
 uvicorn[standard]>=0.25
 pydantic>=2.5
+pycryptodome>=3.20

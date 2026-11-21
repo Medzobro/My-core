@@ -31,7 +31,7 @@ def render_report(report: Report, *, standalone: bool = True) -> str:
     total_usd = data["totals"].get("usd_total")
     count = data["totals"].get("count", 0)
 
-    cards = "\n".join(_render_finding(f) for f in findings)
+    cards = "\n".join(_render_finding(f, data["address"]) for f in findings)
     native_rows = "\n".join(
         f"<li><span class='chain'>{_e(n['chain'])}</span>"
         f"<span class='num' dir='ltr'>{_fmt(n['amount'], n['symbol'])}</span></li>"
@@ -102,6 +102,7 @@ def render_report(report: Report, *, standalone: bool = True) -> str:
 <meta property="og:title" content="تقرير أرصدة عالقة — {_e(data["address"][:10])}…">
 <meta property="og:description" content="{_e(data["verdict_ar"])}">
 <link rel="stylesheet" href="/static/app.css">
+<script src="/static/report.js" defer></script>
 </head>
 <body>
 <main class="wrap">{body}</main>
@@ -109,7 +110,32 @@ def render_report(report: Report, *, standalone: bool = True) -> str:
 </html>"""
 
 
-def _render_finding(finding: dict) -> str:
+def _render_recovery(finding: dict) -> str:
+    """Render exact calldata the user can review and sign themselves."""
+    steps = finding.get("calldata") or []
+    if not steps:
+        return ""
+    items = "".join(
+        "<li>"
+        f"<div class='fn'>{_e(step['label_ar'])} "
+        f"<span dir='ltr'>({_e(step['function'])})</span></div>"
+        f"<div class='fn'>إلى: <code dir='ltr'>{_e(step['to'])}</code></div>"
+        f"<code class='hex' dir='ltr'>{_e(step['data'])}</code>"
+        f"<button class='copy' type='button' data-copy='{_e(step['data'])}'>نسخ calldata</button>"
+        "</li>"
+        for step in steps
+    )
+    return (
+        "<details class='recovery'>"
+        "<summary>بيانات المعاملة الجاهزة (calldata)</summary>"
+        "<p class='hint'>الصقها في محفظة تدعم «البيانات المخصصة»، أو استخدم Write Contract "
+        "في Etherscan. راجعها قبل التوقيع — نحن لا نوقّع ولا نرسل شيئاً.</p>"
+        f"<ul class='calldata'>{items}</ul>"
+        "</details>"
+    )
+
+
+def _render_finding(finding: dict, address: str) -> str:
     label_ar, label_en = DIFFICULTY_LABEL.get(finding["difficulty"], ("متوسط", "medium"))
     steps = "\n".join(
         f"<li><span class='ar'>{_e(s['ar'])}</span>"
@@ -123,6 +149,17 @@ def _render_finding(finding: dict) -> str:
     method = (
         f"<code class='method' dir='ltr'>{_e(finding['withdraw_method'])}</code>"
         if finding.get("withdraw_method")
+        else ""
+    )
+    source = ""
+    if finding.get("source_symbol") and finding.get("source_amount") is not None:
+        source = (
+            f"<div class='source' dir='ltr'>{_fmt(finding['source_amount'], finding['source_symbol'])}"
+            f" → {_fmt(finding['amount'], finding['symbol'])}</div>"
+        )
+    kit = (
+        f"<a class='cta ghost' href='/kit/digixdao/{_e(address)}'>عدّة الاسترداد الكاملة ↗</a>"
+        if finding.get("check_type") == "digixdao"
         else ""
     )
     return f"""
@@ -139,10 +176,13 @@ def _render_finding(finding: dict) -> str:
     <div class="amount">
       <div class="big num" dir="ltr">{_fmt(finding["amount"], finding["symbol"])}</div>
       {usd}
+      {source}
     </div>
   </div>
   <ol class="steps">{steps}</ol>
   {note}
+  {_render_recovery(finding)}
+  {kit}
   <a class="cta" href="{_e(finding["etherscan"])}" target="_blank" rel="noopener">افتح العقد في Etherscan ↗</a>
 </article>"""
 

@@ -13,6 +13,30 @@ ZERO = "0x0000000000000000000000000000000000000000"
 
 # Keyed by lower-case contract address.
 STEPS: dict[str, dict] = {
+    "0x23ea10cc1e6ebdb499d24e45369a35f43627062f": {
+        "title_ar": "DigixDAO — استرداد DGD مقابل ETH",
+        "difficulty": "medium",
+        "steps": [
+            (
+                "عقد Acid أُنشئ بعد حل DigixDAO (Ragnarok 2020): يحرق توكنات DGD ويعيد ETH بسعر ثابت محفوظ في العقد.",
+                "The Acid contract was deployed after DigixDAO's Ragnarok dissolution (2020): it burns DGD and returns ETH at a fixed on-chain rate.",
+            ),
+            (
+                "أولاً approve على عقد DGD (0xe0b7927c…0e2a): نفّذ approve(0x23Ea10CC…062f, كامل رصيدك).",
+                "First approve on the DGD token (0xe0b7927c…0e2a): call approve(0x23Ea10CC…062f, your full balance).",
+            ),
+            (
+                "ثم على عقد Acid نفّذ burn() بلا وسائط — يحرق كل DGD ويرسل ETH إلى محفظتك فوراً.",
+                "Then on Acid call burn() with no arguments — it burns all your DGD and sends the ETH to your wallet immediately.",
+            ),
+            (
+                "السعر يُقرأ من weiPerNanoDGD() على العقد نفسه؛ لا تعتمد على سعر من موقع خارجي.",
+                "The rate is read from weiPerNanoDGD() on the contract itself; do not trust an off-chain quote.",
+            ),
+        ],
+        "note_ar": "لا يوجد استرداد جزئي: burn() يحرق كامل رصيد DGD في المحفظة. تحقق من الرقم قبل التوقيع.",
+        "note_en": "There is no partial refund: burn() destroys the entire DGD balance. Verify the number before signing.",
+    },
     "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208": {
         "title_ar": "IDEX 1.0 — أرصدة المودعين",
         "difficulty": "medium",
@@ -89,38 +113,6 @@ STEPS: dict[str, dict] = {
         ],
         "note_ar": "العقد جزء من حل الـ hard fork لعام 2016، وما زال يعمل.",
         "note_en": "Part of the 2016 hard-fork rescue contract; still functional.",
-    },
-    "0x3fda67f7583380e67ef93072294a7fac882fd7e7": {
-        "title_ar": "Compound v1 cETH",
-        "difficulty": "easy",
-        "steps": [
-            (
-                "افتح عقد cETH في Etherscan ← Write Contract.",
-                "Open the cETH contract in Etherscan → Write Contract.",
-            ),
-            (
-                "نفّذ redeem(uint256) برصيدك من cETH بالـ wei لاستعادة الـ ETH.",
-                "Call redeem(uint256) with your cETH balance in wei to get the ETH back.",
-            ),
-        ],
-        "note_ar": None,
-        "note_en": None,
-    },
-    "0x25e46957363e16c4e2d5f2854b062475f9f8d287": {
-        "title_ar": "Compound v1 cDAI",
-        "difficulty": "easy",
-        "steps": [
-            (
-                "افتح عقد cDAI في Etherscan ← Write Contract.",
-                "Open the cDAI contract in Etherscan → Write Contract.",
-            ),
-            (
-                "نفّذ redeem(uint256) برصيدك من cDAI بالـ wei لاستعادة DAI.",
-                "Call redeem(uint256) with your cDAI balance in wei to redeem DAI.",
-            ),
-        ],
-        "note_ar": None,
-        "note_en": None,
     },
     "0x0000000000b3f879cb30fe243b4dfee438691c04": {
         "title_ar": "GasToken2 (GST2)",
@@ -217,6 +209,22 @@ BY_CHECK_TYPE: dict[str, dict] = {
         ],
         "note_ar": None,
         "note_en": None,
+    },
+    "digixdao": {
+        "title_ar": "استرداد DAO مقابل ETH",
+        "difficulty": "medium",
+        "steps": [
+            (
+                "تحتاج التوكن الأصلي في نفس المحفظة، ثم approve لعقد الاسترداد.",
+                "You need the original token in the same wallet, then approve the refund contract.",
+            ),
+            (
+                "نفّذ burn() على عقد الاسترداد — يحرق التوكن ويرسل ETH.",
+                "Call burn() on the refund contract — it burns the token and sends ETH.",
+            ),
+        ],
+        "note_ar": "تحقق من السعر على السلسلة قبل التوقيع.",
+        "note_en": "Verify the on-chain rate before signing.",
     },
 }
 

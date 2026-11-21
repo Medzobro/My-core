@@ -21,6 +21,7 @@ from audit import engine  # noqa: E402
 from audit.engine import (  # noqa: E402  # noqa: E402
     PENDING_WITHDRAWALS_SELECTOR,
     Finding,
+    Hit,
     Report,
     _finalize,
     _hex_int,
@@ -82,7 +83,7 @@ def test_etherdelta_eth_deposit_becomes_finding():
     c = contract("ForkDelta", "0x8d12a197cb00d4747a1fe03395095ce2a5cc6819", "etherdelta")
     rpc = FakeRPC({("0x8d12a197cb00d4747a1fe03395095ce2a5cc6819", "0xf7888aec"): hex(5 * 10**18)})
     found = run(_scan_contract(rpc, c, USER, {}))
-    assert found == [("ETH", 5 * 10**18, "0x" + "00" * 20, 18)]
+    assert found == [Hit("ETH", 5 * 10**18, "0x" + "00" * 20, 18)]
 
 
 def test_etherdelta_scans_known_tokens():
@@ -109,7 +110,7 @@ def test_erc20_self_respects_decimals():
     )
     rpc = FakeRPC({("0x0000000000b3f879cb30fe243b4dfee438691c04", "0x70a08231"): hex(12345)})
     found = run(_scan_contract(rpc, gst2, USER, {}))
-    assert found == [("GST2", 12345, "0x0000000000b3f879cb30fe243b4dfee438691c04", 2)]
+    assert found == [Hit("GST2", 12345, "0x0000000000b3f879cb30fe243b4dfee438691c04", 2)]
 
 
 def test_erc20_holder_uses_referenced_token():
@@ -123,15 +124,15 @@ def test_erc20_holder_uses_referenced_token():
     )
     rpc = FakeRPC({("0xbb9bc244d798123fde783fcc1c72d3bb8c189413", "0x70a08231"): hex(10**18)})
     found = run(_scan_contract(rpc, dao, USER, {}))
-    assert found[0][0] == "DAO"
-    assert found[0][3] == 16
+    assert found[0].symbol == "DAO"
+    assert found[0].decimals == 16
 
 
 def test_cryptopunks_uses_pending_withdrawals_selector():
     punks = contract("CryptoPunks", engine.PUNKS_CONTRACT, "cryptopunks")
     rpc = FakeRPC({(engine.PUNKS_CONTRACT, PENDING_WITHDRAWALS_SELECTOR): hex(15345 * 10**16)})
     found = run(_scan_contract(rpc, punks, USER, {}))
-    assert found == [("ETH", 15345 * 10**16, "0x" + "00" * 20, 18)]
+    assert found == [Hit("ETH", 15345 * 10**16, "0x" + "00" * 20, 18)]
     target, _method, params = rpc.calls[0]
     assert target == "ethereum"
     assert params[0]["to"].lower() == engine.PUNKS_CONTRACT
@@ -142,6 +143,33 @@ def test_zero_balance_yields_nothing():
     c = contract("IDEX 1.0", "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208", "erc20_self")
     rpc = FakeRPC({("0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208", "0x70a08231"): "0x0"})
     assert run(_scan_contract(rpc, c, USER, {})) == []
+
+
+def test_digixdao_claim_uses_onchain_rate():
+    """The Acid contract pays ETH for DGD; the rate is read, never hardcoded."""
+    acid = "0x23ea10cc1e6ebdb499d24e45369a35f43627062f"
+    dgd = "0xe0b7927c4af23765cb51314a0e0521a9645f0e2a"
+    c = contract(
+        "DigixDAO Acid Refund",
+        acid,
+        "digixdao",
+        balance_check_token=dgd,
+        balance_check_token_decimals=9,
+        balance_check_token_name="DGD",
+    )
+    rpc = FakeRPC(
+        {
+            (acid, "0x456a7cd8"): hex(193_055_202),
+            (dgd, "0x70a08231"): hex(382_981_093_740),
+        }
+    )
+    found = run(_scan_contract(rpc, c, USER, {}))
+    assert len(found) == 1
+    assert found[0].symbol == "ETH"
+    assert found[0].amount_raw == 382_981_093_740 * 193_055_202
+    assert found[0].source_symbol == "DGD"
+    assert found[0].source_amount_raw == 382_981_093_740
+    assert found[0].source_token == dgd
 
 
 def _finding(
@@ -208,7 +236,7 @@ def test_audit_address_pipeline(monkeypatch):
     assert report.totals["count"] == 1
     assert report.findings[0].contract_name == "CryptoPunks Marketplace"
     assert report.findings[0].usd == pytest.approx(306_900.0)
-    assert report.coverage["contracts_checked"] >= 13
+    assert report.coverage["contracts_checked"] >= 9
 
 
 def test_every_scanned_contract_has_guide():

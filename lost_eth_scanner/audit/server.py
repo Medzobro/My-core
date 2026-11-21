@@ -21,15 +21,24 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
+from fastapi.responses import (
+    FileResponse,
+    HTMLResponse,
+    JSONResponse,
+    RedirectResponse,
+    Response,
+)
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
-from audit.engine import Report, audit_address
+from audit.engine import Report, audit_address, load_data
+from audit.kit import load_kit
+from audit.kit_render import render_kit, render_kit_error, render_kit_form
 from audit.render import render_error, render_report
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(HERE, "static")
+CONTRACTS_IN_DB = len(load_data()[1])
 
 REPORT_TTL = 600
 MAX_CACHED = 500
@@ -198,6 +207,45 @@ async def report_page(address: str) -> HTMLResponse:
     return HTMLResponse(render_report(report))
 
 
+@app.get("/kit/digixdao", response_class=HTMLResponse)
+async def kit_index(address: str = "") -> Response:
+    """Landing form; a query-string address redirects to the canonical path."""
+    value = address.strip()
+    if value:
+        return RedirectResponse(f"/kit/digixdao/{value.lower()}", status_code=307)
+    return HTMLResponse(render_kit_form())
+
+
+@app.get("/kit/digixdao/{address}", response_class=HTMLResponse)
+async def kit_page(address: str, request: Request) -> HTMLResponse:
+    if _rate_limited(_client_ip(request)):
+        return HTMLResponse(
+            render_kit_error("عدد الفحوصات كبير، انتظر قليلاً", 429), status_code=429
+        )
+    try:
+        kit = await asyncio.wait_for(load_kit(address.strip().lower()), timeout=20)
+    except asyncio.TimeoutError:
+        return HTMLResponse(
+            render_kit_error("انتهى وقت القراءة من الشبكة، حاول مرة أخرى", 504), status_code=504
+        )
+    except ValueError as exc:
+        return HTMLResponse(render_kit_error(str(exc), 400), status_code=400)
+    return HTMLResponse(render_kit(kit))
+
+
+@app.get("/api/kit/digixdao/{address}")
+async def kit_api(address: str, request: Request) -> JSONResponse:
+    if _rate_limited(_client_ip(request)):
+        raise HTTPException(status_code=429, detail="عدد الفحوصات كبير، انتظر قليلاً")
+    try:
+        kit = await asyncio.wait_for(load_kit(address.strip().lower()), timeout=20)
+    except asyncio.TimeoutError as exc:
+        raise HTTPException(status_code=504, detail="انتهى وقت القراءة من الشبكة") from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return JSONResponse(kit.to_dict())
+
+
 @app.get("/health")
 async def health() -> dict:
     return {
@@ -214,7 +262,7 @@ async def stats() -> dict:
         "audits_served": _served["audits"],
         "findings_found": _served["findings"],
         "cached_reports": len(_reports),
-        "contracts_in_db": 13,
+        "contracts_in_db": CONTRACTS_IN_DB,
         "chains": 20,
     }
 
