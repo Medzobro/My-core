@@ -1,0 +1,37 @@
+[
+  {
+    "nonce": 0,
+    "addr": "0x91ccc4f33ff62a988eea88927bdd72056d0f0f3e",
+    "code_size": 9560,
+    "balance": 0.0,
+    "label": ""
+  },
+  {
+    "nonce": 2,
+    "addr": "0x4dcf60f0cb42c22df36994ccbebd0b281c57003a",
+    "code_size": 8826,
+    "balance": 0.0,
+    "label": "V1 MillionMoney"
+  },
+  {
+    "nonce": 55,
+    "addr": "0xb280db71599a3066f61cf1106fd69a1b656f6fee",
+    "code_size": 6933,
+    "balance": 0.0,
+    "label": ""
+  },
+  {
+    "nonce": 56,
+    "addr": "0xeb9fce2fe6cd203b2f0bc32e21fdfdde4c60ec0f",
+    "code_size": 6933,
+    "balance": 0.0,
+    "label": ""
+  },
+  {
+    "nonce": 61,
+    "addr": "0xbcf935d206ca32929e1b887a07ed240f0d8ccd22",
+    "code_size": 7037,
+    "balance": 0.0,
+    "label": "V2 MillionMoney"
+  }
+]

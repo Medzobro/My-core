@@ -1,0 +1,846 @@
+[
+  {
+    "chain": "ethereum",
+    "name": "Polkadot Foundation Parity Multisig",
+    "address": "0x3bfc20f0b9afcace800d73d2191166ff16540258",
+    "category": "FROZEN",
+    "contract_balance_eth": 306276.63553761196,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000004",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 1.9004711434445989,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000000007",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.004000000000000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 100 ETH",
+    "address": "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291",
+    "category": "DEPRECATED",
+    "contract_balance_eth": 194200.0,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000014",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.26439496000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Iconomi Parity Multisig",
+    "address": "0x376c3e5547c68bc26240d8dcc6729fff665a4448",
+    "category": "FROZEN",
+    "contract_balance_eth": 114939.00007763378,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000002",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 4.122653311210277,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000000003",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 1.4911236939563632,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Babbage Compound",
+    "address": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
+    "category": "DEFI_OLD",
+    "contract_balance_eth": 22983.709224008213,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x00000000000000000000000000000000000868cb",
+        "vanity_score": 345,
+        "vanity_reasons": [
+          "leading_zeros=35",
+          "repeated_run=35",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x657200000000000000000000000000000000001c",
+        "vanity_score": 136,
+        "vanity_reasons": [
+          "repeated_run=34"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000008",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 2.0000000000001e-05,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Curve Old Pool stETH",
+    "address": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+    "category": "DEFI_OLD",
+    "contract_balance_eth": 19836.46750388924,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x00000000000000000000000000000000000f4240",
+        "vanity_score": 345,
+        "vanity_reasons": [
+          "leading_zeros=35",
+          "repeated_run=35",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 10 ETH",
+    "address": "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF",
+    "category": "DEPRECATED",
+    "contract_balance_eth": 18120.0,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000014",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.26439496000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "polygon",
+    "name": "QiDao Old",
+    "address": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+    "category": "DEFI_OLD",
+    "contract_balance_eth": 34763.39336899722,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x000000000000000000fc6598ff0539e217d06be7",
+        "vanity_score": 192,
+        "vanity_reasons": [
+          "leading_zeros=18",
+          "repeated_run=18",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Musiconomi Parity Multisig",
+    "address": "0xc7cd9d874f93f2409f39a95987b3e3c738313925",
+    "category": "FROZEN",
+    "contract_balance_eth": 16475.534209330526,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000002",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 4.122653311210277,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000000004",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 1.9004711434445989,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x00000000000000000000000000005af3107a4000",
+        "vanity_score": 282,
+        "vanity_reasons": [
+          "leading_zeros=28",
+          "repeated_run=28",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Unknown Parity Multisig #4",
+    "address": "0xdb0e7d784d6a7ca2cbda6ce26ac3b1bd348c06f8",
+    "category": "FROZEN",
+    "contract_balance_eth": 6925.000001009999,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000004",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 1.9004711434445989,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000000006",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.001300000000000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 1 ETH",
+    "address": "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936",
+    "category": "DEPRECATED",
+    "contract_balance_eth": 3602.0,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000014",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.26439496000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoPunks Marketplace",
+    "address": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+    "category": "NFT_OLD",
+    "contract_balance_eth": 3261.4419096914708,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000081",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000016",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.235,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "PoWH3D",
+    "address": "0xB3775fB83F7D12A36E0475aBdD1FCA35c091efBe",
+    "category": "DEFUNCT_PONZI",
+    "contract_balance_eth": 2092.41266942219,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x000000000000000000000000000000000000000c",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 1.0274395343154106,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000000006",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.001300000000000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000056bc75e2d63100000",
+        "vanity_score": 252,
+        "vanity_reasons": [
+          "leading_zeros=23",
+          "trailing_zeros=5",
+          "repeated_run=23",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Tornado Cash 0.1 ETH",
+    "address": "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc",
+    "category": "DEPRECATED",
+    "contract_balance_eth": 546.9,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000014",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.26439496000001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Augur v1 Cash",
+    "address": "0xd5524179cB7AE012f5B642C1D6D700Bbaa76B96b",
+    "category": "DEPRECATED",
+    "contract_balance_eth": 770.3398976966845,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x000000000000000000000029c29d1784f9a23bac",
+        "vanity_score": 228,
+        "vanity_reasons": [
+          "leading_zeros=22",
+          "repeated_run=22",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "IDEX 1.0",
+    "address": "0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208",
+    "category": "USER_DEPOSITS",
+    "contract_balance_eth": 16168.164450952987,
+    "owners": [
+      {
+        "owner_source": "owner()",
+        "owner_address": "0x6b770f1a6bff9151f437f2eab907fff132dd86a5",
+        "vanity_score": 6,
+        "vanity_reasons": [
+          "dict_words=['fff']"
+        ],
+        "profanity_likely": false,
+        "owner_balance_eth": 0.00687682,
+        "owner_nonce": 4,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "base",
+    "name": "Friend.tech",
+    "address": "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4",
+    "category": "USER_DEPOSITS",
+    "contract_balance_eth": 927.5121517801156,
+    "owners": [
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x831be9e08185eba7d88aab1efc059336babef430",
+        "vanity_score": 6,
+        "vanity_reasons": [
+          "dict_words=['babe']"
+        ],
+        "profanity_likely": false,
+        "owner_balance_eth": 14.816665624999999,
+        "owner_nonce": 1,
+        "owner_is_contract": true
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoPunks (old contract)",
+    "address": "0x6BA6f2207e343923BA692e5Cae646Fb0F566DB8D",
+    "category": "NFT_OLD",
+    "contract_balance_eth": 4.64,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000081",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000016",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.235,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Wormhole Token Bridge",
+    "address": "0x3ee18B2214AFF97000D974cf647E7C347E8fa585",
+    "category": "BRIDGE",
+    "contract_balance_eth": 3.297377771936291,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x98f3c9e6e3face36baad05fe09d375ef1464288b",
+        "vanity_score": 12,
+        "vanity_reasons": [
+          "dict_words=['face', 'ace']"
+        ],
+        "profanity_likely": false,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 1,
+        "owner_is_contract": true
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000100010002",
+        "vanity_score": 309,
+        "vanity_reasons": [
+          "leading_zeros=31",
+          "repeated_run=31",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoKitties Sire Auction",
+    "address": "0xC7af99Fe5513eB6710e6D5f44F9989dA40F27F26",
+    "category": "NFT_OLD",
+    "contract_balance_eth": 1.5794920288130694,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000177",
+        "vanity_score": 363,
+        "vanity_reasons": [
+          "leading_zeros=37",
+          "repeated_run=37",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Curve Old Pool sETH",
+    "address": "0xc5424B857f758E906013F3555Dad202e4bdB4567",
+    "category": "DEFI_OLD",
+    "contract_balance_eth": 1.101979680667243,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x00000000000000000000000000000000001e8480",
+        "vanity_score": 336,
+        "vanity_reasons": [
+          "leading_zeros=34",
+          "repeated_run=34",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoKitties Sale Auction",
+    "address": "0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C",
+    "category": "OWNED",
+    "contract_balance_eth": 0.45523223693599824,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000177",
+        "vanity_score": 363,
+        "vanity_reasons": [
+          "leading_zeros=37",
+          "repeated_run=37",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "DAOstack Genesis Alpha",
+    "address": "0x294f999356ed03347c7a23bcbcf8d33fa41dc830",
+    "category": "DAO_INACTIVE",
+    "contract_balance_eth": 0.10479099999999526,
+    "owners": [
+      {
+        "owner_source": "owner()",
+        "owner_address": "0x211b9bd0bccaca64fb1d43093c75269bb84b3be6",
+        "vanity_score": 6,
+        "vanity_reasons": [
+          "dict_words=['b1d']"
+        ],
+        "profanity_likely": false,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 1,
+        "owner_is_contract": true
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x610000000000000000000000000000000000001a",
+        "vanity_score": 144,
+        "vanity_reasons": [
+          "repeated_run=36"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "bsc",
+    "name": "Spartan Protocol",
+    "address": "0xE4Ae305ebE1AbE663f261Bc00534067C80ad677c",
+    "category": "DEFI_EXPLOITED",
+    "contract_balance_eth": 0.02,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x4f434f4c20544f4b454e0000000000000000002c",
+        "vanity_score": 72,
+        "vanity_reasons": [
+          "repeated_run=18"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x000000000000000000000000000000000000000c",
+        "vanity_score": 381,
+        "vanity_reasons": [
+          "leading_zeros=39",
+          "repeated_run=39",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.05768484886837789,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000012",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.001,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "The DAO (original)",
+    "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+    "category": "FROZEN",
+    "contract_balance_eth": 0.0006,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x000000000000000000000000000000000000013d",
+        "vanity_score": 363,
+        "vanity_reasons": [
+          "leading_zeros=37",
+          "repeated_run=37",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_1",
+        "owner_address": "0x0000000000000000000000000000000000028000",
+        "vanity_score": 345,
+        "vanity_reasons": [
+          "leading_zeros=35",
+          "repeated_run=35",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      },
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x000000000000000000000000000000006999f317",
+        "vanity_score": 318,
+        "vanity_reasons": [
+          "leading_zeros=32",
+          "repeated_run=32",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "CryptoKitties Core",
+    "address": "0x06012c8cf97BEaD5deAe237070F9587f8E7A266d",
+    "category": "NFT_OLD",
+    "contract_balance_eth": 0.008,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x09191d18729da57a83a9afc8ace0c8d7d104e118",
+        "vanity_score": 6,
+        "vanity_reasons": [
+          "dict_words=['ace']"
+        ],
+        "profanity_likely": false,
+        "owner_balance_eth": 0.1745086363700361,
+        "owner_nonce": 96408,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Etheria v1.0",
+    "address": "0xB21f8684f23Dbb1008508B4DE91a0aaEDEbdB7E4",
+    "category": "NFT_OLD",
+    "contract_balance_eth": 0.0001,
+    "owners": [
+      {
+        "owner_source": "storage_slot_0",
+        "owner_address": "0x0000000000000000000000000000000000000021",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.0,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  },
+  {
+    "chain": "ethereum",
+    "name": "Etheroll (old)",
+    "address": "0xA52e014B3f5Cc48287c2D483A3E026C32cc76E6d",
+    "category": "DEFUNCT_GAME",
+    "contract_balance_eth": 5.841e-15,
+    "owners": [
+      {
+        "owner_source": "storage_slot_2",
+        "owner_address": "0x0000000000000000000000000000000000000016",
+        "vanity_score": 372,
+        "vanity_reasons": [
+          "leading_zeros=38",
+          "repeated_run=38",
+          "profanity_likely"
+        ],
+        "profanity_likely": true,
+        "owner_balance_eth": 0.235,
+        "owner_nonce": 0,
+        "owner_is_contract": false
+      }
+    ]
+  }
+]
