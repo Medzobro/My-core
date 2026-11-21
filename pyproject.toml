@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["legacy", ".venv", "lost_eth_scanner/legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"lost_eth_scanner/tests/*" = ["E402", "E501"]
+"lost_eth_scanner/*.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["lost_eth_scanner/tests"]
+pythonpath = ["lost_eth_scanner"]
+filterwarnings = ["ignore::DeprecationWarning"]

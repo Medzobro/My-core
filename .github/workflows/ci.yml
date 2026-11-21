@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: lost_eth_scanner/requirements*.txt
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r lost_eth_scanner/requirements.txt
+          pip install -r lost_eth_scanner/requirements-dev.txt
+          pip install pytest ruff httpx
+
+      - name: Lint
+        run: ruff check lost_eth_scanner/core lost_eth_scanner/audit lost_eth_scanner/tests
+
+      - name: Format check
+        run: ruff format --check lost_eth_scanner/core lost_eth_scanner/audit lost_eth_scanner/tests
+
+      - name: Tests (offline, mocked RPC)
+        run: pytest -q
+
+      - name: Validate data files
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          base = pathlib.Path("lost_eth_scanner/data")
+          for name in ("chains.json", "contracts_multichain.json", "tokens_multichain.json"):
+              data = json.loads((base / name).read_text(encoding="utf-8"))
+              assert isinstance(data, dict) and data, name
+              print(f"{name}: ok")
+          PY
+
+      - name: CLI smoke test
+        working-directory: lost_eth_scanner
+        run: python lost_eth.py stats > /dev/null && echo "cli ok"
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        working-directory: lost_eth_scanner
+        run: docker build -t mustahaqati:test .

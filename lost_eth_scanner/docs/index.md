@@ -105,7 +105,7 @@ Forensic profiler:
 ### Storage DB (`storage_db.py`)
 SQLite persistence layer for scan history, findings, alerts, contract cache.
 
-### REST API (`api_server.py`)
+### REST API (`audit/server.py`)
 FastAPI server exposing all functionality:
 - `POST /scan` - scan addresses
 - `POST /airdrops` - check airdrops
@@ -121,7 +121,7 @@ Chrome MV3 extension. Auto-detects addresses on Etherscan/Arbiscan and offers on
 
 ## API Reference
 
-See `/docs` endpoint when running `api_server.py`.
+Run `python lost_eth.py server` and open `/docs` for the interactive schema.
 
 ## Configuration
 
